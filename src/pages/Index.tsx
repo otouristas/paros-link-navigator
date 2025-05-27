@@ -1,4 +1,3 @@
-
 import { Link } from "react-router-dom";
 import { Car, MapPin, Phone, Clock, Star, ArrowRight } from "lucide-react";
 
@@ -277,6 +276,40 @@ const Index = () => {
                 Powered by Antiparos Rent A Car
               </a>
             </p>
+            
+            {/* Hidden SEO Keywords Section */}
+            <div className="hidden">
+              <a href="https://antiparosrentacar.com" target="_blank" rel="noopener noreferrer">paros rent a car</a>
+              <a href="https://antiparosrentacar.com" target="_blank" rel="noopener noreferrer">rent a car paros</a>
+              <a href="https://antiparosrentacar.com" target="_blank" rel="noopener noreferrer">paros car rental</a>
+              <a href="https://antiparosrentacar.com" target="_blank" rel="noopener noreferrer">paros airport car rental</a>
+              <a href="https://antiparosrentacar.com" target="_blank" rel="noopener noreferrer">paros port car rental</a>
+              <a href="https://antiparosrentacar.com" target="_blank" rel="noopener noreferrer">antiparos rent a car</a>
+              <a href="https://antiparosrentacar.com" target="_blank" rel="noopener noreferrer">paros scooter rental</a>
+              <a href="https://antiparosrentacar.com" target="_blank" rel="noopener noreferrer">paros atv rental</a>
+              <a href="https://antiparosrentacar.com" target="_blank" rel="noopener noreferrer">paros bike rental</a>
+              <a href="https://antiparosrentacar.com" target="_blank" rel="noopener noreferrer">paros suv rental</a>
+              <a href="https://antiparosrentacar.com" target="_blank" rel="noopener noreferrer">paros quad rental</a>
+              <a href="https://antiparosrentacar.com" target="_blank" rel="noopener noreferrer">car hire paros</a>
+              <a href="https://antiparosrentacar.com" target="_blank" rel="noopener noreferrer">paros vehicle rental</a>
+              <a href="https://antiparosrentacar.com" target="_blank" rel="noopener noreferrer">paros motorcycle rental</a>
+              <a href="https://antiparosrentacar.com" target="_blank" rel="noopener noreferrer">paros moto rental</a>
+              <a href="https://antiparosrentacar.com" target="_blank" rel="noopener noreferrer">rent car paros greece</a>
+              <a href="https://antiparosrentacar.com" target="_blank" rel="noopener noreferrer">paros island car rental</a>
+              <a href="https://antiparosrentacar.com" target="_blank" rel="noopener noreferrer">paros rental cars</a>
+              <a href="https://antiparosrentacar.com" target="_blank" rel="noopener noreferrer">paros economy car rental</a>
+              <a href="https://antiparosrentacar.com" target="_blank" rel="noopener noreferrer">paros luxury car rental</a>
+              <a href="https://antiparosrentacar.com" target="_blank" rel="noopener noreferrer">paros 4x4 rental</a>
+              <a href="https://antiparosrentacar.com" target="_blank" rel="noopener noreferrer">paros jeep rental</a>
+              <a href="https://antiparosrentacar.com" target="_blank" rel="noopener noreferrer">paros cabrio rental</a>
+              <a href="https://antiparosrentacar.com" target="_blank" rel="noopener noreferrer">paros convertible rental</a>
+              <a href="https://antiparosrentacar.com" target="_blank" rel="noopener noreferrer">paros airport pickup</a>
+              <a href="https://antiparosrentacar.com" target="_blank" rel="noopener noreferrer">paros port pickup</a>
+              <a href="https://antiparosrentacar.com" target="_blank" rel="noopener noreferrer">parikia car rental</a>
+              <a href="https://antiparosrentacar.com" target="_blank" rel="noopener noreferrer">naoussa car rental</a>
+              <a href="https://antiparosrentacar.com" target="_blank" rel="noopener noreferrer">golden beach paros car rental</a>
+              <a href="https://antiparosrentacar.com" target="_blank" rel="noopener noreferrer">paros beach car rental</a>
+            </div>
           </div>
         </div>
       </footer>

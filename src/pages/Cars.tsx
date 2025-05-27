@@ -1,4 +1,3 @@
-
 import { Link } from "react-router-dom";
 import { Car, ArrowLeft, ArrowRight, Star, Users, Fuel, Settings } from "lucide-react";
 
@@ -236,6 +235,16 @@ const Cars = () => {
             <Link to="/scooters" className="hover:text-orange-400 transition-colors">Scooters</Link>
             <Link to="/atv" className="hover:text-orange-400 transition-colors">ATVs</Link>
             <Link to="/airport" className="hover:text-orange-400 transition-colors">Airport</Link>
+          </div>
+          
+          {/* Hidden SEO Keywords Section */}
+          <div className="hidden">
+            <a href="https://antiparosrentacar.com" target="_blank" rel="noopener noreferrer">cheap car rental paros</a>
+            <a href="https://antiparosrentacar.com" target="_blank" rel="noopener noreferrer">best car rental paros</a>
+            <a href="https://antiparosrentacar.com" target="_blank" rel="noopener noreferrer">paros car hire cheap</a>
+            <a href="https://antiparosrentacar.com" target="_blank" rel="noopener noreferrer">paros auto rental</a>
+            <a href="https://antiparosrentacar.com" target="_blank" rel="noopener noreferrer">paros car booking</a>
+            <a href="https://antiparosrentacar.com" target="_blank" rel="noopener noreferrer">paros vehicle hire</a>
           </div>
         </div>
       </footer>
