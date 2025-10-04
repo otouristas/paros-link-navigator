@@ -2,7 +2,8 @@ import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { SEO } from "@/components/SEO";
 import { OptimizedImage } from "@/components/OptimizedImage";
-import { Car, MapPin, Clock, Star, Shield, Award, Check, ArrowRight, Phone, Mail, Compass, Users, Zap, Calendar, ThumbsUp, Globe } from "lucide-react";
+import { Car, MapPin, Clock, Star, Shield, Award, Check, ArrowRight, Phone, Mail, Compass, Users, Zap, Calendar, ThumbsUp, Globe, Bot, Sparkles } from "lucide-react";
+import { Link } from "react-router-dom";
 import { useState } from "react";
 
 const Index = () => {
@@ -273,6 +274,109 @@ const Index = () => {
                 <p className="text-gray-700 leading-relaxed text-base font-medium">
                   Free delivery anywhere on Paros and Antiparos. Airport, port, hotel - we meet you where you are.
                 </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Marcia AI Banner - Revolutionary Feature */}
+        <section className="py-24 bg-gradient-to-br from-main-900 via-main-800 to-main-950 text-white relative overflow-hidden">
+          {/* Animated background blobs */}
+          <div className="absolute top-20 left-10 w-96 h-96 bg-gold-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob"></div>
+          <div className="absolute bottom-20 right-10 w-96 h-96 bg-gold-600 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-2000"></div>
+          
+          <div className="container mx-auto px-4 relative z-10">
+            <div className="max-w-6xl mx-auto">
+              <div className="text-center mb-12">
+                <div className="inline-flex items-center bg-white/10 backdrop-blur-lg px-6 py-3 rounded-full mb-6 border border-white/20 animate-pulse">
+                  <Sparkles className="h-5 w-5 mr-2 text-yellow-300" />
+                  <span className="font-black text-sm">NEW! WORLD'S FIRST AI CAR RENTAL ASSISTANT</span>
+                </div>
+                
+                <h2 className="text-5xl md:text-7xl font-black mb-6 leading-tight">
+                  Meet <span className="bg-gradient-to-r from-gold-300 via-gold-400 to-gold-300 bg-clip-text text-transparent animate-gradient">Marcia AI</span>
+                </h2>
+                
+                <p className="text-2xl md:text-3xl mb-10 text-white/95 leading-relaxed max-w-4xl mx-auto font-medium">
+                  Your intelligent 24/7 car rental assistant. Get instant vehicle recommendations, pricing, and expert advice - all powered by artificial intelligence.
+                </p>
+              </div>
+
+              {/* Features Grid */}
+              <div className="grid md:grid-cols-3 gap-8 mb-12">
+                <div className="bg-white/10 backdrop-blur-lg p-8 rounded-2xl border border-white/20 hover:bg-white/20 transition-all">
+                  <Zap className="h-12 w-12 mb-4 text-gold-300" />
+                  <h3 className="text-xl font-black mb-3">Instant Answers</h3>
+                  <p className="text-white/90 font-medium">Get responses in seconds, not hours. No waiting!</p>
+                </div>
+                
+                <div className="bg-white/10 backdrop-blur-lg p-8 rounded-2xl border border-white/20 hover:bg-white/20 transition-all">
+                  <Bot className="h-12 w-12 mb-4 text-gold-400" />
+                  <h3 className="text-xl font-black mb-3">Smart Recommendations</h3>
+                  <p className="text-white/90 font-medium">Personalized vehicle suggestions based on your needs</p>
+                </div>
+                
+                <div className="bg-white/10 backdrop-blur-lg p-8 rounded-2xl border border-white/20 hover:bg-white/20 transition-all">
+                  <Clock className="h-12 w-12 mb-4 text-gold-300" />
+                  <h3 className="text-xl font-black mb-3">Available 24/7</h3>
+                  <p className="text-white/90 font-medium">Planning at 2 AM? Marcia never sleeps!</p>
+                </div>
+              </div>
+
+              {/* CTA Buttons */}
+              <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
+                <button
+                  onClick={() => {
+                    const chatButton = document.querySelector('button[class*="from-main-900"][class*="to-gold-600"]') as HTMLButtonElement;
+                    if (chatButton) chatButton.click();
+                  }}
+                  className="bg-white text-main-900 px-12 py-6 rounded-2xl font-black text-xl transition-all inline-flex items-center justify-center shadow-2xl hover:scale-105 transform group"
+                >
+                  <Bot className="mr-3 h-8 w-8 group-hover:animate-bounce" />
+                  Chat with Marcia Now
+                  <Sparkles className="ml-3 h-6 w-6 text-gold-500" />
+                </button>
+                
+                <Link
+                  to="/marcia-ai"
+                  className="bg-white/10 backdrop-blur-lg hover:bg-white/20 border-2 border-white/30 text-white px-12 py-6 rounded-2xl font-black text-xl transition-all inline-flex items-center justify-center"
+                >
+                  Learn More About Marcia AI
+                </Link>
+              </div>
+
+              {/* Stats */}
+              <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+                <div>
+                  <p className="text-4xl font-black mb-2">&lt; 30s</p>
+                  <p className="text-white/80 font-medium">Response Time</p>
+                </div>
+                <div>
+                  <p className="text-4xl font-black mb-2">24/7</p>
+                  <p className="text-white/80 font-medium">Always Available</p>
+                </div>
+                <div>
+                  <p className="text-4xl font-black mb-2">50+</p>
+                  <p className="text-white/80 font-medium">Vehicles</p>
+                </div>
+                <div>
+                  <p className="text-4xl font-black mb-2">100%</p>
+                  <p className="text-white/80 font-medium">Free</p>
+                </div>
+              </div>
+
+              {/* Touristas AI Badge */}
+              <div className="mt-12 flex items-center justify-center gap-3 text-white/70 text-base">
+                <span>Powered by</span>
+                <a 
+                  href="https://touristas.ai" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-3 hover:text-white transition-colors group"
+                >
+                  <img src="https://hotelssifnos.com/uploads/touristas-ai-logo.svg" alt="Touristas AI" className="h-8 inline-block group-hover:scale-110 transition-transform" />
+                  <span className="font-black text-lg text-white">Touristas AI</span>
+                </a>
               </div>
             </div>
           </div>

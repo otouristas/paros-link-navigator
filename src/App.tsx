@@ -5,9 +5,11 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { WhatsAppButton } from "@/components/WhatsAppButton";
+import { MarciaChat } from "@/components/MarciaChat";
 import { CookieConsent } from "@/components/CookieConsent";
 import { ScrollToTop } from "@/components/ScrollToTop";
 import Index from "./pages/Index";
+import MarciaAI from "./pages/MarciaAI";
 import CarRentalParos from "./pages/CarRentalParos";
 import CarRentalAntiparos from "./pages/CarRentalAntiparos";
 import CarRentalNaoussa from "./pages/CarRentalNaoussa";
@@ -58,6 +60,7 @@ const App = () => (
           <Route path="/blog" element={<Blog />} />
           <Route path="/fleet" element={<Fleet />} />
           <Route path="/fleet/:id" element={<FleetDetail />} />
+          <Route path="/marcia-ai" element={<MarciaAI />} />
           <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
           {/* Blog Posts */}
           <Route path="/blog/complete-guide-exploring-paros-car" element={<CompleteGuideExploringParosCar />} />
@@ -70,6 +73,7 @@ const App = () => (
           <Route path="*" element={<NotFound />} />
         </Routes>
         <WhatsAppButton />
+        <MarciaChat />
         <CookieConsent />
       </BrowserRouter>
     </TooltipProvider>

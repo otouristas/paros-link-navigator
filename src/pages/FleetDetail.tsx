@@ -3,7 +3,7 @@ import { Footer } from "@/components/Footer";
 import { SEO } from "@/components/SEO";
 import { useParams, Link } from "react-router-dom";
 import { useCar, useCars } from "@/hooks/use-cars";
-import { Car as CarIcon, Users, Fuel, Cog, Check, ArrowRight, ArrowLeft, Phone, Shield, Award, ChevronRight } from "lucide-react";
+import { Car as CarIcon, Users, Fuel, Cog, Check, ArrowRight, ArrowLeft, Phone, Shield, Award, ChevronRight, Bot } from "lucide-react";
 import { Skeleton } from "@/components/ui/skeleton";
 
 const FleetDetail = () => {
@@ -159,7 +159,19 @@ const FleetDetail = () => {
                       <p className="text-6xl font-black text-main-900 mb-2">
                         €{car.price_per_day}
                       </p>
-                      <p className="text-gray-600 font-medium">Per Day</p>
+                      <p className="text-gray-600 font-medium mb-4">Per Day</p>
+                      
+                      {/* Ask Marcia AI Button */}
+                      <button
+                        onClick={() => {
+                          const chatButton = document.querySelector('button[class*="from-main-900"][class*="to-gold-600"]') as HTMLButtonElement;
+                          if (chatButton) chatButton.click();
+                        }}
+                        className="inline-flex items-center gap-2 bg-gradient-to-r from-main-900 to-gold-600 hover:from-main-800 hover:to-gold-500 text-white px-6 py-3 rounded-xl font-bold text-sm transition-all shadow-lg hover:shadow-xl"
+                      >
+                        <Bot className="h-4 w-4" />
+                        Ask Marcia AI
+                      </button>
                     </div>
                   </div>
 
