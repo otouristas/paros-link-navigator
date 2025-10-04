@@ -11,8 +11,13 @@ const MarciaContext = createContext<MarciaContextType | undefined>(undefined);
 export function MarciaProvider({ children }: { children: ReactNode }) {
   const [isOpen, setIsOpen] = useState(false);
 
-  const openChat = () => setIsOpen(true);
-  const closeChat = () => setIsOpen(false);
+  const openChat = () => {
+    setIsOpen(true);
+  };
+
+  const closeChat = () => {
+    setIsOpen(false);
+  };
 
   return (
     <MarciaContext.Provider value={{ isOpen, openChat, closeChat }}>

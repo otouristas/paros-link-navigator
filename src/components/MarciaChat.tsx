@@ -244,24 +244,31 @@ export function MarciaChat() {
     };
   };
 
-  const handleSend = () => {
-    if (!input.trim()) return;
+  const handleSend = (messageText?: string) => {
+    const textToSend = messageText || input;
+    
+    // Type check and validate
+    if (!textToSend || typeof textToSend !== 'string' || !textToSend.trim()) {
+      return;
+    }
 
     // Add user message
     const userMessage: Message = {
       id: Date.now().toString(),
-      content: input,
+      content: textToSend,
       sender: 'user',
       timestamp: new Date(),
     };
 
     setMessages(prev => [...prev, userMessage]);
-    setInput('');
+    if (!messageText) {
+      setInput('');
+    }
     setIsTyping(true);
 
     // Simulate AI thinking
     setTimeout(() => {
-      const aiResponse = getAIResponse(input);
+      const aiResponse = getAIResponse(textToSend);
       setMessages(prev => [...prev, aiResponse]);
       setIsTyping(false);
     }, 1000 + Math.random() * 1000); // 1-2 seconds

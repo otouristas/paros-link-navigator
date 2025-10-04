@@ -3,15 +3,16 @@ import { Footer } from "@/components/Footer";
 import { SEO } from "@/components/SEO";
 import { Calendar, User, ArrowRight, MapPin, Clock, Waves, Car, Star, Camera } from "lucide-react";
 import { Link } from "react-router-dom";
+import { BlogCTA } from "@/components/BlogCTA";
 
 const BestBeachesParosAccessibleCar = () => {
   return (
     <>
       <SEO
-        title="Best Beaches in Paros Accessible by Car: A Local's Guide | Paros Car Rental"
-        description="Discover Paros' most beautiful beaches that you can easily reach by car. From family-friendly shores to secluded coves, our local guide reveals the island's best-kept secrets."
+        title="Best Beaches in Paros Accessible by Car 2024: Golden Beach, Kolymbithres & More | Paros Car Rental Guide"
+        description="Discover Paros' most beautiful beaches that you can easily reach by car. From family-friendly shores to secluded coves, our local guide reveals the island's best-kept secrets with Aggelos Rentals."
         canonicalUrl="http://rentacar-paros.gr/blog/best-beaches-paros-accessible-car"
-        keywords="paros beaches, paros beaches by car, best beaches paros, paros beach guide, paros coastal drive"
+        keywords="paros beaches, paros beaches by car, best beaches paros, paros beach guide, paros coastal drive, golden beach paros, kolymbithres beach, santa maria beach, paros car rental beaches, rent a car paros beaches"
       />
       <div className="min-h-screen bg-white text-main-950">
         <Header />
@@ -53,9 +54,24 @@ const BestBeachesParosAccessibleCar = () => {
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto">
               <div className="prose prose-lg mx-auto">
-                <p className="text-xl text-gray-600 mb-8 leading-relaxed">
-                  Discover Paros' most beautiful beaches that you can easily reach by car. From family-friendly shores to secluded coves, our local guide reveals the island's best-kept secrets.
+                {/* Feature Image */}
+                <div className="mb-12">
+                  <img
+                    src="https://images.unsplash.com/photo-1533105079780-92b9be482077?w=1200&h=600&fit=crop"
+                    alt="Beautiful beach in Paros with crystal clear waters and golden sand accessible by car"
+                    className="w-full h-96 object-cover rounded-2xl shadow-lg"
+                    loading="lazy"
+                  />
+                </div>
+                
+                <p className="text-xl text-gray-700 leading-relaxed mb-6">
+                  Paros boasts some of the Aegean's most spectacular beaches, and the best part? Most are easily accessible by <Link to="/car-rental-paros" className="text-main-900 font-bold hover:text-gold-600 underline">car rental</Link>. Whether you're staying in <Link to="/car-rental-parikia-paros" className="hover:text-gold-600 text-main-900 font-semibold">Parikia</Link> or <Link to="/car-rental-naoussa-paros" className="hover:text-gold-600 text-main-900 font-semibold">Naoussa</Link>, having your own vehicle opens up a world of pristine shores and hidden coves that remain inaccessible to those relying on public transport.
                 </p>
+                <p className="text-lg text-gray-600 leading-relaxed mb-12">
+                  At <Link to="/" className="text-main-900 font-bold hover:text-gold-600">Aggelos Rentals</Link>, we've been helping visitors discover Paros' best beaches for over 30 years. Here's our insider guide to the island's most beautiful coastal destinations - all reachable by car.
+                </p>
+
+                <BlogCTA initialMessage="I want to visit the best beaches in Paros, which car should I rent?" />
 
                 <h2 className="text-3xl font-bold text-main-900 mb-6">Top Beach Destinations by Car</h2>
 

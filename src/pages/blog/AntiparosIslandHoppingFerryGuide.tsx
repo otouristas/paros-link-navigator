@@ -3,15 +3,16 @@ import { Footer } from "@/components/Footer";
 import { SEO } from "@/components/SEO";
 import { Calendar, User, ArrowRight, MapPin, Clock, Ship, Car, CreditCard } from "lucide-react";
 import { Link } from "react-router-dom";
+import { BlogCTA } from "@/components/BlogCTA";
 
 const AntiparosIslandHoppingFerryGuide = () => {
   return (
     <>
       <SEO
-        title="Antiparos Island Hopping: Ferry Schedule and Car Rental Tips | Paros Car Rental"
-        description="Complete guide to taking your rental car to Antiparos island. Ferry schedules, parking tips, costs, and best spots to visit on this charming Cycladic island."
+        title="Antiparos Island Hopping 2024: Ferry Schedule, Car Rental Tips & Best Spots | Complete Travel Guide"
+        description="Complete guide to taking your rental car to Antiparos island. Ferry schedules, parking tips, costs, and best spots to visit on this charming Cycladic island with Aggelos Rentals."
         canonicalUrl="http://rentacar-paros.gr/blog/antiparos-island-hopping-ferry-guide"
-        keywords="antiparos ferry schedule, paros to antiparos ferry, antiparos car rental, island hopping paros, antiparos travel guide"
+        keywords="antiparos ferry schedule, paros to antiparos ferry, antiparos car rental, island hopping paros, antiparos travel guide, rent a car antiparos, antiparos ferry cost, antiparos beaches, antiparos cave, pounta ferry antiparos"
       />
       <div className="min-h-screen bg-white text-main-950">
         <Header />
@@ -53,9 +54,24 @@ const AntiparosIslandHoppingFerryGuide = () => {
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto">
               <div className="prose prose-lg mx-auto">
-                <p className="text-xl text-gray-600 mb-8 leading-relaxed">
-                  Everything you need to know about taking your rental car to Antiparos. Ferry schedules, parking tips, and the best spots to visit on this charming smaller island.
+                {/* Feature Image */}
+                <div className="mb-12">
+                  <img
+                    src="https://images.unsplash.com/photo-1527004013197-933c4bb611b3?w=1200&h=600&fit=crop"
+                    alt="Ferry boat traveling between Paros and Antiparos islands in the Aegean Sea"
+                    className="w-full h-96 object-cover rounded-2xl shadow-lg"
+                    loading="lazy"
+                  />
+                </div>
+                
+                <p className="text-xl text-gray-700 leading-relaxed mb-6">
+                  Antiparos, the charming sister island of Paros, is a must-visit destination just a short ferry ride away. With a <Link to="/car-rental-antiparos" className="text-main-900 font-bold hover:text-gold-600 underline">rental car from Aggelos Rentals</Link>, you can explore both islands with complete freedom and discover hidden gems that most tourists never see.
                 </p>
+                <p className="text-lg text-gray-600 leading-relaxed mb-12">
+                  This complete guide covers everything you need to know about taking your <Link to="/car-rental-paros" className="text-main-900 font-bold hover:text-gold-600">rental vehicle</Link> to Antiparos - from ferry schedules and costs to parking tips and the best spots to visit. Whether you're planning a day trip from <Link to="/car-rental-parikia-paros" className="hover:text-gold-600 text-main-900 font-semibold">Parikia</Link> or staying overnight, we've got you covered.
+                </p>
+
+                <BlogCTA initialMessage="I want to take a car to Antiparos, which vehicle is best?" />
 
                 <h2 className="text-3xl font-bold text-main-900 mb-6">Getting to Antiparos with Your Rental Car</h2>
                 

@@ -3,15 +3,16 @@ import { Footer } from "@/components/Footer";
 import { SEO } from "@/components/SEO";
 import { Calendar, User, ArrowRight, MapPin, Clock, Car, Zap, Fuel, Users } from "lucide-react";
 import { Link } from "react-router-dom";
+import { BlogCTA } from "@/components/BlogCTA";
 
 const ScooterCarATVComparisonParos = () => {
   return (
     <>
       <SEO
-        title="Scooter vs Car vs ATV: Which Vehicle is Best for Your Paros Adventure? | Paros Car Rental"
-        description="Compare the pros and cons of different rental vehicles for exploring Paros and Antiparos. From fuel efficiency to off-road capability, find the perfect ride for your island adventure."
+        title="Scooter vs Car vs ATV 2024: Which Vehicle is Best for Your Paros Adventure? | Complete Rental Comparison Guide"
+        description="Compare the pros and cons of different rental vehicles for exploring Paros and Antiparos. From fuel efficiency to off-road capability, find the perfect ride for your island adventure with Aggelos Rentals."
         canonicalUrl="http://rentacar-paros.gr/blog/scooter-car-atv-comparison-paros"
-        keywords="scooter vs car paros, atv rental paros, vehicle comparison paros, best transport paros, paros vehicle guide"
+        keywords="scooter vs car paros, atv rental paros, vehicle comparison paros, best transport paros, paros vehicle guide, rent scooter paros, rent atv paros, paros quad rental, economy car paros, best vehicle for paros"
       />
       <div className="min-h-screen bg-white text-main-950">
         <Header />
@@ -53,9 +54,24 @@ const ScooterCarATVComparisonParos = () => {
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto">
               <div className="prose prose-lg mx-auto">
-                <p className="text-xl text-gray-600 mb-8 leading-relaxed">
-                  Compare the pros and cons of different rental vehicles for exploring Paros and Antiparos. From fuel efficiency to off-road capability, find the perfect ride for your island adventure.
+                {/* Feature Image */}
+                <div className="mb-12">
+                  <img
+                    src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1200&h=600&fit=crop"
+                    alt="Different vehicle types for rent in Paros including cars, scooters and ATVs"
+                    className="w-full h-96 object-cover rounded-2xl shadow-lg"
+                    loading="lazy"
+                  />
+                </div>
+                
+                <p className="text-xl text-gray-700 leading-relaxed mb-6">
+                  Choosing the right vehicle can make or break your Paros experience. Whether you need a <Link to="/car-rental-paros" className="text-main-900 font-bold hover:text-gold-600 underline">car</Link>, <Link to="/scooter-rental-paros" className="text-main-900 font-bold hover:text-gold-600 underline">scooter</Link>, or <Link to="/atv-quad-rental-paros" className="text-main-900 font-bold hover:text-gold-600 underline">ATV</Link> depends on your travel style, group size, and planned activities.
                 </p>
+                <p className="text-lg text-gray-600 leading-relaxed mb-12">
+                  At <Link to="/" className="text-main-900 font-bold hover:text-gold-600">Aggelos Rentals</Link>, we offer all three vehicle types with transparent pricing and comprehensive insurance. This guide will help you make the perfect choice for your island adventure, whether you're exploring from <Link to="/paros-airport-car-rental" className="hover:text-gold-600 text-main-900 font-semibold">Paros Airport</Link> or picking up from our <Link to="/car-rental-naoussa-paros" className="hover:text-gold-600 text-main-900 font-semibold">Naoussa</Link> location.
+                </p>
+
+                <BlogCTA initialMessage="I'm not sure which vehicle to rent for Paros, can you help?" />
 
                 <h2 className="text-3xl font-bold text-main-900 mb-6">Vehicle Comparison Overview</h2>
                 

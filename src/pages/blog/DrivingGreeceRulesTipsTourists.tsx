@@ -3,15 +3,16 @@ import { Footer } from "@/components/Footer";
 import { SEO } from "@/components/SEO";
 import { Calendar, User, ArrowRight, MapPin, Clock, Car, Shield, AlertTriangle, CreditCard } from "lucide-react";
 import { Link } from "react-router-dom";
+import { BlogCTA } from "@/components/BlogCTA";
 
 const DrivingGreeceRulesTipsTourists = () => {
   return (
     <>
       <SEO
-        title="Driving in Greece: Essential Rules and Tips for Tourists | Paros Car Rental"
-        description="Everything international visitors need to know about driving in Greece. From traffic rules to parking regulations, stay safe and confident behind the wheel in Paros and Antiparos."
+        title="Driving in Greece 2024: Essential Rules, Tips & Road Safety for Tourists | Complete Guide"
+        description="Everything international visitors need to know about driving in Greece. From traffic rules to parking regulations, stay safe and confident behind the wheel in Paros and Antiparos with Aggelos Rentals."
         canonicalUrl="http://rentacar-paros.gr/blog/driving-greece-rules-tips-tourists"
-        keywords="driving in greece, greece driving rules, greece traffic laws, paros driving tips, greece road rules"
+        keywords="driving in greece, greece driving rules, greece traffic laws, paros driving tips, greece road rules, drive greece tourist, greece driving license, greece parking rules, speed limits greece, greece road safety"
       />
       <div className="min-h-screen bg-white text-main-950">
         <Header />
@@ -53,9 +54,24 @@ const DrivingGreeceRulesTipsTourists = () => {
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto">
               <div className="prose prose-lg mx-auto">
-                <p className="text-xl text-gray-600 mb-8 leading-relaxed">
-                  Everything international visitors need to know about driving in Greece. From traffic rules to parking regulations, stay safe and confident behind the wheel in Paros and Antiparos.
+                {/* Feature Image */}
+                <div className="mb-12">
+                  <img
+                    src="https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=1200&h=600&fit=crop"
+                    alt="Scenic Greek road with driving safety tips and beautiful coastal views"
+                    className="w-full h-96 object-cover rounded-2xl shadow-lg"
+                    loading="lazy"
+                  />
+                </div>
+                
+                <p className="text-xl text-gray-700 leading-relaxed mb-6">
+                  Driving in Greece is an incredible way to explore islands like Paros and Antiparos at your own pace. While Greek roads are generally well-maintained and drivers are friendly, there are important rules and customs that international visitors should know before getting behind the wheel with a <Link to="/car-rental-paros" className="text-main-900 font-bold hover:text-gold-600 underline">rental car</Link>.
                 </p>
+                <p className="text-lg text-gray-600 leading-relaxed mb-12">
+                  At <Link to="/" className="text-main-900 font-bold hover:text-gold-600">Aggelos Rentals</Link>, we've helped thousands of international visitors safely explore Paros for over 30 years. This comprehensive guide covers everything from required documents to local driving etiquette, ensuring you feel confident whether you're picking up from <Link to="/paros-airport-car-rental" className="hover:text-gold-600 text-main-900 font-semibold">Paros Airport</Link> or <Link to="/paros-port-car-rental" className="hover:text-gold-600 text-main-900 font-semibold">Paros Port</Link>.
+                </p>
+
+                <BlogCTA initialMessage="I'm an international tourist, what do I need to drive in Paros?" />
 
                 <h2 className="text-3xl font-bold text-main-900 mb-6">Essential Documents</h2>
                 

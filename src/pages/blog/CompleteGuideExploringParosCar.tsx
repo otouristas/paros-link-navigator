@@ -1,17 +1,19 @@
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { SEO } from "@/components/SEO";
-import { Calendar, User, Clock, MapPin, ArrowRight, Car, Camera, Sun } from "lucide-react";
+import { Calendar, User, Clock, MapPin, ArrowRight, Car, Camera, Sun, Bot, ExternalLink } from "lucide-react";
 import { Link } from "react-router-dom";
+import { BlogCTA } from "@/components/BlogCTA";
 
 const CompleteGuideExploringParosCar = () => {
+  
   return (
     <>
       <SEO
-        title="Complete Guide to Exploring Paros by Car: Best Routes and Hidden Gems | Aggelos Rentals"
-        description="Discover the most scenic routes around Paros island by car. From Golden Beach to hidden coves, our local guide reveals the best spots only accessible by vehicle."
+        title="Complete Guide to Exploring Paros by Car: Best Routes, Hidden Gems & Car Rental Tips | Aggelos Rentals 2024"
+        description="Discover the most scenic routes around Paros island by car. From Golden Beach to hidden coves, our local guide reveals the best spots only accessible by vehicle. Rent a car in Paros with our premium fleet."
         canonicalUrl="http://rentacar-paros.gr/blog/complete-guide-exploring-paros-car"
-        keywords="paros car routes, paros hidden beaches, paros scenic drives, paros island guide, paros car exploration, paros beaches by car"
+        keywords="paros car routes, paros hidden beaches, paros scenic drives, paros island guide, paros car exploration, paros beaches by car, rent a car paros, car rental paros, paros road trip, paros driving guide, explore paros by car, paros travel tips"
       />
       <div className="min-h-screen bg-white text-main-950">
         <Header />
@@ -58,22 +60,42 @@ const CompleteGuideExploringParosCar = () => {
               {/* Introduction */}
               <div className="mb-12">
                 <p className="text-xl text-gray-700 leading-relaxed mb-6">
-                  Paros is an island best explored at your own pace, and there's no better way to discover its hidden treasures than by car. With winding coastal roads, charming mountain villages, and secluded beaches, driving around Paros offers an authentic Greek island experience that public transport simply can't match.
+                  Paros is an island best explored at your own pace, and there's no better way to discover its hidden treasures than by <Link to="/car-rental-paros" className="text-main-900 font-bold hover:text-gold-600 underline">renting a car</Link>. With winding coastal roads, charming mountain villages, and secluded beaches, driving around Paros offers an authentic Greek island experience that public transport simply can't match.
                 </p>
-                <p className="text-lg text-gray-600 leading-relaxed">
-                  Having lived on Paros for over 30 years, we've compiled the ultimate driving guide to help you make the most of your island adventure. From must-see attractions to secret spots known only to locals, this guide will transform your Paros experience.
+                <p className="text-lg text-gray-600 leading-relaxed mb-6">
+                  Having lived on Paros for over 30 years, we at <Link to="/" className="text-main-900 font-bold hover:text-gold-600">Aggelos Rentals</Link> have compiled the ultimate driving guide to help you make the most of your island adventure. From must-see attractions to secret spots known only to locals, this guide will transform your Paros experience.
                 </p>
+                
+                {/* Book Now CTA */}
+                <div className="bg-gradient-to-r from-main-900 to-gold-600 p-8 rounded-2xl text-white my-8">
+                  <div className="flex flex-col md:flex-row items-center justify-between gap-4">
+                    <div>
+                      <h3 className="text-2xl font-black mb-2">Ready to Explore Paros?</h3>
+                      <p className="text-white/90">Book your perfect car rental now and start your adventure!</p>
+                    </div>
+                    <a
+                      href="https://antiparosrentacar.gocars.gr/search?lang=en"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="bg-white text-main-900 hover:bg-gold-100 px-8 py-4 rounded-xl font-black text-lg transition-all inline-flex items-center gap-2 shadow-xl hover:scale-105 transform whitespace-nowrap"
+                    >
+                      Book Now
+                      <ExternalLink className="h-5 w-5" />
+                    </a>
+                  </div>
+                </div>
               </div>
 
               {/* Featured Image */}
               <div className="mb-12">
                 <img
-                  src="/images/blog/paros-car-exploration.jpg"
-                  alt="Scenic drive around Paros island"
+                  src="https://images.unsplash.com/photo-1601581987809-a874a81309c9?w=1200&h=600&fit=crop"
+                  alt="Scenic drive around Paros island with coastal views and traditional Greek architecture"
                   className="w-full h-96 object-cover rounded-2xl shadow-lg"
+                  loading="lazy"
                 />
                 <p className="text-sm text-gray-500 mt-4 text-center italic">
-                  The scenic coastal road from Parikia to Naoussa offers stunning views of the Aegean Sea
+                  The scenic coastal road from <Link to="/car-rental-parikia-paros" className="text-main-900 hover:text-gold-600">Parikia</Link> to <Link to="/car-rental-naoussa-paros" className="text-main-900 hover:text-gold-600">Naoussa</Link> offers stunning views of the Aegean Sea
                 </p>
               </div>
 
@@ -196,24 +218,30 @@ const CompleteGuideExploringParosCar = () => {
                 </div>
               </div>
 
+              <BlogCTA initialMessage="I need help choosing a car for exploring Paros" />
+
               {/* CTA */}
               <div className="bg-gradient-to-br from-main-900 to-secondary-700 text-white p-8 rounded-2xl text-center">
                 <h3 className="text-2xl font-bold mb-4">Ready to Explore Paros by Car?</h3>
                 <p className="text-white/95 mb-6">
-                  Rent your perfect vehicle from Aggelos Rentals and start your Paros adventure today. We provide free island maps and personalized recommendations to make your trip unforgettable.
+                  Rent your perfect vehicle from Aggelos Rentals and start your Paros adventure today. Choose from our locations at <Link to="/paros-airport-car-rental" className="underline hover:text-gold-400">Paros Airport</Link>, <Link to="/paros-port-car-rental" className="underline hover:text-gold-400">Paros Port</Link>, or get free delivery to your hotel!
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                  <Link
-                    to="/car-rental-paros"
-                    className="bg-gold-600 hover:bg-gold-500 text-main-900 px-8 py-4 rounded-lg font-bold transition-all duration-200 shadow-lg hover:shadow-xl transform hover:scale-105"
+                  <a
+                    href="https://antiparosrentacar.gocars.gr/search?lang=en"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="bg-gold-600 hover:bg-gold-500 text-main-900 px-8 py-4 rounded-lg font-bold transition-all duration-200 shadow-lg hover:shadow-xl transform hover:scale-105 inline-flex items-center justify-center gap-2"
                   >
                     Book Your Car Now
-                  </Link>
+                    <ExternalLink className="h-5 w-5" />
+                  </a>
                   <Link
                     to="/contact"
-                    className="bg-white/20 hover:bg-white/30 text-white px-8 py-4 rounded-lg font-bold transition-all duration-200"
+                    className="bg-white/20 hover:bg-white/30 text-white px-8 py-4 rounded-lg font-bold transition-all duration-200 inline-flex items-center justify-center gap-2"
                   >
-                    Get Local Tips <ArrowRight className="ml-2 h-5 w-5 inline" />
+                    Get Local Tips
+                    <ArrowRight className="h-5 w-5" />
                   </Link>
                 </div>
               </div>

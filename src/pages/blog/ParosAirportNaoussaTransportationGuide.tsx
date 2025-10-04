@@ -3,15 +3,16 @@ import { Footer } from "@/components/Footer";
 import { SEO } from "@/components/SEO";
 import { Calendar, User, ArrowRight, MapPin, Clock, Plane, Car, Bus, CreditCard } from "lucide-react";
 import { Link } from "react-router-dom";
+import { BlogCTA } from "@/components/BlogCTA";
 
 const ParosAirportNaoussaTransportationGuide = () => {
   return (
     <>
       <SEO
-        title="Paros Airport to Naoussa: Complete Transportation Guide | Paros Car Rental"
-        description="Step-by-step guide for getting from Paros Airport to Naoussa village. Compare rental car pickup, public transport, and taxi options to start your island adventure right."
+        title="Paros Airport to Naoussa 2024: Complete Transportation Guide | Car Rental, Bus & Taxi Options"
+        description="Step-by-step guide for getting from Paros Airport to Naoussa village. Compare rental car pickup, public transport, and taxi options to start your island adventure right with Aggelos Rentals."
         canonicalUrl="http://rentacar-paros.gr/blog/paros-airport-naoussa-transportation-guide"
-        keywords="paros airport to naoussa, paros transportation, paros airport transfer, naoussa transport, paros airport guide"
+        keywords="paros airport to naoussa, paros transportation, paros airport transfer, naoussa transport, paros airport guide, paros airport car rental, naoussa car rental, paros airport bus, taxi paros airport, paros airport shuttle"
       />
       <div className="min-h-screen bg-white text-main-950">
         <Header />
@@ -53,9 +54,24 @@ const ParosAirportNaoussaTransportationGuide = () => {
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto">
               <div className="prose prose-lg mx-auto">
-                <p className="text-xl text-gray-600 mb-8 leading-relaxed">
-                  Step-by-step guide for getting from Paros Airport to Naoussa village. Compare rental car pickup, public transport, and taxi options to start your island adventure right.
+                {/* Feature Image */}
+                <div className="mb-12">
+                  <img
+                    src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=1200&h=600&fit=crop"
+                    alt="Paros Airport with arriving passengers and transportation options"
+                    className="w-full h-96 object-cover rounded-2xl shadow-lg"
+                    loading="lazy"
+                  />
+                </div>
+                
+                <p className="text-xl text-gray-700 leading-relaxed mb-6">
+                  Landing at Paros Airport and heading to the charming village of Naoussa? You have several transportation options, but the most convenient is picking up a <Link to="/paros-airport-car-rental" className="text-main-900 font-bold hover:text-gold-600 underline">rental car right at the airport</Link>. This allows you to start your vacation immediately with complete freedom to explore.
                 </p>
+                <p className="text-lg text-gray-600 leading-relaxed mb-12">
+                  <Link to="/" className="text-main-900 font-bold hover:text-gold-600">Aggelos Rentals</Link> offers convenient airport pickup services, eliminating the hassle of finding transportation after your flight. Whether you're heading to <Link to="/car-rental-naoussa-paros" className="hover:text-gold-600 text-main-900 font-semibold">Naoussa</Link>, <Link to="/car-rental-parikia-paros" className="hover:text-gold-600 text-main-900 font-semibold">Parikia</Link>, or anywhere else on the island, we'll have your vehicle ready and waiting.
+                </p>
+
+                <BlogCTA initialMessage="I'm arriving at Paros Airport and need a car to Naoussa" />
 
                 <h2 className="text-3xl font-bold text-main-900 mb-6">Distance and Travel Time</h2>
                 
