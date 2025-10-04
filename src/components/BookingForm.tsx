@@ -187,24 +187,22 @@ export function BookingForm({ className = '' }: BookingFormProps) {
             Pick-up Date/Time*
           </label>
           <div className="space-y-2">
-            <div className="relative overflow-hidden">
-              <Calendar className="absolute left-2.5 top-1/2 transform -translate-y-1/2 h-4 w-4 text-gold-600 pointer-events-none z-10" />
+            <div className="relative">
+              <Calendar className="absolute left-2.5 top-1/2 transform -translate-y-1/2 h-4 w-4 text-gold-600" />
               <input
                 type="date"
                 value={pickupDate}
                 onChange={(e) => setPickupDate(e.target.value)}
-                className="w-full max-w-full pl-9 pr-2 py-2.5 bg-white dark:bg-gray-700 border-2 border-gray-200 dark:border-gray-600 rounded-lg focus:border-gold-600 focus:outline-none font-semibold text-main-900 dark:text-white text-sm box-border"
-                style={{ colorScheme: 'light', width: '100%', minWidth: '0' }}
+                className="w-full pl-9 pr-3 py-2.5 bg-white dark:bg-gray-700 border-2 border-gray-200 dark:border-gray-600 rounded-lg focus:border-gold-600 focus:outline-none font-semibold text-main-900 dark:text-white text-sm"
               />
             </div>
-            <div className="relative overflow-hidden">
-              <Clock className="absolute left-2.5 top-1/2 transform -translate-y-1/2 h-4 w-4 text-gold-600 pointer-events-none z-10" />
+            <div className="relative">
+              <Clock className="absolute left-2.5 top-1/2 transform -translate-y-1/2 h-4 w-4 text-gold-600" />
               <input
                 type="time"
                 value={pickupTime}
                 onChange={(e) => setPickupTime(e.target.value)}
-                className="w-full max-w-full pl-9 pr-2 py-2.5 bg-white dark:bg-gray-700 border-2 border-gray-200 dark:border-gray-600 rounded-lg focus:border-gold-600 focus:outline-none font-semibold text-main-900 dark:text-white text-sm box-border"
-                style={{ colorScheme: 'light', width: '100%', minWidth: '0' }}
+                className="w-full pl-9 pr-3 py-2.5 bg-white dark:bg-gray-700 border-2 border-gray-200 dark:border-gray-600 rounded-lg focus:border-gold-600 focus:outline-none font-semibold text-main-900 dark:text-white text-sm"
               />
             </div>
           </div>
@@ -216,24 +214,22 @@ export function BookingForm({ className = '' }: BookingFormProps) {
             Drop-off Date/Time*
           </label>
           <div className="space-y-2">
-            <div className="relative overflow-hidden">
-              <Calendar className="absolute left-2.5 top-1/2 transform -translate-y-1/2 h-4 w-4 text-gold-600 pointer-events-none z-10" />
+            <div className="relative">
+              <Calendar className="absolute left-2.5 top-1/2 transform -translate-y-1/2 h-4 w-4 text-gold-600" />
               <input
                 type="date"
                 value={returnDate}
                 onChange={(e) => setReturnDate(e.target.value)}
-                className="w-full max-w-full pl-9 pr-2 py-2.5 bg-white dark:bg-gray-700 border-2 border-gray-200 dark:border-gray-600 rounded-lg focus:border-gold-600 focus:outline-none font-semibold text-main-900 dark:text-white text-sm box-border"
-                style={{ colorScheme: 'light', width: '100%', minWidth: '0' }}
+                className="w-full pl-9 pr-3 py-2.5 bg-white dark:bg-gray-700 border-2 border-gray-200 dark:border-gray-600 rounded-lg focus:border-gold-600 focus:outline-none font-semibold text-main-900 dark:text-white text-sm"
               />
             </div>
-            <div className="relative overflow-hidden">
-              <Clock className="absolute left-2.5 top-1/2 transform -translate-y-1/2 h-4 w-4 text-gold-600 pointer-events-none z-10" />
+            <div className="relative">
+              <Clock className="absolute left-2.5 top-1/2 transform -translate-y-1/2 h-4 w-4 text-gold-600" />
               <input
                 type="time"
                 value={returnTime}
                 onChange={(e) => setReturnTime(e.target.value)}
-                className="w-full max-w-full pl-9 pr-2 py-2.5 bg-white dark:bg-gray-700 border-2 border-gray-200 dark:border-gray-600 rounded-lg focus:border-gold-600 focus:outline-none font-semibold text-main-900 dark:text-white text-sm box-border"
-                style={{ colorScheme: 'light', width: '100%', minWidth: '0' }}
+                className="w-full pl-9 pr-3 py-2.5 bg-white dark:bg-gray-700 border-2 border-gray-200 dark:border-gray-600 rounded-lg focus:border-gold-600 focus:outline-none font-semibold text-main-900 dark:text-white text-sm"
               />
             </div>
           </div>
