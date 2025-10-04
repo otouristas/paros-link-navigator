@@ -2,6 +2,7 @@ import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { SEO } from "@/components/SEO";
 import { OptimizedImage } from "@/components/OptimizedImage";
+import { BookingForm } from "@/components/BookingForm";
 import { Car, MapPin, Clock, Star, Shield, Award, Check, ArrowRight, Phone, Mail, Compass, Users, Zap, Calendar, ThumbsUp, Globe, Bot, Sparkles } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useState } from "react";
@@ -25,36 +26,46 @@ const Index = () => {
         <Header />
 
         {/* Hero Section with Stronger Contrast */}
-        <section className="relative bg-gradient-to-br from-main-900 via-main-800 to-main-950 text-white py-32 overflow-hidden">
+        <section className="relative bg-gradient-to-br from-main-900 via-main-800 to-main-950 text-white py-20 md:py-32 overflow-hidden">
           <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmZmZmYiIGZpbGwtb3BhY2l0eT0iMC4wNSI+PHBhdGggZD0iTTM2IDE0di0yYzAtMi4yMS0xLjc5LTQtNC00cy00IDEuNzktNCA0djJjLTIuMjEgMC00IDEuNzktNCA0czEuNzkgNCA0IDRoOGMyLjIxIDAgNC0xLjc5IDQtNHMtMS43OS00LTUtNHoiLz48L2c+PC9nPjwvc3ZnPg==')] opacity-10"></div>
           <div className="container mx-auto px-4 relative z-10">
-            <div className="max-w-6xl mx-auto text-center">
-              <div className="inline-flex items-center bg-gold-500 text-main-950 px-6 py-3 rounded-full text-sm font-bold mb-8 shadow-2xl">
-                <Award className="h-5 w-5 mr-2" />
-                Your Local Paros & Antiparos Experts Since 2010
-              </div>
-              <h1 className="text-5xl md:text-6xl font-black mb-6 leading-tight tracking-tight">
-                Explore Paros & Antiparos<br />
-                <span className="text-gold-400">Your Way</span>
-              </h1>
-              <p className="text-xl md:text-2xl mb-10 text-white/95 leading-relaxed max-w-4xl mx-auto font-medium">
-                Discover the authentic beauty of the Cyclades. From hidden beaches to charming villages, we provide the perfect vehicle for your Greek island adventure.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-6 justify-center">
-                <a
-                  href="/car-rental-paros"
-                  className="bg-gold-500 hover:bg-gold-400 text-main-950 px-12 py-6 rounded-2xl font-black text-xl transition-all inline-flex items-center justify-center shadow-2xl hover:shadow-gold-500/50 hover:scale-105 transform"
-                >
-                  Start Your Journey
-                  <ArrowRight className="ml-3 h-7 w-7" />
-                </a>
-                <a
-                  href="tel:+306944950094"
-                  className="bg-white text-main-900 hover:bg-gray-100 px-12 py-6 rounded-2xl font-black text-xl transition-all shadow-xl inline-flex items-center justify-center border-4 border-white/20"
-                >
-                  <Phone className="mr-3 h-7 w-7" />
-                  Get Local Advice
-                </a>
+            <div className="max-w-7xl mx-auto">
+              <div className="grid lg:grid-cols-2 gap-12 items-center">
+                {/* Left Side - Hero Content */}
+                <div className="text-center lg:text-left">
+                  <div className="inline-flex items-center bg-gold-500 text-main-950 px-6 py-3 rounded-full text-sm font-bold mb-8 shadow-2xl">
+                    <Award className="h-5 w-5 mr-2" />
+                    Your Local Paros & Antiparos Experts Since 2010
+                  </div>
+                  <h1 className="text-4xl md:text-5xl lg:text-6xl font-black mb-6 leading-tight tracking-tight">
+                    Explore Paros & Antiparos<br />
+                    <span className="text-gold-400">Your Way</span>
+                  </h1>
+                  <p className="text-lg md:text-xl mb-10 text-white/95 leading-relaxed font-medium">
+                    Discover the authentic beauty of the Cyclades. From hidden beaches to charming villages, we provide the perfect vehicle for your Greek island adventure.
+                  </p>
+                  <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                    <a
+                      href="/car-rental-paros"
+                      className="bg-gold-500 hover:bg-gold-400 text-main-950 px-10 py-4 rounded-2xl font-black text-lg transition-all inline-flex items-center justify-center shadow-2xl hover:shadow-gold-500/50 hover:scale-105 transform"
+                    >
+                      Explore Fleet
+                      <ArrowRight className="ml-3 h-6 w-6" />
+                    </a>
+                    <a
+                      href="tel:+306944950094"
+                      className="bg-white text-main-900 hover:bg-gray-100 px-10 py-4 rounded-2xl font-black text-lg transition-all shadow-xl inline-flex items-center justify-center border-4 border-white/20"
+                    >
+                      <Phone className="mr-3 h-6 w-6" />
+                      Call Now
+                    </a>
+                  </div>
+                </div>
+
+                {/* Right Side - Booking Form */}
+                <div className="lg:pl-8">
+                  <BookingForm />
+                </div>
               </div>
             </div>
           </div>
