@@ -6,10 +6,40 @@ interface SEOProps {
   description: string;
   canonicalUrl?: string;
   keywords?: string;
+  schema?: any;
 }
 
-export const SEO = ({ title, description, canonicalUrl, keywords }: SEOProps) => {
+export const SEO = ({ title, description, canonicalUrl, keywords, schema }: SEOProps) => {
   const location = useLocation();
+
+  const defaultSchema = {
+    "@context": "https://schema.org",
+    "@type": "CarRental",
+    "name": "Aggelos Rentals",
+    "url": "https://antiparosrentacar.com",
+    "image": "https://antiparosrentacar.com/wp-content/uploads/logo.png",
+    "telephone": "+30 228 405 1010",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Parikia Port",
+      "addressLocality": "Paros",
+      "addressRegion": "Cyclades",
+      "postalCode": "84400",
+      "addressCountry": "GR"
+    },
+    "openingHours": "Mo-Su 07:00-23:00",
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 37.0398079,
+      "longitude": 25.0845734
+    },
+    "sameAs": [
+      "https://facebook.com/aggelosrentacar",
+      "https://instagram.com/aggelosrentacar"
+    ]
+  };
+
+  const finalSchema = schema || defaultSchema;
 
   useEffect(() => {
     document.title = title;
@@ -61,7 +91,17 @@ export const SEO = ({ title, description, canonicalUrl, keywords }: SEOProps) =>
     if (!document.querySelector('meta[property="og:url"]')) {
       document.head.appendChild(ogUrl);
     }
-  }, [title, description, canonicalUrl, keywords, location.pathname]);
+
+    // Add JSON-LD Schema
+    let schemaScript = document.querySelector('script[type="application/ld+json"]');
+    if (schemaScript) {
+      schemaScript.remove();
+    }
+    schemaScript = document.createElement('script');
+    schemaScript.type = 'application/ld+json';
+    schemaScript.textContent = JSON.stringify(finalSchema);
+    document.head.appendChild(schemaScript);
+  }, [title, description, canonicalUrl, keywords, location.pathname, finalSchema]);
 
   return null;
 };
