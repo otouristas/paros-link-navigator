@@ -227,6 +227,197 @@ export function MarciaChat() {
       };
     }
     
+    // Booking/Reservation queries
+    if (lowerMessage.includes('book') || lowerMessage.includes('reserve') || lowerMessage.includes('reservation') || lowerMessage.includes('availability')) {
+      return {
+        id: Date.now().toString(),
+        content: "📅 Ready to book? Here's how:\n\n**Online Booking:**\n• Use our booking form on homepage\n• Select dates & vehicle\n• Instant confirmation\n\n**Direct Booking:**\n• Call: +30 694 495 0094\n• WhatsApp: Available 24/7\n• Email: aggelos@antiparosrentacar.com\n\nNeed help choosing a vehicle first?",
+        sender: 'marcia',
+        timestamp: new Date(),
+        suggestions: ['Show me vehicles', 'Airport pickup', 'Contact WhatsApp'],
+      };
+    }
+    
+    // Seasonal/Best time queries
+    if (lowerMessage.includes('season') || lowerMessage.includes('best time') || lowerMessage.includes('when to visit') || lowerMessage.includes('weather') || lowerMessage.includes('summer') || lowerMessage.includes('winter')) {
+      return {
+        id: Date.now().toString(),
+        content: "🌞 Best time to visit Paros:\n\n**Peak Season (June-Aug):**\n• Perfect beach weather\n• All facilities open\n• Book vehicles early!\n\n**Shoulder Season (May, Sep-Oct):**\n• Great weather, fewer crowds\n• Better prices\n• My recommendation! ⭐\n\n**Off Season (Nov-Apr):**\n• Limited rentals\n• Some businesses closed\n• Very quiet\n\nWhen are you planning to visit?",
+        sender: 'marcia',
+        timestamp: new Date(),
+        suggestions: ['Summer rentals', 'September deals', 'Book now'],
+      };
+    }
+    
+    // Group/Event rentals
+    if (lowerMessage.includes('group') || lowerMessage.includes('wedding') || lowerMessage.includes('event') || lowerMessage.includes('multiple') || lowerMessage.includes('fleet')) {
+      return {
+        id: Date.now().toString(),
+        content: "🎉 Group & Event Rentals:\n\n**We specialize in:**\n• Wedding transportation\n• Corporate events\n• Group tours (10+ vehicles)\n• Photography shoots\n\n**Benefits:**\n• Bulk discounts available\n• Coordinated delivery\n• Dedicated support\n• Flexible terms\n\nContact us for a custom quote!",
+        sender: 'marcia',
+        timestamp: new Date(),
+        suggestions: ['Contact for quote', 'View fleet', 'Wedding packages'],
+      };
+    }
+    
+    // Breakdown/Maintenance queries
+    if (lowerMessage.includes('breakdown') || lowerMessage.includes('problem') || lowerMessage.includes('broken') || lowerMessage.includes('maintenance') || lowerMessage.includes('roadside')) {
+      return {
+        id: Date.now().toString(),
+        content: "🛠️ 24/7 Roadside Assistance:\n\n**We've got you covered!**\n• Free breakdown service\n• 24/7 hotline: +30 694 495 0094\n• Replacement vehicle if needed\n• Towing included\n\n**Common issues:**\n• Flat tire → We come to you\n• Dead battery → Jump start service\n• Locked keys → Spare key delivery\n\nNever stress - we're always here!",
+        sender: 'marcia',
+        timestamp: new Date(),
+        suggestions: ['Emergency contact', 'Insurance details', 'Browse fleet'],
+      };
+    }
+    
+    // Payment methods
+    if (lowerMessage.includes('payment') || lowerMessage.includes('pay') || lowerMessage.includes('credit card') || lowerMessage.includes('cash') || lowerMessage.includes('deposit')) {
+      return {
+        id: Date.now().toString(),
+        content: "💳 Payment Options:\n\n**We accept:**\n• Credit Cards (Visa, Mastercard)\n• Debit Cards\n• Cash (EUR)\n• Bank Transfer\n\n**Deposit:**\n• €200-500 security deposit\n• Held on credit card\n• Released upon return\n• No damage = full refund\n\n**Payment timing:**\n• Pay on pickup or online\n• No hidden fees!",
+        sender: 'marcia',
+        timestamp: new Date(),
+        suggestions: ['Deposit info', 'Book now', 'Insurance included?'],
+      };
+    }
+    
+    // Cancellation policy
+    if (lowerMessage.includes('cancel') || lowerMessage.includes('refund') || lowerMessage.includes('change booking') || lowerMessage.includes('modify')) {
+      return {
+        id: Date.now().toString(),
+        content: "🔄 Flexible Cancellation Policy:\n\n**Free Cancellation:**\n• Up to 48 hours before pickup\n• Full refund guaranteed\n• No questions asked\n\n**Changes:**\n• Modify dates/vehicle anytime\n• Subject to availability\n• No change fees!\n\n**Within 48 hours:**\n• 50% refund\n• Or reschedule for free\n\nLife happens - we understand!",
+        sender: 'marcia',
+        timestamp: new Date(),
+        suggestions: ['Book with confidence', 'See vehicles', 'Contact us'],
+      };
+    }
+    
+    // Additional equipment
+    if (lowerMessage.includes('gps') || lowerMessage.includes('child seat') || lowerMessage.includes('baby') || lowerMessage.includes('equipment') || lowerMessage.includes('extra') || lowerMessage.includes('accessories')) {
+      return {
+        id: Date.now().toString(),
+        content: "🎒 Additional Equipment:\n\n**Free Extras:**\n• Child seats (all sizes) 🍼\n• Booster seats\n• GPS Navigation\n• Phone holder\n• First aid kit\n\n**Available on request:**\n• Roof racks\n• Beach equipment\n• Cooler box\n\nJust let us know what you need!",
+        sender: 'marcia',
+        timestamp: new Date(),
+        suggestions: ['Child seat info', 'GPS included?', 'Book now'],
+      };
+    }
+    
+    // Road conditions
+    if (lowerMessage.includes('road') || lowerMessage.includes('condition') || lowerMessage.includes('paved') || lowerMessage.includes('dirt') || lowerMessage.includes('mountain')) {
+      return {
+        id: Date.now().toString(),
+        content: "🛣️ Paros Road Conditions:\n\n**Main Roads:**\n• Well-paved & maintained\n• Perfect for any car\n• Clear signage\n\n**Mountain Villages:**\n• Narrow winding roads\n• Some steep sections\n• Any car can do it!\n\n**Beaches:**\n• Most: Paved access\n• Hidden spots: Dirt roads\n• 4x4/ATV recommended\n\nPerfect for exploring safely!",
+        sender: 'marcia',
+        timestamp: new Date(),
+        suggestions: ['Recommend vehicle', 'Best routes', 'ATVs for beaches'],
+      };
+    }
+    
+    // Parking information
+    if (lowerMessage.includes('parking') || lowerMessage.includes('park') || lowerMessage.includes('where to park')) {
+      return {
+        id: Date.now().toString(),
+        content: "🅿️ Parking in Paros:\n\n**Parikia (Port Town):**\n• Free parking near port\n• Some paid zones (€2/hour)\n• Easy to find spots\n\n**Naoussa:**\n• Free parking 5min walk\n• Limited street parking\n• Early arrival recommended\n\n**Beaches:**\n• Free parking at all major beaches\n• Shaded spots fill up fast\n\n**Pro tip:** Small cars = easier parking in old towns!",
+        sender: 'marcia',
+        timestamp: new Date(),
+        suggestions: ['Economy cars', 'Scooters', 'Best beaches'],
+      };
+    }
+    
+    // Distance/Duration queries
+    if (lowerMessage.includes('how far') || lowerMessage.includes('distance') || lowerMessage.includes('how long') || lowerMessage.includes('drive time')) {
+      return {
+        id: Date.now().toString(),
+        content: "🗺️ Paros Distances:\n\n**From Airport:**\n• Parikia: 10 min\n• Naoussa: 20 min\n• Golden Beach: 25 min\n\n**Popular Routes:**\n• Parikia ↔ Naoussa: 20 min\n• Parikia ↔ Antiparos Ferry: 15 min\n• Complete island loop: 2-3 hours\n\n**Island Size:**\n• 21km x 16km\n• Very easy to explore!\n\nPerfect for day trips!",
+        sender: 'marcia',
+        timestamp: new Date(),
+        suggestions: ['Best routes', 'Day trip ideas', 'Beach guide'],
+      };
+    }
+    
+    // Automatic vs Manual transmission
+    if (lowerMessage.includes('automatic') || lowerMessage.includes('manual') || lowerMessage.includes('transmission')) {
+      const automaticCars = allCars.filter(car => car.transmission.toLowerCase() === 'automatic' && car.type === 'Car').slice(0, 3);
+      if (automaticCars.length > 0) {
+        return {
+          id: Date.now().toString(),
+          content: "⚙️ Transmission Options:\n\n**Automatic:**\n• Easier to drive\n• Better in traffic\n• Slightly higher price\n• Great for relaxing holiday!\n\n**Manual:**\n• More economical\n• Lower rental price\n• Most vehicles are manual\n\nHere are our automatic options:",
+          sender: 'marcia',
+          timestamp: new Date(),
+          suggestions: ['Show all automatics', 'Manual cars', 'Compare'],
+          vehicles: automaticCars,
+        };
+      }
+    }
+    
+    // First time in Greece
+    if (lowerMessage.includes('first time') || lowerMessage.includes('never been') || lowerMessage.includes('tips') || lowerMessage.includes('advice') || lowerMessage.includes('things to know')) {
+      return {
+        id: Date.now().toString(),
+        content: "🇬🇷 First Time in Paros? Welcome!\n\n**Driving Tips:**\n• Drive on the RIGHT side\n• Speed limits: 50-90 km/h\n• Greeks are friendly drivers!\n• Honking = saying hello 😊\n\n**What to Know:**\n• Fuel: Petrol stations in main towns\n• Parking: Usually free & easy\n• Navigation: Google Maps works great\n• Tolls: None on Paros!\n\n**Must-Visit:**\n• Naoussa old town\n• Kolympithres Beach\n• Antiparos Cave\n\nYou'll love it here! 🌅",
+        sender: 'marcia',
+        timestamp: new Date(),
+        suggestions: ['Driving rules', 'Best beaches', 'Recommend vehicle'],
+      };
+    }
+    
+    // Electric/Hybrid vehicles
+    if (lowerMessage.includes('electric') || lowerMessage.includes('hybrid') || lowerMessage.includes('eco') || lowerMessage.includes('environment')) {
+      return {
+        id: Date.now().toString(),
+        content: "⚡ Eco-Friendly Options:\n\n**Currently Available:**\n• Fuel-efficient economy cars\n• Modern engines (Euro 6)\n• Low emissions\n\n**Electric Vehicles:**\n• Coming soon to our fleet!\n• Limited charging stations on island\n• Perfect for daily use\n\n**Best Eco Choice Now:**\n• Small economy cars\n• Scooters (50cc)\n• Excellent fuel economy\n\nInterested in our most efficient options?",
+        sender: 'marcia',
+        timestamp: new Date(),
+        suggestions: ['Economy cars', 'Scooters', 'Fuel costs'],
+      };
+    }
+    
+    // Contact/Support queries
+    if (lowerMessage.includes('contact') || lowerMessage.includes('phone') || lowerMessage.includes('email') || lowerMessage.includes('whatsapp') || lowerMessage.includes('call')) {
+      return {
+        id: Date.now().toString(),
+        content: "📞 Contact Aggelos Rentals:\n\n**Phone/WhatsApp:**\n+30 694 495 0094\n(Available 24/7!)\n\n**Email:**\naggelos@antiparosrentacar.com\n\n**Office Location:**\nAntiparos Port\nCyclades, 840 07\n\n**Response Time:**\n• WhatsApp: Instant!\n• Phone: Always answer\n• Email: Within 2 hours\n\nWe're always here to help! 😊",
+        sender: 'marcia',
+        timestamp: new Date(),
+        suggestions: ['WhatsApp us', 'Book now', 'View fleet'],
+      };
+    }
+    
+    // Special offers/Discounts
+    if (lowerMessage.includes('offer') || lowerMessage.includes('deal') || lowerMessage.includes('special') || lowerMessage.includes('promotion') || lowerMessage.includes('discount code')) {
+      return {
+        id: Date.now().toString(),
+        content: "🎁 Current Offers:\n\n**Weekly Discount:**\n• 7+ days: 15% OFF\n• 14+ days: 20% OFF\n• 30+ days: 25% OFF\n\n**Early Bird:**\n• Book 30+ days ahead: 10% OFF\n• Book 60+ days ahead: 15% OFF\n\n**Special Deals:**\n• Free delivery to Antiparos\n• Free child seats\n• Free GPS\n\n**Group Discount:**\n• 3+ vehicles: Custom pricing\n\nBest prices guaranteed!",
+        sender: 'marcia',
+        timestamp: new Date(),
+        suggestions: ['Book long-term', 'Group rentals', 'Book now'],
+      };
+    }
+    
+    // Reviews/Ratings
+    if (lowerMessage.includes('review') || lowerMessage.includes('rating') || lowerMessage.includes('feedback') || lowerMessage.includes('recommend') || lowerMessage.includes('testimonial')) {
+      return {
+        id: Date.now().toString(),
+        content: "⭐ What Our Customers Say:\n\n**Google Reviews: 4.9/5**\n\n\"Best car rental in Paros! Professional service and great prices!\" - Sarah M. 🇺🇸\n\n\"Aggelos delivered to our hotel, car was spotless. Highly recommend!\" - John D. 🇬🇧\n\n\"Used them for 2 weeks, perfect condition. Will rent again!\" - Maria K. 🇩🇪\n\n**Why customers love us:**\n✓ Transparent pricing\n✓ Perfect maintenance\n✓ 24/7 support\n✓ Friendly service\n\nJoin our happy customers!",
+        sender: 'marcia',
+        timestamp: new Date(),
+        suggestions: ['Read more reviews', 'Book now', 'Contact us'],
+      };
+    }
+    
+    // Comparison queries
+    if (lowerMessage.includes('vs') || lowerMessage.includes('compare') || lowerMessage.includes('difference') || lowerMessage.includes('or')) {
+      return {
+        id: Date.now().toString(),
+        content: "🔄 Need help comparing?\n\n**Car vs Scooter:**\n• Car: More comfort, luggage space, A/C\n• Scooter: Easy parking, fuel efficient, fun!\n\n**Economy vs SUV:**\n• Economy: Budget-friendly, easy parking\n• SUV: More space, premium comfort\n\n**Manual vs Automatic:**\n• Manual: Lower cost, more available\n• Automatic: Easier driving, relaxing\n\nTell me your priorities and I'll recommend the best option!",
+        sender: 'marcia',
+        timestamp: new Date(),
+        suggestions: ['Economy cars', 'SUVs', 'Scooters', 'ATVs'],
+      };
+    }
+    
     // Default response with suggestions
     return {
       id: Date.now().toString(),
@@ -456,7 +647,7 @@ export function MarciaChat() {
                 className="flex-1 px-4 py-3 bg-white dark:bg-gray-700 border-2 border-main-300 dark:border-gray-600 text-gray-900 dark:text-white rounded-xl focus:outline-none focus:border-gold-600 transition-colors font-medium placeholder:text-gray-400 dark:placeholder:text-gray-500"
               />
               <button
-                onClick={handleSend}
+                onClick={() => handleSend()}
                 disabled={!input.trim()}
                 className="bg-gradient-to-r from-main-900 to-gold-600 text-white p-3 rounded-xl hover:scale-105 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
               >
