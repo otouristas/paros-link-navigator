@@ -40,18 +40,18 @@ const Contact = () => {
                     <Phone className="h-10 w-10 text-main-900" />
                   </div>
                   <h3 className="text-xl font-bold mb-3 text-main-900">Phone</h3>
-                  <a href="tel:+306944950094" className="text-gold-600 hover:text-gold-700 font-semibold text-lg">
+                  <a href="tel:+306944950094" className="text-main-900 hover:text-main-700 font-semibold text-lg">
                     +30 694 495 0094
                   </a>
                   <p className="text-gray-600 text-sm mt-2">Available 24/7</p>
                 </div>
                 
                 <div className="text-center">
-                  <div className="h-20 w-20 bg-gold-100 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg">
-                    <Mail className="h-10 w-10 text-gold-700" />
+                  <div className="h-20 w-20 bg-main-100 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg">
+                    <Mail className="h-10 w-10 text-main-900" />
                   </div>
                   <h3 className="text-xl font-bold mb-3 text-main-900">Email</h3>
-                  <a href="mailto:aggelos@antiparosrentacar.com" className="text-gold-600 hover:text-gold-700 font-semibold text-lg break-all">
+                  <a href="mailto:aggelos@antiparosrentacar.com" className="text-main-900 hover:text-main-700 font-semibold text-lg break-all">
                     aggelos@antiparosrentacar.com
                   </a>
                   <p className="text-gray-600 text-sm mt-2">Quick response</p>
@@ -186,7 +186,7 @@ const Contact = () => {
                     
                     <button
                       type="submit"
-                      className="w-full bg-gold-600 hover:bg-gold-700 text-white font-bold py-4 px-6 rounded-lg transition-colors duration-200 shadow-lg hover:shadow-xl transform hover:scale-105"
+                      className="w-full bg-gold-600 hover:bg-gold-500 text-main-900 font-bold py-4 px-6 rounded-lg transition-colors duration-200 shadow-lg hover:shadow-xl transform hover:scale-105"
                     >
                       Send Message
                     </button>
@@ -239,23 +239,23 @@ const Contact = () => {
                     <h3 className="text-2xl font-bold text-main-900 mb-6">Why Contact Us?</h3>
                     <ul className="space-y-3 text-gray-700">
                       <li className="flex items-start">
-                        <span className="text-gold-500 mr-3">•</span>
+                        <span className="text-main-700 mr-3">•</span>
                         <span>Get personalized recommendations for your Paros or Antiparos trip</span>
                       </li>
                       <li className="flex items-start">
-                        <span className="text-gold-500 mr-3">•</span>
+                        <span className="text-main-700 mr-3">•</span>
                         <span>Ask about special offers and group discounts</span>
                       </li>
                       <li className="flex items-start">
-                        <span className="text-gold-500 mr-3">•</span>
+                        <span className="text-main-700 mr-3">•</span>
                         <span>Discuss pickup and delivery options</span>
                       </li>
                       <li className="flex items-start">
-                        <span className="text-gold-500 mr-3">•</span>
+                        <span className="text-main-700 mr-3">•</span>
                         <span>Get assistance with ferry travel permissions</span>
                       </li>
                       <li className="flex items-start">
-                        <span className="text-gold-500 mr-3">•</span>
+                        <span className="text-main-700 mr-3">•</span>
                         <span>Resolve any questions about insurance and policies</span>
                       </li>
                     </ul>

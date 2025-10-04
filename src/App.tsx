@@ -6,8 +6,8 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { WhatsAppButton } from "@/components/WhatsAppButton";
 import { CookieConsent } from "@/components/CookieConsent";
+import { ScrollToTop } from "@/components/ScrollToTop";
 import Index from "./pages/Index";
-import CarRentalParos from "./pages/CarRentalParos";
 import CarRentalAntiparos from "./pages/CarRentalAntiparos";
 import CarRentalNaoussa from "./pages/CarRentalNaoussa";
 import CarRentalParikia from "./pages/CarRentalParikia";
@@ -20,6 +20,12 @@ import AboutUs from "./pages/AboutUs";
 import Contact from "./pages/Contact";
 import Blog from "./pages/Blog";
 import TermsAndConditions from "./pages/TermsAndConditions";
+import CompleteGuideExploringParosCar from "./pages/blog/CompleteGuideExploringParosCar";
+import AntiparosIslandHoppingFerryGuide from "./pages/blog/AntiparosIslandHoppingFerryGuide";
+import ScooterCarATVComparisonParos from "./pages/blog/ScooterCarATVComparisonParos";
+import ParosAirportNaoussaTransportationGuide from "./pages/blog/ParosAirportNaoussaTransportationGuide";
+import BestBeachesParosAccessibleCar from "./pages/blog/BestBeachesParosAccessibleCar";
+import DrivingGreeceRulesTipsTourists from "./pages/blog/DrivingGreeceRulesTipsTourists";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -30,10 +36,11 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
+        <ScrollToTop />
         <Routes>
           <Route path="/" element={<Index />} />
+          <Route path="/car-rental-paros" element={<Index />} />
           {/* SEO Strategy Routes */}
-          <Route path="/car-rental-paros" element={<CarRentalParos />} />
           <Route path="/car-rental-antiparos" element={<CarRentalAntiparos />} />
           <Route path="/car-rental-naoussa-paros" element={<CarRentalNaoussa />} />
           <Route path="/car-rental-parikia-paros" element={<CarRentalParikia />} />
@@ -47,6 +54,13 @@ const App = () => (
           <Route path="/contact" element={<Contact />} />
           <Route path="/blog" element={<Blog />} />
           <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
+          {/* Blog Posts */}
+          <Route path="/blog/complete-guide-exploring-paros-car" element={<CompleteGuideExploringParosCar />} />
+          <Route path="/blog/antiparos-island-hopping-ferry-guide" element={<AntiparosIslandHoppingFerryGuide />} />
+          <Route path="/blog/scooter-car-atv-comparison-paros" element={<ScooterCarATVComparisonParos />} />
+          <Route path="/blog/paros-airport-naoussa-transportation-guide" element={<ParosAirportNaoussaTransportationGuide />} />
+          <Route path="/blog/best-beaches-paros-accessible-car" element={<BestBeachesParosAccessibleCar />} />
+          <Route path="/blog/driving-greece-rules-tips-tourists" element={<DrivingGreeceRulesTipsTourists />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

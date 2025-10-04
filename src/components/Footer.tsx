@@ -135,7 +135,7 @@ export const Footer = () => {
                 href="https://antiparosrentacar.gocars.gr/search?lang=en" 
                 target="_blank" 
                 rel="noopener noreferrer" 
-                className="bg-gold-700 hover:bg-gold-600 text-white px-4 py-3 rounded-lg font-bold text-sm transition-all duration-200 shadow-lg hover:shadow-xl transform hover:scale-105 inline-flex items-center"
+                className="bg-gold-600 hover:bg-gold-500 text-main-900 px-4 py-3 rounded-lg font-bold text-sm transition-all duration-200 shadow-lg hover:shadow-xl transform hover:scale-105 inline-flex items-center"
               >
                 <span>BOOK ONLINE</span>
                 <ExternalLink className="h-4 w-4 ml-2" />

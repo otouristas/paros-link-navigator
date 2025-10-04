@@ -35,13 +35,13 @@ const CarRentalParos = () => {
                   href="https://antiparosrentacar.gocars.gr/search?lang=en"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="bg-gold-700 hover:bg-gold-600 text-white px-10 py-5 rounded-xl font-bold text-lg transition-all inline-flex items-center justify-center shadow-2xl hover:scale-105 transform"
+                  className="bg-gold-600 hover:bg-gold-500 text-main-900 px-10 py-5 rounded-xl font-bold text-lg transition-all inline-flex items-center justify-center shadow-2xl hover:scale-105 transform"
                 >
                   Book Your Car in Paros Now
                   <ArrowRight className="ml-3 h-6 w-6" />
                 </a>
                 <a
-                  href="tel:+302284051010"
+                  href="tel:+306944950094"
                   className="bg-white text-main-900 hover:bg-gray-50 px-10 py-5 rounded-xl font-bold text-lg transition-all shadow-xl inline-flex items-center justify-center"
                 >
                   <Phone className="mr-3 h-6 w-6" />
@@ -161,7 +161,7 @@ const CarRentalParos = () => {
                   </div>
                   <h3 className="text-2xl font-bold mb-3 text-main-900">Economy</h3>
                   <p className="text-gray-600 mb-4">Toyota Aygo - Perfect for couples</p>
-                  <div className="text-3xl font-bold text-gold-700 mb-4">€35<span className="text-lg text-gray-500">/day</span></div>
+                  <div className="text-3xl font-bold text-main-900 mb-4">€35<span className="text-lg text-gray-500">/day</span></div>
                   <ul className="space-y-2 text-sm text-gray-600">
                     <li className="flex items-center"><Check className="h-4 w-4 mr-2 text-green-500" />Air conditioning</li>
                     <li className="flex items-center"><Check className="h-4 w-4 mr-2 text-green-500" />Full insurance</li>
@@ -175,7 +175,7 @@ const CarRentalParos = () => {
                   </div>
                   <h3 className="text-2xl font-bold mb-3 text-main-900">Family</h3>
                   <p className="text-gray-600 mb-4">Suzuki Baleno - Great for families</p>
-                  <div className="text-3xl font-bold text-gold-700 mb-4">€50<span className="text-lg text-gray-500">/day</span></div>
+                  <div className="text-3xl font-bold text-main-900 mb-4">€50<span className="text-lg text-gray-500">/day</span></div>
                   <ul className="space-y-2 text-sm text-gray-600">
                     <li className="flex items-center"><Check className="h-4 w-4 mr-2 text-green-500" />Spacious interior</li>
                     <li className="flex items-center"><Check className="h-4 w-4 mr-2 text-green-500" />Child seat available</li>
@@ -189,7 +189,7 @@ const CarRentalParos = () => {
                   </div>
                   <h3 className="text-2xl font-bold mb-3 text-main-900">SUV/Jeep</h3>
                   <p className="text-gray-600 mb-4">Suzuki Jimny - For off-road lovers</p>
-                  <div className="text-3xl font-bold text-gold-700 mb-4">€60<span className="text-lg text-gray-500">/day</span></div>
+                  <div className="text-3xl font-bold text-main-900 mb-4">€60<span className="text-lg text-gray-500">/day</span></div>
                   <ul className="space-y-2 text-sm text-gray-600">
                     <li className="flex items-center"><Check className="h-4 w-4 mr-2 text-green-500" />4x4 capability</li>
                     <li className="flex items-center"><Check className="h-4 w-4 mr-2 text-green-500" />Beach access</li>
@@ -358,16 +358,16 @@ const CarRentalParos = () => {
                   href="https://antiparosrentacar.gocars.gr/search?lang=en"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="bg-gold-700 hover:bg-gold-600 text-white px-10 py-5 rounded-xl font-bold text-lg transition-all inline-flex items-center justify-center shadow-2xl hover:scale-105 transform"
+                  className="bg-gold-600 hover:bg-gold-500 text-main-900 px-10 py-5 rounded-xl font-bold text-lg transition-all inline-flex items-center justify-center shadow-2xl hover:scale-105 transform"
                 >
                   Reserve Your Car Now
                 </a>
                 <a
-                  href="tel:+302284051010"
+                  href="tel:+306944950094"
                   className="bg-white text-main-900 hover:bg-gray-50 px-10 py-5 rounded-xl font-bold text-lg transition-all inline-flex items-center justify-center shadow-xl"
                 >
                   <Phone className="mr-3 h-6 w-6" />
-                  Call +30 228 405 1010
+                  Call +30 694 495 0094
                 </a>
               </div>
             </div>

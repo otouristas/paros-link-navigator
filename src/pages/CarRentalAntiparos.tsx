@@ -35,13 +35,13 @@ const CarRentalAntiparos = () => {
                   href="https://antiparosrentacar.gocars.gr/search?lang=en"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="bg-gold-700 hover:bg-gold-600 text-white px-10 py-5 rounded-xl font-bold text-lg transition-all inline-flex items-center justify-center shadow-2xl hover:scale-105 transform"
+                  className="bg-gold-600 hover:bg-gold-500 text-main-900 px-10 py-5 rounded-xl font-bold text-lg transition-all inline-flex items-center justify-center shadow-2xl hover:scale-105 transform"
                 >
                   Book Your Antiparos Car Today
                   <ArrowRight className="ml-3 h-6 w-6" />
                 </a>
                 <a
-                  href="tel:+302284051010"
+                  href="tel:+306944950094"
                   className="bg-white text-main-900 hover:bg-gray-50 px-10 py-5 rounded-xl font-bold text-lg transition-all shadow-xl inline-flex items-center justify-center"
                 >
                   <Phone className="mr-3 h-6 w-6" />
@@ -280,16 +280,16 @@ const CarRentalAntiparos = () => {
                   href="https://antiparosrentacar.gocars.gr/search?lang=en"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="bg-gold-700 hover:bg-gold-600 text-white px-10 py-5 rounded-xl font-bold text-lg transition-all inline-flex items-center justify-center shadow-2xl hover:scale-105 transform"
+                  className="bg-gold-600 hover:bg-gold-500 text-main-900 px-10 py-5 rounded-xl font-bold text-lg transition-all inline-flex items-center justify-center shadow-2xl hover:scale-105 transform"
                 >
                   Book Your Antiparos Ride Today
                 </a>
                 <a
-                  href="tel:+302284051010"
+                  href="tel:+306944950094"
                   className="bg-white text-main-900 hover:bg-gray-50 px-10 py-5 rounded-xl font-bold text-lg transition-all inline-flex items-center justify-center shadow-xl"
                 >
                   <Phone className="mr-3 h-6 w-6" />
-                  Call +30 228 405 1010
+                  Call +30 694 495 0094
                 </a>
               </div>
             </div>

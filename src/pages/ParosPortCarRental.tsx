@@ -35,13 +35,13 @@ const ParosPortCarRental = () => {
                   href="https://antiparosrentacar.gocars.gr/search?lang=en"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="bg-gold-700 hover:bg-gold-600 text-white px-8 py-4 rounded-xl font-bold text-lg transition-all duration-200 shadow-lg hover:shadow-xl transform hover:scale-105"
+                  className="bg-gold-600 hover:bg-gold-500 text-main-900 px-8 py-4 rounded-xl font-bold text-lg transition-all duration-200 shadow-lg hover:shadow-xl transform hover:scale-105"
                 >
                   Book at Paros Port Now
                 </a>
                 <div className="flex items-center text-white/80">
                   <Phone className="h-5 w-5 mr-2" />
-                  <span className="font-semibold">+30 228 405 1010</span>
+                  <span className="font-semibold">+30 694 495 0094</span>
                 </div>
               </div>
             </div>
@@ -193,13 +193,13 @@ const ParosPortCarRental = () => {
                   href="https://antiparosrentacar.gocars.gr/search?lang=en"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="bg-gold-700 hover:bg-gold-600 text-white px-8 py-4 rounded-xl font-bold text-lg transition-all duration-200 shadow-lg hover:shadow-xl transform hover:scale-105 flex items-center"
+                  className="bg-gold-600 hover:bg-gold-500 text-main-900 px-8 py-4 rounded-xl font-bold text-lg transition-all duration-200 shadow-lg hover:shadow-xl transform hover:scale-105 flex items-center"
                 >
                   <span>Book at Paros Port Now</span>
                   <ArrowRight className="h-5 w-5 ml-2" />
                 </a>
                 <div className="text-white/80">
-                  <span className="font-semibold">Or call: +30 228 405 1010</span>
+                  <span className="font-semibold">Or call: +30 694 495 0094</span>
                 </div>
               </div>
             </div>

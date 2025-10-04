@@ -36,7 +36,7 @@ const AboutUs = () => {
                   href="https://antiparosrentacar.gocars.gr/search?lang=en"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="bg-gold-700 hover:bg-gold-600 text-white px-8 py-4 rounded-lg font-bold text-lg transition-all duration-200 shadow-lg hover:shadow-xl transform hover:scale-105"
+                  className="bg-gold-600 hover:bg-gold-500 text-main-900 px-8 py-4 rounded-lg font-bold text-lg transition-all duration-200 shadow-lg hover:shadow-xl transform hover:scale-105"
                 >
                   Book Your Vehicle Today
                 </a>
@@ -108,7 +108,7 @@ const AboutUs = () => {
                     </Link>
                     <Link
                       to="/car-rental-antiparos"
-                      className="bg-gold-600 hover:bg-gold-700 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-200"
+                      className="bg-gold-600 hover:bg-gold-500 text-main-900 px-6 py-3 rounded-lg font-semibold transition-all duration-200"
                     >
                       Antiparos Car Rental
                     </Link>
@@ -230,7 +230,7 @@ const AboutUs = () => {
                   href="https://antiparosrentacar.gocars.gr/search?lang=en"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="bg-gold-700 hover:bg-gold-600 text-white px-10 py-5 rounded-xl font-bold text-lg transition-all inline-flex items-center justify-center shadow-2xl hover:scale-105 transform"
+                  className="bg-gold-600 hover:bg-gold-500 text-main-900 px-10 py-5 rounded-xl font-bold text-lg transition-all inline-flex items-center justify-center shadow-2xl hover:scale-105 transform"
                 >
                   Book Now
                 </a>

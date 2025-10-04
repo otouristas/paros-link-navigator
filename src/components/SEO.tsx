@@ -18,7 +18,7 @@ export const SEO = ({ title, description, canonicalUrl, keywords, schema }: SEOP
     "name": "Aggelos Rentals",
     "url": "https://antiparosrentacar.com",
     "image": "https://antiparosrentacar.com/wp-content/uploads/logo.png",
-    "telephone": "+30 228 405 1010",
+    "telephone": "+30 694 495 0094",
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "Parikia Port",
@@ -68,7 +68,7 @@ export const SEO = ({ title, description, canonicalUrl, keywords, schema }: SEOP
       linkCanonical.setAttribute('rel', 'canonical');
       document.head.appendChild(linkCanonical);
     }
-    const canonical = canonicalUrl || `http://rentacar-paros.gr${location.pathname}`;
+    const canonical = canonicalUrl || `https://rentacar-paros.gr${location.pathname}`;
     linkCanonical.setAttribute('href', canonical);
 
     const ogTitle = document.querySelector('meta[property="og:title"]') || document.createElement('meta');
@@ -97,7 +97,7 @@ export const SEO = ({ title, description, canonicalUrl, keywords, schema }: SEOP
     if (schemaScript) {
       schemaScript.remove();
     }
-    schemaScript = document.createElement('script');
+    schemaScript = document.createElement('script') as HTMLScriptElement;
     schemaScript.type = 'application/ld+json';
     schemaScript.textContent = JSON.stringify(finalSchema);
     document.head.appendChild(schemaScript);

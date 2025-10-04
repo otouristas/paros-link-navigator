@@ -44,7 +44,7 @@ export const Header = () => {
       {/* Main navigation */}
       <div className="container mx-auto px-4 py-3">
         <nav className="flex justify-between items-center">
-          <Link to="/car-rental-paros" className="flex items-center space-x-3 group">
+          <Link to="/" className="flex items-center space-x-3 group">
             <img
               src="/logo.png"
               alt="Aggelos Rentals Logo"
@@ -71,7 +71,7 @@ export const Header = () => {
                   href="https://antiparosrentacar.gocars.gr/search?lang=en"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="bg-gold-700 hover:bg-gold-600 text-white px-5 py-2.5 rounded-lg font-bold text-sm transition-all duration-200 shadow-lg hover:shadow-xl transform hover:scale-105"
+                  className="bg-gold-600 hover:bg-gold-500 text-main-900 px-5 py-2.5 rounded-lg font-bold text-sm transition-all duration-200 shadow-lg hover:shadow-xl transform hover:scale-105"
                 >
                   BOOK NOW
                 </a>
@@ -105,7 +105,7 @@ export const Header = () => {
                     href="https://antiparosrentacar.gocars.gr/search?lang=en"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="block w-full bg-gold-700 hover:bg-gold-600 text-white px-6 py-3 rounded-lg font-bold text-center transition-all duration-200"
+                      className="block w-full bg-gold-600 hover:bg-gold-500 text-main-900 px-6 py-3 rounded-lg font-bold text-center transition-all duration-200"
                   >
                     BOOK NOW
                   </a>
