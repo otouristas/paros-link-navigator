@@ -22,7 +22,7 @@ const Index = () => {
         canonicalUrl="https://rentacar-paros.gr"
         keywords="paros rent a car, paros car rental, antiparos rent a car, paros island exploration, paros transportation, cyclades car rental, greek islands car rental"
       />
-      <div className="min-h-screen bg-white">
+      <div className="min-h-screen bg-white dark:bg-gray-900 transition-colors duration-300">
         <Header />
 
         {/* Hero Section with Stronger Contrast */}
@@ -72,11 +72,11 @@ const Index = () => {
         </section>
 
         {/* Image Masonry Gallery - NEW SECTION */}
-        <section className="py-20 bg-gradient-to-b from-gray-50 to-white">
+        <section className="py-20 bg-gradient-to-b from-gray-50 to-white dark:from-gray-800 dark:to-gray-900">
           <div className="container mx-auto px-4">
             <div className="text-center mb-16">
-              <h2 className="text-4xl md:text-5xl font-black mb-4 text-main-900">Experience Island Freedom</h2>
-              <p className="text-xl text-gray-600 max-w-3xl mx-auto font-medium">
+              <h2 className="text-4xl md:text-5xl font-black mb-4 text-main-900 dark:text-white">Experience Island Freedom</h2>
+              <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto font-medium">
                 Real moments from real travelers exploring Paros & Antiparos with Aggelos Rentals
               </p>
             </div>
@@ -141,25 +141,25 @@ const Index = () => {
         </section>
 
         {/* Services Overview Section */}
-        <section className="py-24 bg-white">
+        <section className="py-24 bg-white dark:bg-gray-900">
           <div className="container mx-auto px-4">
             <div className="text-center mb-20">
-              <h2 className="text-4xl md:text-5xl font-black mb-4 text-main-900">Your Complete Transportation Solution</h2>
-              <p className="text-xl text-gray-600 max-w-3xl mx-auto font-medium">
+              <h2 className="text-4xl md:text-5xl font-black mb-4 text-main-900 dark:text-white">Your Complete Transportation Solution</h2>
+              <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto font-medium">
                 Whether you need a car for family adventures or a scooter for quick island hops
               </p>
             </div>
             
             <div className="grid md:grid-cols-3 gap-10 max-w-6xl mx-auto">
-              <div className="bg-gradient-to-br from-white to-gray-50 p-10 rounded-3xl shadow-xl border-2 border-gray-100 text-center group hover:shadow-2xl hover:border-main-300 transition-all">
+              <div className="bg-gradient-to-br from-white to-gray-50 dark:from-gray-800 dark:to-gray-700 p-10 rounded-3xl shadow-xl border-2 border-gray-100 dark:border-gray-700 text-center group hover:shadow-2xl hover:border-main-300 dark:hover:border-gold-600 transition-all">
                 <div className="h-24 w-24 bg-gradient-to-br from-main-900 to-main-700 rounded-3xl flex items-center justify-center mx-auto mb-8 shadow-lg group-hover:scale-110 transition-transform">
                   <Car className="h-12 w-12 text-white" />
                 </div>
-                <h3 className="text-2xl font-black mb-4 text-main-900">Car Rentals</h3>
-                <p className="text-gray-700 mb-6 leading-relaxed text-base font-medium">
+                <h3 className="text-2xl font-black mb-4 text-main-900 dark:text-white">Car Rentals</h3>
+                <p className="text-gray-700 dark:text-gray-300 mb-6 leading-relaxed text-base font-medium">
                   Perfect for families and groups. Explore Paros comfortably with our modern fleet of economy and SUV vehicles.
                 </p>
-                <a href="/car-rental-paros" className="inline-flex items-center text-main-900 font-black text-lg hover:text-gold-600 transition-colors">
+                <a href="/car-rental-paros" className="inline-flex items-center text-main-900 dark:text-gold-400 font-black text-lg hover:text-gold-600 transition-colors">
                   Explore Cars
                   <ArrowRight className="ml-3 h-6 w-6" />
                 </a>

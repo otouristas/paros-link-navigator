@@ -49,13 +49,13 @@ export function BookingForm({ className = '' }: BookingFormProps) {
   };
 
   return (
-    <div className={`bg-white rounded-2xl shadow-2xl p-4 md:p-6 ${className}`}>
+    <div className={`bg-white dark:bg-gray-800 rounded-2xl shadow-2xl p-4 md:p-6 border-2 border-gray-100 dark:border-gray-700 ${className}`}>
       {/* Header */}
       <div className="text-center mb-3">
-        <h2 className="text-2xl md:text-3xl font-black text-main-900 mb-1.5">
+        <h2 className="text-2xl md:text-3xl font-black text-main-900 dark:text-white mb-1.5">
           Start Your Reservation
         </h2>
-        <div className="flex items-center justify-center gap-2 text-xs text-gray-600">
+        <div className="flex items-center justify-center gap-2 text-xs text-gray-600 dark:text-gray-300">
           <Shield className="h-3 w-3 text-gold-600" />
           <span className="font-semibold">100% Secure Environment</span>
         </div>
@@ -254,18 +254,18 @@ export function BookingForm({ className = '' }: BookingFormProps) {
       </button>
 
       {/* Key Points */}
-      <div className="grid grid-cols-3 gap-3 py-3 border-t-2 border-gray-100">
+      <div className="grid grid-cols-3 gap-3 py-3 border-t-2 border-gray-100 dark:border-gray-700">
         <div className="flex flex-col items-center text-center">
           <Check className="h-5 w-5 text-gold-600 mb-1" />
-          <span className="text-xs font-bold text-main-900">No Hidden Costs</span>
+          <span className="text-xs font-bold text-main-900 dark:text-white">No Hidden Costs</span>
         </div>
         <div className="flex flex-col items-center text-center">
           <Check className="h-5 w-5 text-gold-600 mb-1" />
-          <span className="text-xs font-bold text-main-900">No Deposits</span>
+          <span className="text-xs font-bold text-main-900 dark:text-white">No Deposits</span>
         </div>
         <div className="flex flex-col items-center text-center">
           <Check className="h-5 w-5 text-gold-600 mb-1" />
-          <span className="text-xs font-bold text-main-900">Unlimited Km</span>
+          <span className="text-xs font-bold text-main-900 dark:text-white">Unlimited Km</span>
         </div>
       </div>
     </div>

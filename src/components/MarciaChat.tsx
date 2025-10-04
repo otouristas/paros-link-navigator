@@ -277,7 +277,7 @@ export function MarciaChat() {
       {!isOpen && (
         <button
           onClick={() => setIsOpen(true)}
-          className="fixed bottom-6 right-6 z-50 bg-gradient-to-r from-main-900 to-gold-600 text-white p-4 rounded-full shadow-2xl hover:scale-110 transition-all duration-300 flex items-center gap-3 group"
+          className="fixed bottom-6 left-1/2 -translate-x-1/2 sm:left-auto sm:right-6 sm:translate-x-0 z-50 bg-gradient-to-r from-main-900 to-gold-600 text-white p-4 rounded-full shadow-2xl hover:scale-110 transition-all duration-300 flex items-center gap-3 group"
         >
           <Sparkles className="h-6 w-6 animate-pulse" />
           <span className="font-black text-lg hidden sm:inline group-hover:inline">Ask Marcia AI</span>
@@ -287,7 +287,7 @@ export function MarciaChat() {
 
       {/* Chat Window */}
       {isOpen && (
-        <div className="fixed bottom-6 right-6 z-50 w-[95vw] sm:w-[450px] h-[600px] bg-white rounded-3xl shadow-2xl flex flex-col overflow-hidden border-4 border-main-900">
+        <div className="fixed bottom-6 left-1/2 -translate-x-1/2 sm:left-auto sm:right-6 sm:translate-x-0 z-50 w-[95vw] sm:w-[450px] h-[600px] bg-white dark:bg-gray-800 rounded-3xl shadow-2xl flex flex-col overflow-hidden border-4 border-main-900 dark:border-gold-600">
           
           {/* Header */}
           <div className="bg-gradient-to-r from-main-900 via-main-800 to-gold-600 text-white p-6 flex items-center justify-between">
@@ -310,7 +310,7 @@ export function MarciaChat() {
           </div>
 
           {/* Messages */}
-          <div className="flex-1 overflow-y-auto p-6 space-y-4 bg-gradient-to-b from-gray-50 to-white">
+          <div className="flex-1 overflow-y-auto p-6 space-y-4 bg-gradient-to-b from-gray-50 to-white dark:from-gray-900 dark:to-gray-800">
             {messages.map((message) => (
               <div
                 key={message.id}
@@ -329,7 +329,7 @@ export function MarciaChat() {
                     className={`p-4 rounded-2xl ${
                       message.sender === 'user'
                         ? 'bg-gradient-to-r from-main-900 to-gold-600 text-white ml-auto'
-                        : 'bg-white border-2 border-main-200 text-gray-800'
+                        : 'bg-white dark:bg-gray-700 border-2 border-main-200 dark:border-gray-600 text-gray-800 dark:text-white'
                     }`}
                   >
                     <p className="text-sm font-medium whitespace-pre-line">{message.content}</p>
@@ -343,7 +343,7 @@ export function MarciaChat() {
                           key={vehicle.id}
                           to={`/fleet/${vehicle.id}`}
                           onClick={() => setIsOpen(false)}
-                          className="block bg-white border-2 border-gray-200 hover:border-gold-500 rounded-xl p-3 transition-all hover:shadow-lg group"
+                          className="block bg-white dark:bg-gray-700 border-2 border-gray-200 dark:border-gray-600 hover:border-gold-500 dark:hover:border-gold-500 rounded-xl p-3 transition-all hover:shadow-lg group"
                         >
                           <div className="flex gap-3">
                             {/* Vehicle Image */}
@@ -363,10 +363,10 @@ export function MarciaChat() {
                             
                             {/* Vehicle Info */}
                             <div className="flex-1 min-w-0">
-                              <h4 className="font-black text-sm text-main-900 group-hover:text-gold-600 transition-colors mb-1 truncate">
+                              <h4 className="font-black text-sm text-main-900 dark:text-white group-hover:text-gold-600 transition-colors mb-1 truncate">
                                 {vehicle.name}
                               </h4>
-                              <div className="flex items-center gap-3 text-xs text-gray-600 mb-2">
+                              <div className="flex items-center gap-3 text-xs text-gray-600 dark:text-gray-300 mb-2">
                                 <span className="flex items-center gap-1">
                                   <Users className="h-3 w-3" />
                                   {vehicle.seats}
@@ -399,7 +399,7 @@ export function MarciaChat() {
                         <button
                           key={idx}
                           onClick={() => handleSuggestionClick(suggestion)}
-                          className="text-xs bg-gold-100 hover:bg-gold-200 text-main-900 px-3 py-2 rounded-xl font-bold transition-colors"
+                          className="text-xs bg-gold-100 dark:bg-gold-900/30 hover:bg-gold-200 dark:hover:bg-gold-800/40 text-main-900 dark:text-gold-300 px-3 py-2 rounded-xl font-bold transition-colors"
                         >
                           {suggestion}
                         </button>
@@ -410,8 +410,8 @@ export function MarciaChat() {
 
                 {message.sender === 'user' && (
                   <div className="flex-shrink-0">
-                    <div className="w-8 h-8 rounded-full bg-gray-200 flex items-center justify-center">
-                      <User className="h-5 w-5 text-gray-600" />
+                    <div className="w-8 h-8 rounded-full bg-gray-200 dark:bg-gray-700 flex items-center justify-center">
+                      <User className="h-5 w-5 text-gray-600 dark:text-gray-300" />
                     </div>
                   </div>
                 )}
@@ -423,11 +423,11 @@ export function MarciaChat() {
                 <div className="w-8 h-8 rounded-full bg-gradient-to-r from-main-900 to-gold-600 flex items-center justify-center">
                   <Bot className="h-5 w-5 text-white" />
                 </div>
-                <div className="bg-white border-2 border-main-200 p-4 rounded-2xl">
+                <div className="bg-white dark:bg-gray-700 border-2 border-main-200 dark:border-gray-600 p-4 rounded-2xl">
                   <div className="flex gap-1">
-                    <div className="w-2 h-2 bg-main-900 rounded-full animate-bounce"></div>
+                    <div className="w-2 h-2 bg-main-900 dark:bg-gold-500 rounded-full animate-bounce"></div>
                     <div className="w-2 h-2 bg-gold-600 rounded-full animate-bounce" style={{ animationDelay: '0.1s' }}></div>
-                    <div className="w-2 h-2 bg-main-900 rounded-full animate-bounce" style={{ animationDelay: '0.2s' }}></div>
+                    <div className="w-2 h-2 bg-main-900 dark:bg-gold-500 rounded-full animate-bounce" style={{ animationDelay: '0.2s' }}></div>
                   </div>
                 </div>
               </div>
@@ -437,7 +437,7 @@ export function MarciaChat() {
           </div>
 
           {/* Input */}
-          <div className="p-4 bg-white border-t-2 border-gray-200">
+          <div className="p-4 bg-white dark:bg-gray-800 border-t-2 border-gray-200 dark:border-gray-700">
             <div className="flex gap-3">
               <input
                 type="text"
@@ -445,7 +445,7 @@ export function MarciaChat() {
                 onChange={(e) => setInput(e.target.value)}
                 onKeyPress={(e) => e.key === 'Enter' && handleSend()}
                 placeholder="Ask Marcia anything..."
-                className="flex-1 px-4 py-3 border-2 border-main-300 rounded-xl focus:outline-none focus:border-gold-600 transition-colors font-medium"
+                className="flex-1 px-4 py-3 bg-white dark:bg-gray-700 border-2 border-main-300 dark:border-gray-600 text-gray-900 dark:text-white rounded-xl focus:outline-none focus:border-gold-600 transition-colors font-medium placeholder:text-gray-400 dark:placeholder:text-gray-500"
               />
               <button
                 onClick={handleSend}
@@ -456,8 +456,8 @@ export function MarciaChat() {
               </button>
             </div>
             <div className="text-center mt-2 space-y-1">
-              <p className="text-xs text-gray-500">
-                <Link to="/marcia-ai" className="text-main-900 hover:underline font-bold">
+              <p className="text-xs text-gray-500 dark:text-gray-400">
+                <Link to="/marcia-ai" className="text-main-900 dark:text-gold-400 hover:underline font-bold">
                   Learn more about Marcia AI
                 </Link>
               </p>
@@ -465,11 +465,11 @@ export function MarciaChat() {
                 href="https://touristas.ai" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="flex items-center justify-center gap-2 text-xs text-gray-400 hover:text-main-900 transition-colors group"
+                className="flex items-center justify-center gap-2 text-xs text-gray-400 hover:text-main-900 dark:hover:text-gold-400 transition-colors group"
               >
                 <span>Powered by</span>
                 <img src="https://hotelssifnos.com/uploads/touristas-ai-logo.svg" alt="Touristas AI" className="h-6 inline-block group-hover:scale-110 transition-transform" />
-                <span className="font-bold text-sm text-gray-600 group-hover:text-main-900">Touristas AI</span>
+                <span className="font-bold text-sm text-gray-600 dark:text-gray-400 group-hover:text-main-900 dark:group-hover:text-gold-400">Touristas AI</span>
               </a>
             </div>
           </div>
