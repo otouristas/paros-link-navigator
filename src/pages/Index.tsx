@@ -101,20 +101,20 @@ const Index = () => {
                 </div>
               </div>
 
-              {/* Image 2 - Car Rental */}
+              {/* Image 2 - Ferry to Antiparos */}
               <div className="relative group overflow-hidden rounded-3xl shadow-2xl hover:shadow-gold-500/30 transition-all duration-500">
                 <OptimizedImage
-                  src="/src/assets/rent-a-car-paros-1024x1024-1-r2uyji8qochxcy2rmsvndn4q6ce4ppnchlxfd8te2w.webp"
-                  alt="Rent a Car in Paros - Aggelos Rentals Modern Fleet"
+                  src="/src/assets/blog/antiparos-paros-with-ferry-1024x683.png"
+                  alt="Ferry connecting Paros and Antiparos - Explore both islands with Aggelos Rentals"
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                   loading="lazy"
-                  onLoad={() => handleImageLoad('car')}
+                  onLoad={() => handleImageLoad('ferry')}
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-main-950/80 via-main-900/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500">
                   <div className="absolute bottom-0 left-0 right-0 p-8 text-white">
-                    <h3 className="text-3xl font-black mb-2">Modern Fleet</h3>
-                    <p className="text-lg font-medium text-white/90">Clean, reliable vehicles</p>
+                    <h3 className="text-3xl font-black mb-2">Island Hopping</h3>
+                    <p className="text-lg font-medium text-white/90">Ferry to Antiparos included</p>
                   </div>
                 </div>
               </div>

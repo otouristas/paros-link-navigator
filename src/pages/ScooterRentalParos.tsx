@@ -10,7 +10,7 @@ const ScooterRentalParos = () => {
       <SEO
         title="Scooter Rental Paros | Rent a Scooter or Moped – Aggelos Rentals"
         description="Rent a scooter in Paros or Antiparos. Ideal for couples & solo travelers. Affordable, insured, and safe."
-        canonicalUrl="http://rentacar-paros.gr/scooter-rental-paros"
+        canonicalUrl="https://rentacar-paros.gr/scooter-rental-paros"
         keywords="scooter rental paros, rent a scooter paros, moped rental paros, scooter hire paros, paros scooter rental"
       />
       <div className="min-h-screen bg-white text-main-950">

@@ -201,20 +201,20 @@ export const Footer = () => {
                 Paros Car Rental | Rent a Car Paros | Paros Airport Car Hire | Antiparos Rentals
               </p>
             </div>
-                <div className="flex items-center space-x-6 text-sm">
-                  <Link to="/fleet" className="text-white/70 hover:text-gold-400 transition-colors">
+                <div className="flex items-center space-x-3 md:space-x-6 text-xs md:text-sm">
+                  <Link to="/fleet" className="text-white/70 dark:text-gray-400 hover:text-gold-400 dark:hover:text-gold-400 transition-colors">
                     Fleet
                   </Link>
-                  <Link to="/blog" className="text-white/70 hover:text-gold-400 transition-colors">
+                  <Link to="/blog" className="text-white/70 dark:text-gray-400 hover:text-gold-400 dark:hover:text-gold-400 transition-colors">
                     Blog
                   </Link>
-                  <Link to="/about-us" className="text-white/70 hover:text-gold-400 transition-colors">
+                  <Link to="/about-us" className="text-white/70 dark:text-gray-400 hover:text-gold-400 dark:hover:text-gold-400 transition-colors">
                     About Us
                   </Link>
-                  <Link to="/contact" className="text-white/70 hover:text-gold-400 transition-colors">
+                  <Link to="/contact" className="text-white/70 dark:text-gray-400 hover:text-gold-400 dark:hover:text-gold-400 transition-colors">
                     Contact Us
                   </Link>
-                  <Link to="/terms-and-conditions" className="text-white/70 hover:text-gold-400 transition-colors">
+                  <Link to="/terms-and-conditions" className="text-white/70 dark:text-gray-400 hover:text-gold-400 dark:hover:text-gold-400 transition-colors">
                     Terms & Conditions
                   </Link>
                 </div>

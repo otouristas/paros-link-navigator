@@ -10,7 +10,7 @@ const ParosPortCarRental = () => {
       <SEO
         title="Paros Port Car Rental | Rent a Car at the Ferry Port – Aggelos Rentals"
         description="Rent a car at Paros Port from Aggelos Rentals. Perfect for ferry arrivals. Book ahead to skip the line."
-        canonicalUrl="http://rentacar-paros.gr/paros-port-car-rental"
+        canonicalUrl="https://rentacar-paros.gr/paros-port-car-rental"
         keywords="paros port car rental, rent a car paros port, ferry port car rental, paros ferry pickup, port car hire"
       />
       <div className="min-h-screen bg-white text-main-950">

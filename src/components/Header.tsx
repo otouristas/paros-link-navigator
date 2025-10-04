@@ -24,15 +24,16 @@ export const Header = () => {
       {/* Top contact bar */}
       <div className="bg-main-950 dark:bg-gray-950 border-b border-main-800 dark:border-gray-800 transition-colors duration-300">
         <div className="container mx-auto px-4 py-2">
-          <div className="flex items-center justify-between text-sm text-white/80 dark:text-gray-300">
-            <div className="flex items-center space-x-6">
-                  <div className="flex items-center space-x-2">
-                    <Phone className="h-4 w-4" />
-                    <span>+30 694 495 0094</span>
+          <div className="flex items-center justify-between text-xs md:text-sm text-white/80 dark:text-gray-300">
+            <div className="flex items-center space-x-2 md:space-x-6">
+                  <div className="flex items-center space-x-1 md:space-x-2">
+                    <Phone className="h-3 w-3 md:h-4 md:w-4" />
+                    <span className="truncate">+30 694 495 0094</span>
                   </div>
-                  <div className="flex items-center space-x-2">
-                    <MapPin className="h-4 w-4" />
-                    <span>Port, Antiparos, Cyclades 840 07</span>
+                  <div className="flex items-center space-x-1 md:space-x-2">
+                    <MapPin className="h-3 w-3 md:h-4 md:w-4" />
+                    <span className="hidden sm:inline">Port, Antiparos, Cyclades 840 07</span>
+                    <span className="sm:hidden">Antiparos</span>
                   </div>
             </div>
             <div className="hidden md:block">

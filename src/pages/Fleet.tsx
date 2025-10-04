@@ -69,7 +69,7 @@ const Fleet = () => {
       <SEO
         title="Our Fleet | Car, Scooter & ATV Rentals in Paros – Aggelos Rentals"
         description="Browse our complete fleet of rental vehicles in Paros and Antiparos. Economy cars, SUVs, scooters, and ATVs. Best prices and modern fleet."
-        canonicalUrl="http://rentacar-paros.gr/fleet"
+        canonicalUrl="https://rentacar-paros.gr/fleet"
         keywords="paros car fleet, rental vehicles paros, paros scooter models, atv fleet paros, car rental options paros"
       />
       <div className="min-h-screen bg-white">

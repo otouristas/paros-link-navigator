@@ -10,7 +10,7 @@ const ParosAirportCarRental = () => {
       <SEO
         title="Paros Airport Car Rental | Rent a Car at Paros Airport – Aggelos Rentals"
         description="Fast and easy Paros Airport car rental with Aggelos Rentals. Book online, pick up upon arrival, 24/7 service."
-        canonicalUrl="http://rentacar-paros.gr/paros-airport-car-rental"
+        canonicalUrl="https://rentacar-paros.gr/paros-airport-car-rental"
         keywords="paros airport car rental, rent a car paros airport, paros airport pickup, paros airport car hire, PAS airport car rental"
       />
       <div className="min-h-screen bg-white text-main-950">

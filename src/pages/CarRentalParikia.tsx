@@ -10,7 +10,7 @@ const CarRentalParikia = () => {
       <SEO
         title="Parikia Car Rental Paros | Rent a Car Near Paros Port – Aggelos Rentals"
         description="Rent a car at Paros Port with Aggelos Rentals. Fast check-in, no queues, best prices for ferry arrivals."
-        canonicalUrl="http://rentacar-paros.gr/car-rental-parikia-paros"
+        canonicalUrl="https://rentacar-paros.gr/car-rental-parikia-paros"
         keywords="parikia car rental paros, rent a car parikia, paros port car rental, ferry arrival car rental, parikia port pickup"
       />
       <div className="min-h-screen bg-white text-main-950">

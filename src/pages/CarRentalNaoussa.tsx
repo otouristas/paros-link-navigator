@@ -9,7 +9,7 @@ const CarRentalNaoussa = () => {
       <SEO
         title="Car Rental Naoussa Paros | Affordable Car Hire – Aggelos Rentals"
         description="Rent a car in Naoussa Paros to explore beaches and villages. Best local rates, easy pickup, and reliable vehicles."
-        canonicalUrl="http://rentacar-paros.gr/car-rental-naoussa-paros"
+        canonicalUrl="https://rentacar-paros.gr/car-rental-naoussa-paros"
         keywords="naoussa car rental, car rental naoussa paros, naoussa paros car hire, rent a car naoussa, naoussa vehicle rental"
       />
       <div className="min-h-screen bg-white">

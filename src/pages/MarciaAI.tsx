@@ -10,7 +10,7 @@ const MarciaAI = () => {
       <SEO
         title="Marcia AI - Revolutionary Car Rental Assistant | Paros Rentals"
         description="Meet Marcia AI, the world's first AI-powered car rental assistant for Paros. Get instant recommendations, pricing, and personalized vehicle suggestions 24/7."
-        canonicalUrl="http://rentacar-paros.gr/marcia-ai"
+        canonicalUrl="https://rentacar-paros.gr/marcia-ai"
         keywords="marcia ai, ai car rental, paros rental assistant, smart car booking, ai vehicle recommendations, automated rental"
       />
       <div className="min-h-screen bg-white">

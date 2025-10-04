@@ -11,7 +11,7 @@ const ScooterCarATVComparisonParos = () => {
       <SEO
         title="Scooter vs Car vs ATV 2024: Which Vehicle is Best for Your Paros Adventure? | Complete Rental Comparison Guide"
         description="Compare the pros and cons of different rental vehicles for exploring Paros and Antiparos. From fuel efficiency to off-road capability, find the perfect ride for your island adventure with Aggelos Rentals."
-        canonicalUrl="http://rentacar-paros.gr/blog/scooter-car-atv-comparison-paros"
+        canonicalUrl="https://rentacar-paros.gr/blog/scooter-car-atv-comparison-paros"
         keywords="scooter vs car paros, atv rental paros, vehicle comparison paros, best transport paros, paros vehicle guide, rent scooter paros, rent atv paros, paros quad rental, economy car paros, best vehicle for paros"
       />
       <div className="min-h-screen bg-white text-main-950">
@@ -57,7 +57,7 @@ const ScooterCarATVComparisonParos = () => {
                 {/* Feature Image */}
                 <div className="mb-12">
                   <img
-                    src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1200&h=600&fit=crop"
+                    src="/src/assets/blog/antiparos-rent-a-car-scaled.jpg"
                     alt="Different vehicle types for rent in Paros including cars, scooters and ATVs"
                     className="w-full h-96 object-cover rounded-2xl shadow-lg"
                     loading="lazy"

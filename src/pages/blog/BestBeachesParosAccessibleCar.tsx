@@ -11,7 +11,7 @@ const BestBeachesParosAccessibleCar = () => {
       <SEO
         title="Best Beaches in Paros Accessible by Car 2024: Golden Beach, Kolymbithres & More | Paros Car Rental Guide"
         description="Discover Paros' most beautiful beaches that you can easily reach by car. From family-friendly shores to secluded coves, our local guide reveals the island's best-kept secrets with Aggelos Rentals."
-        canonicalUrl="http://rentacar-paros.gr/blog/best-beaches-paros-accessible-car"
+        canonicalUrl="https://rentacar-paros.gr/blog/best-beaches-paros-accessible-car"
         keywords="paros beaches, paros beaches by car, best beaches paros, paros beach guide, paros coastal drive, golden beach paros, kolymbithres beach, santa maria beach, paros car rental beaches, rent a car paros beaches"
       />
       <div className="min-h-screen bg-white text-main-950">
@@ -57,8 +57,8 @@ const BestBeachesParosAccessibleCar = () => {
                 {/* Feature Image */}
                 <div className="mb-12">
                   <img
-                    src="https://images.unsplash.com/photo-1533105079780-92b9be482077?w=1200&h=600&fit=crop"
-                    alt="Beautiful beach in Paros with crystal clear waters and golden sand accessible by car"
+                    src="/src/assets/blog/Kolimpithres-Beach-Paros-650x399.webp"
+                    alt="Beautiful Kolimpithres beach in Paros with crystal clear waters and golden sand accessible by car"
                     className="w-full h-96 object-cover rounded-2xl shadow-lg"
                     loading="lazy"
                   />

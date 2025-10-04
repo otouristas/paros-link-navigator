@@ -1,15 +1,87 @@
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { SEO } from "@/components/SEO";
-import { Phone, Mail, MapPin, Clock, MessageCircle } from "lucide-react";
+import { Phone, Mail, MapPin, Clock, MessageCircle, CheckCircle, AlertCircle, Loader2, Bot } from "lucide-react";
+import { useState, FormEvent } from "react";
+
+interface FormData {
+  firstName: string;
+  lastName: string;
+  email: string;
+  phone: string;
+  subject: string;
+  message: string;
+}
 
 const Contact = () => {
+  const [formData, setFormData] = useState<FormData>({
+    firstName: '',
+    lastName: '',
+    email: '',
+    phone: '',
+    subject: '',
+    message: '',
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
+  const [errorMessage, setErrorMessage] = useState('');
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+    setFormData(prev => ({
+      ...prev,
+      [e.target.name]: e.target.value
+    }));
+  };
+
+  const handleSubmit = async (e: FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    setSubmitStatus('idle');
+    setErrorMessage('');
+
+    try {
+      const response = await fetch('/api/send-email', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name: `${formData.firstName} ${formData.lastName}`,
+          email: formData.email,
+          phone: formData.phone,
+          message: `Subject: ${formData.subject}\n\n${formData.message}`,
+          vehicleType: formData.subject,
+        }),
+      });
+
+      if (response.ok) {
+        setSubmitStatus('success');
+        setFormData({
+          firstName: '',
+          lastName: '',
+          email: '',
+          phone: '',
+          subject: '',
+          message: '',
+        });
+      } else {
+        const data = await response.json();
+        throw new Error(data.error || 'Failed to send message');
+      }
+    } catch (error: any) {
+      setSubmitStatus('error');
+      setErrorMessage(error.message || 'Something went wrong. Please try again.');
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   return (
     <>
       <SEO
         title="Contact Us | Aggelos Rentals Car Rental Paros & Antiparos"
         description="Contact Aggelos Rentals for car, scooter, and ATV rentals in Paros and Antiparos. Call +30 694 495 0094 or email aggelos@antiparosrentacar.com"
-        canonicalUrl="http://rentacar-paros.gr/contact"
+        canonicalUrl="https://rentacar-paros.gr/contact"
         keywords="contact aggelos rentals, car rental paros contact, antiparos car rental phone, paros rent a car email, cyclades car rental contact"
       />
       <div className="min-h-screen bg-white text-main-950">
@@ -93,7 +165,41 @@ const Contact = () => {
                 {/* Contact Form */}
                 <div className="bg-gradient-to-br from-white to-gray-50 p-10 rounded-3xl shadow-xl border-2 border-gray-100">
                   <h2 className="text-4xl font-black text-main-900 mb-8">Send us a Message</h2>
-                  <form className="space-y-6">
+                  
+                  {/* Success Message */}
+                  {submitStatus === 'success' && (
+                    <div className="mb-6 p-6 bg-green-50 border-2 border-green-500 rounded-xl">
+                      <div className="flex items-start gap-4">
+                        <CheckCircle className="h-6 w-6 text-green-600 flex-shrink-0 mt-1" />
+                        <div>
+                          <h3 className="font-black text-green-900 text-lg mb-2">Thank You!</h3>
+                          <p className="text-green-800 font-medium mb-4">
+                            We've received your message and will get back to you shortly. Our team typically responds within 2-4 hours.
+                          </p>
+                          <a href="/marcia-ai" className="inline-flex items-center gap-2 bg-gold-600 hover:bg-gold-500 text-white px-6 py-3 rounded-lg font-bold transition-all">
+                            <Bot className="h-5 w-5" />
+                            Try Marcia AI for Instant Help
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  )}
+
+                  {/* Error Message */}
+                  {submitStatus === 'error' && (
+                    <div className="mb-6 p-6 bg-red-50 border-2 border-red-500 rounded-xl">
+                      <div className="flex items-start gap-4">
+                        <AlertCircle className="h-6 w-6 text-red-600 flex-shrink-0 mt-1" />
+                        <div>
+                          <h3 className="font-black text-red-900 text-lg mb-2">Oops! Something went wrong</h3>
+                          <p className="text-red-800 font-medium">{errorMessage}</p>
+                          <p className="text-red-700 text-sm mt-2">Please try calling us directly at <a href="tel:+306944950094" className="underline font-bold">+30 694 495 0094</a></p>
+                        </div>
+                      </div>
+                    </div>
+                  )}
+
+                  <form onSubmit={handleSubmit} className="space-y-6">
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                       <div>
                         <label htmlFor="firstName" className="block text-sm font-bold text-gray-700 mb-2">
@@ -103,8 +209,11 @@ const Contact = () => {
                           type="text"
                           id="firstName"
                           name="firstName"
+                          value={formData.firstName}
+                          onChange={handleChange}
                           required
-                          className="w-full px-4 py-3 border-2 border-gray-300 rounded-xl focus:ring-2 focus:ring-gold-500 focus:border-gold-500 transition-colors"
+                          disabled={isSubmitting}
+                          className="w-full px-4 py-3 border-2 border-gray-300 rounded-xl focus:ring-2 focus:ring-gold-500 focus:border-gold-500 transition-colors disabled:bg-gray-100 disabled:cursor-not-allowed"
                           placeholder="Your first name"
                         />
                       </div>
@@ -116,8 +225,11 @@ const Contact = () => {
                           type="text"
                           id="lastName"
                           name="lastName"
+                          value={formData.lastName}
+                          onChange={handleChange}
                           required
-                          className="w-full px-4 py-3 border-2 border-gray-300 rounded-xl focus:ring-2 focus:ring-gold-500 focus:border-gold-500 transition-colors"
+                          disabled={isSubmitting}
+                          className="w-full px-4 py-3 border-2 border-gray-300 rounded-xl focus:ring-2 focus:ring-gold-500 focus:border-gold-500 transition-colors disabled:bg-gray-100 disabled:cursor-not-allowed"
                           placeholder="Your last name"
                         />
                       </div>
@@ -131,8 +243,11 @@ const Contact = () => {
                         type="email"
                         id="email"
                         name="email"
+                        value={formData.email}
+                        onChange={handleChange}
                         required
-                        className="w-full px-4 py-3 border-2 border-gray-300 rounded-xl focus:ring-2 focus:ring-gold-500 focus:border-gold-500 transition-colors"
+                        disabled={isSubmitting}
+                        className="w-full px-4 py-3 border-2 border-gray-300 rounded-xl focus:ring-2 focus:ring-gold-500 focus:border-gold-500 transition-colors disabled:bg-gray-100 disabled:cursor-not-allowed"
                         placeholder="your.email@example.com"
                       />
                     </div>
@@ -145,7 +260,10 @@ const Contact = () => {
                         type="tel"
                         id="phone"
                         name="phone"
-                        className="w-full px-4 py-3 border-2 border-gray-300 rounded-xl focus:ring-2 focus:ring-gold-500 focus:border-gold-500 transition-colors"
+                        value={formData.phone}
+                        onChange={handleChange}
+                        disabled={isSubmitting}
+                        className="w-full px-4 py-3 border-2 border-gray-300 rounded-xl focus:ring-2 focus:ring-gold-500 focus:border-gold-500 transition-colors disabled:bg-gray-100 disabled:cursor-not-allowed"
                         placeholder="+30 XXX XXX XXXX"
                       />
                     </div>
@@ -157,8 +275,11 @@ const Contact = () => {
                       <select
                         id="subject"
                         name="subject"
+                        value={formData.subject}
+                        onChange={handleChange}
                         required
-                        className="w-full px-4 py-3 border-2 border-gray-300 rounded-xl focus:ring-2 focus:ring-gold-500 focus:border-gold-500 transition-colors"
+                        disabled={isSubmitting}
+                        className="w-full px-4 py-3 border-2 border-gray-300 rounded-xl focus:ring-2 focus:ring-gold-500 focus:border-gold-500 transition-colors disabled:bg-gray-100 disabled:cursor-not-allowed"
                       >
                         <option value="">Select a subject</option>
                         <option value="car-rental">Car Rental Inquiry</option>
@@ -177,18 +298,29 @@ const Contact = () => {
                       <textarea
                         id="message"
                         name="message"
+                        value={formData.message}
+                        onChange={handleChange}
                         rows={5}
                         required
-                        className="w-full px-4 py-3 border-2 border-gray-300 rounded-xl focus:ring-2 focus:ring-gold-500 focus:border-gold-500 transition-colors resize-vertical"
+                        disabled={isSubmitting}
+                        className="w-full px-4 py-3 border-2 border-gray-300 rounded-xl focus:ring-2 focus:ring-gold-500 focus:border-gold-500 transition-colors resize-vertical disabled:bg-gray-100 disabled:cursor-not-allowed"
                         placeholder="Tell us about your rental needs, dates, or any questions you have..."
                       ></textarea>
                     </div>
                     
                     <button
                       type="submit"
-                      className="w-full bg-gold-500 hover:bg-gold-400 text-main-950 font-black py-5 px-6 rounded-2xl transition-colors duration-200 shadow-xl hover:shadow-2xl transform hover:scale-105"
+                      disabled={isSubmitting}
+                      className="w-full bg-gold-500 hover:bg-gold-400 text-main-950 font-black py-5 px-6 rounded-2xl transition-colors duration-200 shadow-xl hover:shadow-2xl transform hover:scale-105 disabled:bg-gray-400 disabled:cursor-not-allowed disabled:transform-none flex items-center justify-center gap-3"
                     >
-                      Send Message
+                      {isSubmitting ? (
+                        <>
+                          <Loader2 className="h-5 w-5 animate-spin" />
+                          Sending...
+                        </>
+                      ) : (
+                        'Send Message'
+                      )}
                     </button>
                   </form>
                 </div>

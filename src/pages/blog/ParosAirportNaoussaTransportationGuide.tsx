@@ -11,7 +11,7 @@ const ParosAirportNaoussaTransportationGuide = () => {
       <SEO
         title="Paros Airport to Naoussa 2024: Complete Transportation Guide | Car Rental, Bus & Taxi Options"
         description="Step-by-step guide for getting from Paros Airport to Naoussa village. Compare rental car pickup, public transport, and taxi options to start your island adventure right with Aggelos Rentals."
-        canonicalUrl="http://rentacar-paros.gr/blog/paros-airport-naoussa-transportation-guide"
+        canonicalUrl="https://rentacar-paros.gr/blog/paros-airport-naoussa-transportation-guide"
         keywords="paros airport to naoussa, paros transportation, paros airport transfer, naoussa transport, paros airport guide, paros airport car rental, naoussa car rental, paros airport bus, taxi paros airport, paros airport shuttle"
       />
       <div className="min-h-screen bg-white text-main-950">
@@ -57,8 +57,8 @@ const ParosAirportNaoussaTransportationGuide = () => {
                 {/* Feature Image */}
                 <div className="mb-12">
                   <img
-                    src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=1200&h=600&fit=crop"
-                    alt="Paros Airport with arriving passengers and transportation options"
+                    src="/src/assets/blog/Aerial-View-of-Antiparos-Island-1024x576.webp"
+                    alt="Aerial view of Paros and Antiparos islands showing the airport and transportation routes"
                     className="w-full h-96 object-cover rounded-2xl shadow-lg"
                     loading="lazy"
                   />

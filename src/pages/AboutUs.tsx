@@ -10,7 +10,7 @@ const AboutUs = () => {
       <SEO
         title="About Aggelos Rentals | Car Rental Paros & Antiparos Since 1994"
         description="Learn about Aggelos Rentals, your trusted partner for car, scooter, and ATV rentals in Paros and Antiparos since 1994. 30+ years of service with 130+ vehicles."
-        canonicalUrl="http://rentacar-paros.gr/about-us"
+        canonicalUrl="https://rentacar-paros.gr/about-us"
         keywords="about aggelos rentals, car rental paros history, antiparos car rental company, paros rent a car since 1994, cyclades car rental"
       />
       <div className="min-h-screen bg-white text-main-950">

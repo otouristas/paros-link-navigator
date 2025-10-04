@@ -11,7 +11,7 @@ const DrivingGreeceRulesTipsTourists = () => {
       <SEO
         title="Driving in Greece 2024: Essential Rules, Tips & Road Safety for Tourists | Complete Guide"
         description="Everything international visitors need to know about driving in Greece. From traffic rules to parking regulations, stay safe and confident behind the wheel in Paros and Antiparos with Aggelos Rentals."
-        canonicalUrl="http://rentacar-paros.gr/blog/driving-greece-rules-tips-tourists"
+        canonicalUrl="https://rentacar-paros.gr/blog/driving-greece-rules-tips-tourists"
         keywords="driving in greece, greece driving rules, greece traffic laws, paros driving tips, greece road rules, drive greece tourist, greece driving license, greece parking rules, speed limits greece, greece road safety"
       />
       <div className="min-h-screen bg-white text-main-950">
@@ -57,8 +57,8 @@ const DrivingGreeceRulesTipsTourists = () => {
                 {/* Feature Image */}
                 <div className="mb-12">
                   <img
-                    src="https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=1200&h=600&fit=crop"
-                    alt="Scenic Greek road with driving safety tips and beautiful coastal views"
+                    src="/src/assets/blog/antiparos-paros-rent-jeep-car-rentals.webp"
+                    alt="Rental car driving on scenic Greek roads in Paros with beautiful coastal views"
                     className="w-full h-96 object-cover rounded-2xl shadow-lg"
                     loading="lazy"
                   />

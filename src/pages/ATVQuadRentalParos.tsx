@@ -10,7 +10,7 @@ const ATVQuadRentalParos = () => {
       <SEO
         title="ATV & Quad Rental Paros | 4x4 Jeep Hire – Aggelos Rentals"
         description="Discover Paros with an ATV or Jeep. Perfect for off-road adventure and beach exploration."
-        canonicalUrl="http://rentacar-paros.gr/atv-quad-rental-paros"
+        canonicalUrl="https://rentacar-paros.gr/atv-quad-rental-paros"
         keywords="atv rental paros, quad rental paros, 4x4 jeep rental paros, paros atv hire, off-road paros, quad bike paros"
       />
       <div className="min-h-screen bg-white text-main-950">

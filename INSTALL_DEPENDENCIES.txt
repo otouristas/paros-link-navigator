@@ -1,0 +1,43 @@
+========================================
+  MANUAL INSTALLATION STEPS
+========================================
+
+Please run these commands ONE BY ONE in PowerShell or Command Prompt:
+
+1. Open PowerShell/CMD in your project folder
+
+2. Run this command:
+   npm install express cors resend concurrently
+
+3. Wait for it to complete, then run:
+   npm run server
+
+4. In a NEW terminal window, run:
+   npm run dev
+
+5. Visit: http://localhost:8080/contact
+
+========================================
+  ALTERNATIVE: Install individually
+========================================
+
+If the above doesn't work, try installing one at a time:
+
+npm install express
+npm install cors
+npm install resend
+npm install concurrently
+
+Then run:
+npm run dev:all
+
+========================================
+  VERIFY INSTALLATION
+========================================
+
+To check if packages are installed, run:
+npm list express cors resend concurrently
+
+You should see version numbers for each package.
+
+========================================

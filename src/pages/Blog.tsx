@@ -16,7 +16,7 @@ const Blog = () => {
       <SEO
         title="Blog | Car Rental Tips & Travel Guides for Paros & Antiparos"
         description="Read our blog for expert travel tips, island guides, and car rental advice for Paros and Antiparos. Discover hidden gems and plan your perfect Greek island adventure."
-        canonicalUrl="http://rentacar-paros.gr/blog"
+        canonicalUrl="https://rentacar-paros.gr/blog"
         keywords="paros travel blog, antiparos travel guide, car rental tips paros, paros island guide, cyclades travel blog"
       />
       <div className="min-h-screen bg-white text-main-950">

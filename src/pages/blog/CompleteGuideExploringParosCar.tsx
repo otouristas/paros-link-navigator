@@ -12,7 +12,7 @@ const CompleteGuideExploringParosCar = () => {
       <SEO
         title="Complete Guide to Exploring Paros by Car: Best Routes, Hidden Gems & Car Rental Tips | Aggelos Rentals 2024"
         description="Discover the most scenic routes around Paros island by car. From Golden Beach to hidden coves, our local guide reveals the best spots only accessible by vehicle. Rent a car in Paros with our premium fleet."
-        canonicalUrl="http://rentacar-paros.gr/blog/complete-guide-exploring-paros-car"
+        canonicalUrl="https://rentacar-paros.gr/blog/complete-guide-exploring-paros-car"
         keywords="paros car routes, paros hidden beaches, paros scenic drives, paros island guide, paros car exploration, paros beaches by car, rent a car paros, car rental paros, paros road trip, paros driving guide, explore paros by car, paros travel tips"
       />
       <div className="min-h-screen bg-white text-main-950">
@@ -89,7 +89,7 @@ const CompleteGuideExploringParosCar = () => {
               {/* Featured Image */}
               <div className="mb-12">
                 <img
-                  src="https://images.unsplash.com/photo-1601581987809-a874a81309c9?w=1200&h=600&fit=crop"
+                  src="/src/assets/blog/rent-a-car-paros-1024x1024-1.webp"
                   alt="Scenic drive around Paros island with coastal views and traditional Greek architecture"
                   className="w-full h-96 object-cover rounded-2xl shadow-lg"
                   loading="lazy"

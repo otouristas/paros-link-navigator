@@ -10,7 +10,7 @@ const EconomyCarRentalParos = () => {
       <SEO
         title="Economy Car Rental Paros | Cheap Car Hire – Aggelos Rentals"
         description="Save more with economy car rentals in Paros. Clean, reliable vehicles with free delivery & unlimited mileage."
-        canonicalUrl="http://rentacar-paros.gr/economy-car-rental-paros"
+        canonicalUrl="https://rentacar-paros.gr/economy-car-rental-paros"
         keywords="economy car rental paros, cheap car rental paros, budget car hire paros, affordable car rental paros, low cost car rental paros"
       />
       <div className="min-h-screen bg-white text-main-950">

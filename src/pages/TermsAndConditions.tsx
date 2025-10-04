@@ -8,7 +8,7 @@ const TermsAndConditions = () => {
       <SEO
         title="Terms & Conditions | Aggelos Rentals Car Rental Paros & Antiparos"
         description="Read the terms and conditions for car rental services in Paros and Antiparos. Pricing, requirements, policies, and cancellation terms for Aggelos Rentals."
-        canonicalUrl="http://rentacar-paros.gr/terms-and-conditions"
+        canonicalUrl="https://rentacar-paros.gr/terms-and-conditions"
         keywords="terms and conditions, car rental paros terms, antiparos car rental policy, rental agreement paros, car hire conditions"
       />
       <div className="min-h-screen bg-white text-main-950">

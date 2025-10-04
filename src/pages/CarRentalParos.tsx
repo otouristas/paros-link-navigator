@@ -9,7 +9,7 @@ const CarRentalParos = () => {
       <SEO
         title="Car Rental Paros | Rent a Car in Paros Island – Aggelos Rentals"
         description="Rent a car in Paros easily with Aggelos Rentals. Choose from economy, SUV, or automatic cars. Free delivery to Paros Airport, Port, and Naoussa. Book online today!"
-        canonicalUrl="http://rentacar-paros.gr/car-rental-paros"
+        canonicalUrl="https://rentacar-paros.gr/car-rental-paros"
         keywords="car rental paros, rent a car paros, paros car hire, paros car rental company, paros airport car rental, paros port car rental, naoussa car rental"
       />
       <div className="min-h-screen bg-white">
