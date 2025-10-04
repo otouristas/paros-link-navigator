@@ -114,11 +114,11 @@ const FleetDetail = () => {
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
                 {/* Image Gallery */}
                 <div>
-                  <div className="relative overflow-hidden rounded-3xl shadow-2xl mb-6">
+                  <div className="relative overflow-hidden rounded-3xl shadow-2xl mb-6 bg-gray-100">
                     <img
                       src={car.images && car.images.length > 0 ? car.images[0] : '/placeholder.svg'}
                       alt={car.name}
-                      className="w-full h-96 object-cover"
+                      className="w-full h-96 object-contain"
                     />
                     <div className="absolute top-6 left-6">
                       {car.category && (
@@ -132,11 +132,11 @@ const FleetDetail = () => {
                   {car.images && car.images.length > 1 && (
                     <div className="grid grid-cols-3 gap-4">
                       {car.images.slice(1, 4).map((img, index) => (
-                        <div key={index} className="rounded-2xl overflow-hidden shadow-lg">
+                        <div key={index} className="rounded-2xl overflow-hidden shadow-lg bg-gray-100">
                           <img
                             src={img}
                             alt={`${car.name} - Image ${index + 2}`}
-                            className="w-full h-32 object-cover hover:scale-110 transition-transform duration-300"
+                            className="w-full h-32 object-contain hover:scale-105 transition-transform duration-300"
                           />
                         </div>
                       ))}
@@ -408,11 +408,11 @@ const FleetDetail = () => {
                       to={`/fleet/${similarCar.id}`}
                       className="group bg-white rounded-3xl shadow-xl overflow-hidden hover:shadow-2xl transition-all border-2 border-gray-100 hover:border-gold-300"
                     >
-                      <div className="relative overflow-hidden h-56">
+                      <div className="relative overflow-hidden h-56 bg-gray-100">
                         <img
                           src={similarCar.images && similarCar.images.length > 0 ? similarCar.images[0] : '/placeholder.svg'}
                           alt={similarCar.name}
-                          className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                          className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500"
                           loading="lazy"
                         />
                         {similarCar.category && (
