@@ -7,6 +7,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+- 📊 Google Analytics integration (G-1H34VC33RQ)
+- 📖 Complete project documentation (README, CONTRIBUTING, LICENSE, etc.)
+- 🚀 GitHub deployment fixes for image paths
+
 ### Planned Features
 - Multi-language support (Greek, English)
 - Advanced booking system integration
