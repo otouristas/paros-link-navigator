@@ -16,8 +16,8 @@ export const SEO = ({ title, description, canonicalUrl, keywords, schema }: SEOP
     "@context": "https://schema.org",
     "@type": "CarRental",
     "name": "Aggelos Rentals",
-    "url": "https://antiparosrentacar.com",
-    "image": "https://antiparosrentacar.com/wp-content/uploads/logo.png",
+    "url": "https://rentacar-paros.gr",
+    "image": "https://rentacar-paros.gr/logo.png",
     "telephone": "+30 694 495 0094",
     "address": {
       "@type": "PostalAddress",
@@ -92,15 +92,77 @@ export const SEO = ({ title, description, canonicalUrl, keywords, schema }: SEOP
       document.head.appendChild(ogUrl);
     }
 
+    // Add og:image
+    const ogImage = document.querySelector('meta[property="og:image"]') || document.createElement('meta');
+    ogImage.setAttribute('property', 'og:image');
+    ogImage.setAttribute('content', 'https://rentacar-paros.gr/logo.png');
+    if (!document.querySelector('meta[property="og:image"]')) {
+      document.head.appendChild(ogImage);
+    }
+
+    // Add og:type
+    const ogType = document.querySelector('meta[property="og:type"]') || document.createElement('meta');
+    ogType.setAttribute('property', 'og:type');
+    ogType.setAttribute('content', 'website');
+    if (!document.querySelector('meta[property="og:type"]')) {
+      document.head.appendChild(ogType);
+    }
+
+    // Add og:site_name
+    const ogSiteName = document.querySelector('meta[property="og:site_name"]') || document.createElement('meta');
+    ogSiteName.setAttribute('property', 'og:site_name');
+    ogSiteName.setAttribute('content', 'Aggelos Rentals - Paros Car Rental');
+    if (!document.querySelector('meta[property="og:site_name"]')) {
+      document.head.appendChild(ogSiteName);
+    }
+
+    // Add Twitter Card meta tags
+    const twitterCard = document.querySelector('meta[name="twitter:card"]') || document.createElement('meta');
+    twitterCard.setAttribute('name', 'twitter:card');
+    twitterCard.setAttribute('content', 'summary_large_image');
+    if (!document.querySelector('meta[name="twitter:card"]')) {
+      document.head.appendChild(twitterCard);
+    }
+
+    const twitterTitle = document.querySelector('meta[name="twitter:title"]') || document.createElement('meta');
+    twitterTitle.setAttribute('name', 'twitter:title');
+    twitterTitle.setAttribute('content', title);
+    if (!document.querySelector('meta[name="twitter:title"]')) {
+      document.head.appendChild(twitterTitle);
+    }
+
+    const twitterDescription = document.querySelector('meta[name="twitter:description"]') || document.createElement('meta');
+    twitterDescription.setAttribute('name', 'twitter:description');
+    twitterDescription.setAttribute('content', description);
+    if (!document.querySelector('meta[name="twitter:description"]')) {
+      document.head.appendChild(twitterDescription);
+    }
+
+    const twitterImage = document.querySelector('meta[name="twitter:image"]') || document.createElement('meta');
+    twitterImage.setAttribute('name', 'twitter:image');
+    twitterImage.setAttribute('content', 'https://rentacar-paros.gr/logo.png');
+    if (!document.querySelector('meta[name="twitter:image"]')) {
+      document.head.appendChild(twitterImage);
+    }
+
+    // Add viewport meta tag if not present
+    let viewport = document.querySelector('meta[name="viewport"]');
+    if (!viewport) {
+      viewport = document.createElement('meta');
+      viewport.setAttribute('name', 'viewport');
+      viewport.setAttribute('content', 'width=device-width, initial-scale=1');
+      document.head.appendChild(viewport);
+    }
+
     // Add JSON-LD Schema
     let schemaScript = document.querySelector('script[type="application/ld+json"]');
     if (schemaScript) {
       schemaScript.remove();
     }
-    schemaScript = document.createElement('script') as HTMLScriptElement;
-    schemaScript.type = 'application/ld+json';
-    schemaScript.textContent = JSON.stringify(finalSchema);
-    document.head.appendChild(schemaScript);
+    const newSchemaScript = document.createElement('script') as HTMLScriptElement;
+    newSchemaScript.type = 'application/ld+json';
+    newSchemaScript.textContent = JSON.stringify(finalSchema);
+    document.head.appendChild(newSchemaScript);
   }, [title, description, canonicalUrl, keywords, location.pathname, finalSchema]);
 
   return null;
