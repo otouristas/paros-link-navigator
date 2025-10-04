@@ -202,11 +202,14 @@ export const Footer = () => {
               </p>
             </div>
                 <div className="flex items-center space-x-6 text-sm">
-                  <Link to="/about-us" className="text-white/70 hover:text-gold-400 transition-colors">
-                    About Us
+                  <Link to="/fleet" className="text-white/70 hover:text-gold-400 transition-colors">
+                    Fleet
                   </Link>
                   <Link to="/blog" className="text-white/70 hover:text-gold-400 transition-colors">
                     Blog
+                  </Link>
+                  <Link to="/about-us" className="text-white/70 hover:text-gold-400 transition-colors">
+                    About Us
                   </Link>
                   <Link to="/contact" className="text-white/70 hover:text-gold-400 transition-colors">
                     Contact Us

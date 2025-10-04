@@ -7,6 +7,7 @@ export const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const navigationItems = [
+    { name: "Fleet", href: "/fleet" },
     { name: "Car Rental Paros", href: "/car-rental-paros" },
     { name: "Antiparos", href: "/car-rental-antiparos" },
     { name: "Naoussa", href: "/car-rental-naoussa-paros" },
@@ -15,8 +16,7 @@ export const Header = () => {
     { name: "Port", href: "/paros-port-car-rental" },
     { name: "Scooters", href: "/scooter-rental-paros" },
     { name: "ATVs", href: "/atv-quad-rental-paros" },
-    { name: "Economy Cars", href: "/economy-car-rental-paros" },
-    { name: "Blog", href: "/blog" }
+    { name: "Economy Cars", href: "/economy-car-rental-paros" }
   ];
 
   return (

@@ -20,6 +20,8 @@ import EconomyCarRentalParos from "./pages/EconomyCarRentalParos";
 import AboutUs from "./pages/AboutUs";
 import Contact from "./pages/Contact";
 import Blog from "./pages/Blog";
+import Fleet from "./pages/Fleet";
+import FleetDetail from "./pages/FleetDetail";
 import TermsAndConditions from "./pages/TermsAndConditions";
 import CompleteGuideExploringParosCar from "./pages/blog/CompleteGuideExploringParosCar";
 import AntiparosIslandHoppingFerryGuide from "./pages/blog/AntiparosIslandHoppingFerryGuide";
@@ -54,6 +56,8 @@ const App = () => (
           <Route path="/about-us" element={<AboutUs />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/blog" element={<Blog />} />
+          <Route path="/fleet" element={<Fleet />} />
+          <Route path="/fleet/:id" element={<FleetDetail />} />
           <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
           {/* Blog Posts */}
           <Route path="/blog/complete-guide-exploring-paros-car" element={<CompleteGuideExploringParosCar />} />
