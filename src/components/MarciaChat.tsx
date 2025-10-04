@@ -12,22 +12,42 @@ interface Message {
   timestamp: Date;
   suggestions?: string[];
   vehicles?: VehicleType[];
+  bookingForm?: boolean; // Flag for inline booking form
+}
+
+interface UserContext {
+  name?: string;
+  email?: string;
+  phone?: string;
+  pickupDate?: string;
+  returnDate?: string;
+  pickupLocation?: string;
+  vehiclePreference?: string;
+  passengers?: number;
+  budget?: string;
+  conversationStage?: 'initial' | 'collecting_info' | 'showing_vehicles' | 'ready_to_book';
 }
 
 export function MarciaChat() {
   const { data: allCars = [] } = useCars();
   const { isOpen, openChat, closeChat } = useMarcia();
+  
+  // User context for data collection
+  const [userContext, setUserContext] = useState<UserContext>({
+    conversationStage: 'initial'
+  });
+  
   const [messages, setMessages] = useState<Message[]>([
     {
       id: '1',
-      content: "👋 Hi! I'm Marcia AI, your personal car rental assistant for Paros! I can help you find the perfect vehicle for your Greek island adventure. What are you looking for?",
+      content: "Hey there! 👋 I'm Marcia, your personal car rental assistant for Paros.\n\nI can help you find the perfect vehicle, check what's available, and even book it for you right here in our chat.\n\nWhat brings you to beautiful Paros? 🌊",
       sender: 'marcia',
       timestamp: new Date(),
       suggestions: [
-        'Show me cheap cars',
-        'I need a scooter',
-        'Family car for 5 people',
-        'Show me ATVs',
+        'Looking for a car',
+        'I want to book now',
+        'Show me options',
+        'Just browsing',
       ],
     },
   ]);
@@ -43,11 +63,78 @@ export function MarciaChat() {
     scrollToBottom();
   }, [messages]);
 
+  // Extract data from user messages
+  const extractUserData = (message: string) => {
+    const lower = message.toLowerCase();
+    const updates: Partial<UserContext> = {};
+    
+    // Extract email
+    const emailRegex = /[\w.-]+@[\w.-]+\.\w+/;
+    const emailMatch = message.match(emailRegex);
+    if (emailMatch && !userContext.email) {
+      updates.email = emailMatch[0];
+    }
+    
+    // Extract phone (various formats)
+    const phoneRegex = /(\+?\d{1,3}[-.\s]?)?\(?\d{3}\)?[-.\s]?\d{3}[-.\s]?\d{4}/;
+    const phoneMatch = message.match(phoneRegex);
+    if (phoneMatch && !userContext.phone) {
+      updates.phone = phoneMatch[0];
+    }
+    
+    // Extract dates (DD/MM/YYYY or similar)
+    const dateRegex = /\b\d{1,2}[\/\-]\d{1,2}[\/\-]\d{2,4}\b/g;
+    const dates = message.match(dateRegex);
+    if (dates) {
+      if (!userContext.pickupDate) updates.pickupDate = dates[0];
+      if (dates.length > 1 && !userContext.returnDate) updates.returnDate = dates[1];
+    }
+    
+    // Extract number of passengers
+    const passengerMatch = message.match(/(\d+)\s*(people|person|passenger|adult|pax)/i);
+    if (passengerMatch && !userContext.passengers) {
+      updates.passengers = parseInt(passengerMatch[1]);
+    }
+    
+    // Extract budget indicators
+    if ((lower.includes('budget') || lower.includes('cheap') || lower.includes('€')) && !userContext.budget) {
+      const budgetMatch = message.match(/€?\s*(\d+)/);
+      if (budgetMatch) {
+        updates.budget = budgetMatch[1];
+      } else if (lower.includes('cheap') || lower.includes('budget')) {
+        updates.budget = 'economy';
+      }
+    }
+    
+    // Extract name (if message looks like "My name is..." or "I'm...")
+    const nameMatch = message.match(/(?:my name is|i'm|i am|call me)\s+([a-z]+)/i);
+    if (nameMatch && !userContext.name) {
+      updates.name = nameMatch[1].charAt(0).toUpperCase() + nameMatch[1].slice(1);
+    }
+    
+    // Extract location preference
+    if (lower.includes('airport') && !userContext.pickupLocation) {
+      updates.pickupLocation = 'airport';
+    } else if (lower.includes('port') && !userContext.pickupLocation) {
+      updates.pickupLocation = 'port';
+    }
+    
+    if (Object.keys(updates).length > 0) {
+      setUserContext(prev => ({ ...prev, ...updates }));
+    }
+    
+    return updates;
+  };
+
   const getAIResponse = (userMessage: string): Message => {
     const lowerMessage = userMessage.toLowerCase();
     
+    // Extract any data from this message
+    const extractedData = extractUserData(userMessage);
+    
     // Debug: Log available cars
     console.log('Available cars:', allCars.length);
+    console.log('User context:', { ...userContext, ...extractedData });
     
     // General car queries - show economy by default
     if (lowerMessage.includes('car') && !lowerMessage.includes('rental') && !lowerMessage.includes('how')) {
@@ -70,7 +157,7 @@ export function MarciaChat() {
       if (economyCars.length > 0) {
         return {
           id: Date.now().toString(),
-          content: "💰 Perfect! Our economy cars are ideal for budget-conscious travelers. They're fuel-efficient, easy to park, and perfect for exploring Paros. Here are my top recommendations:",
+          content: "💰 Love it! Our economy cars are perfect if you're watching your budget. They're super fuel-efficient, easy to park in those narrow Greek streets, and honestly? They're all you need to explore Paros. Check these out:",
           sender: 'marcia',
           timestamp: new Date(),
           suggestions: ['Show all economy cars', 'Compare prices', 'Airport pickup?'],
@@ -85,7 +172,7 @@ export function MarciaChat() {
       if (familyCars.length > 0) {
         return {
           id: Date.now().toString(),
-          content: "👨‍👩‍👧‍👦 Great choice for a family trip! Here are spacious vehicles perfect for families:\n• 5-7 seats\n• Ample luggage space\n• Child seat options (free!)\n• Air conditioning included",
+          content: "👨‍👩‍👧‍👦 Perfect! Family trips are the best. These cars have plenty of room for everyone - we're talking 5-7 seats, tons of luggage space, and yes, child seats are totally free! Plus they all have A/C because, you know, Greek summer. 😎",
           sender: 'marcia',
           timestamp: new Date(),
           suggestions: ['Add child seats', 'Best family beaches', 'View all family cars'],
@@ -100,7 +187,7 @@ export function MarciaChat() {
       if (scooters.length > 0) {
         return {
           id: Date.now().toString(),
-          content: "🛵 Excellent choice! Scooters are perfect for exploring Paros' narrow streets and coastal roads:\n• 50cc-125cc models available\n• Free helmets & insurance\n• Easy parking everywhere\n• Fuel-efficient",
+          content: "🛵 Oh nice! Scooters are honestly the best way to explore Paros. You can zip through those narrow village streets, park literally anywhere, and they barely use any fuel. We've got 50cc and 125cc models - all come with free helmets and full insurance!",
           sender: 'marcia',
           timestamp: new Date(),
           suggestions: ['License requirements?', 'Safety gear included?', 'Best scooter routes'],
@@ -115,7 +202,7 @@ export function MarciaChat() {
       if (atvs.length > 0) {
         return {
           id: Date.now().toString(),
-          content: "🏖️ Adventure time! Our ATVs and quads are perfect for accessing hidden beaches and off-road trails:\n• 150cc-520cc models\n• Safety gear included\n• Reach hidden spots\n• Ultimate freedom",
+          content: "🏖️ Now we're talking! ATVs are incredible for reaching those secret beaches that most tourists never find. We've got models ranging from 150cc to 520cc. Everything comes with safety gear, and trust me - you'll feel like you're in an action movie exploring hidden trails! 😄",
           sender: 'marcia',
           timestamp: new Date(),
           suggestions: ['Hidden beaches guide', 'Safety briefing', 'License needed?'],
@@ -143,7 +230,7 @@ export function MarciaChat() {
     if (lowerMessage.includes('airport') || lowerMessage.includes('port') || lowerMessage.includes('naoussa') || lowerMessage.includes('parikia') || lowerMessage.includes('antiparos')) {
       return {
         id: Date.now().toString(),
-        content: "📍 We offer FREE delivery to:\n• Paros Airport\n• Paros Port\n• Your hotel/accommodation\n• Naoussa\n• Parikia\n• Antiparos (via ferry)\n\nJust let us know where you're arriving and we'll have your vehicle ready and waiting!",
+        content: "📍 Great question! We deliver anywhere you need - completely free! Whether you're landing at the airport, arriving by ferry at the port, or staying at a hotel in Naoussa or Parikia, we'll bring it right to you. We even do Antiparos (we'll meet you at the ferry)!\n\nJust let us know where you're arriving, and we'll be there waiting with your vehicle. Easy! 😊",
         sender: 'marcia',
         timestamp: new Date(),
         suggestions: ['Airport pickup', 'Hotel delivery', 'Antiparos info'],
@@ -154,7 +241,7 @@ export function MarciaChat() {
     if (lowerMessage.includes('price') || lowerMessage.includes('cost') || lowerMessage.includes('how much') || lowerMessage.includes('€')) {
       return {
         id: Date.now().toString(),
-        content: "💵 Our competitive pricing:\n• Economy cars: from €35/day\n• Family vehicles: from €45/day\n• SUVs: from €55/day\n• Scooters: from €25/day\n• ATVs: from €50/day\n\n✨ All include:\n• Unlimited mileage\n• Full insurance\n• Free delivery\n• 24/7 support\n\nLonger rentals get better rates!",
+        content: "💵 Let me break down the prices for you:\n\nEconomy cars start at €35/day, family vehicles at €45, SUVs at €55, scooters at €25, and ATVs at €50.\n\nHere's the best part - everything includes unlimited mileage, full insurance, free delivery to wherever you are, and 24/7 support. No hidden fees or surprises!\n\nRenting for a week? You'll get an even better rate. Just ask! 😊",
         sender: 'marcia',
         timestamp: new Date(),
         suggestions: ['Weekly rates', 'Insurance details', 'Book now'],
@@ -209,7 +296,7 @@ export function MarciaChat() {
     if (lowerMessage.includes('beach') || lowerMessage.includes('coast') || lowerMessage.includes('sea') || lowerMessage.includes('swimming')) {
       return {
         id: Date.now().toString(),
-        content: "🏖️ Paros has AMAZING beaches! Here's my recommendation based on your vehicle:\n\n🚗 **Best beaches by car:**\n• Kolympithres (unique rock formations)\n• Santa Maria (shallow waters)\n• Golden Beach (watersports)\n\n🛵 **Scooter-accessible:**\n• Monastiri Beach\n• Aliki Beach\n\n🚙 **4x4/ATV only:**\n• Louka Beach (hidden gem!)\n• Kalogeros (therapeutic clay)\n\nWant a beach guide?",
+        content: "🏖️ Oh man, Paros has AMAZING beaches! Let me give you my top picks based on what you're driving:\n\nIf you've got a car, definitely check out Kolympithres with its crazy unique rock formations, Santa Maria for shallow crystal-clear waters, and Golden Beach if you're into watersports.\n\nOn a scooter? Monastiri Beach and Aliki Beach are perfect and super easy to reach.\n\nGot an ATV or 4x4? You HAVE to find Louka Beach - it's this hidden gem that most tourists never see. And Kalogeros has therapeutic clay you can cover yourself in! 😄\n\nWant me to send you a full beach guide?",
         sender: 'marcia',
         timestamp: new Date(),
         suggestions: ['Hidden beaches', 'Family-friendly beaches', 'Best for swimming'],
@@ -220,29 +307,137 @@ export function MarciaChat() {
     if (lowerMessage.includes('antiparos')) {
       return {
         id: Date.now().toString(),
-        content: "🏝️ Antiparos is beautiful! Here's how to visit:\n• Ferry from Paros Port (10 min, €2)\n• We can deliver your rental to Antiparos\n• Scooters/ATVs are popular there\n• Smaller island = easier to explore\n\n**Must-see:**\n• Antiparos Cave\n• Soros Beach\n• Antiparos Town\n\nNeed a vehicle for Antiparos?",
+        content: "🏝️ Antiparos is absolutely beautiful! It's super easy to visit - just take the ferry from Paros Port, it's only 10 minutes and costs €2.\n\nWe can deliver your rental directly to Antiparos if you want! Lots of people love renting scooters or ATVs there since it's a smaller island and super easy to explore everything.\n\nYou absolutely have to see the Antiparos Cave (it's incredible!), Soros Beach, and just wander around Antiparos Town. So charming!\n\nWant me to set you up with a vehicle for Antiparos?",
         sender: 'marcia',
         timestamp: new Date(),
         suggestions: ['Antiparos car rental', 'Ferry schedule', 'Cave tours'],
       };
     }
     
-    // Booking/Reservation queries
-    if (lowerMessage.includes('book') || lowerMessage.includes('reserve') || lowerMessage.includes('reservation') || lowerMessage.includes('availability')) {
+    // BOOKING FLOW - Enhanced with data collection
+    if (lowerMessage.includes('book') || lowerMessage.includes('reserve') || lowerMessage.includes('reservation') || lowerMessage.includes('i want to book')) {
+      
+      // Check if we have enough info to proceed with booking
+      const hasBasicInfo = userContext.name && userContext.email && userContext.phone;
+      const hasDates = userContext.pickupDate && userContext.returnDate;
+      
+      // If we have all info, show confirmation
+      if (hasBasicInfo && hasDates) {
+        return {
+          id: Date.now().toString(),
+          content: `Perfect ${userContext.name}! ✅ Let me just confirm everything looks good:\n\nI'll send the confirmation to ${userContext.email} and reach you at ${userContext.phone}.\n\nYou're picking up on ${userContext.pickupDate} and returning on ${userContext.returnDate}${userContext.pickupLocation ? ` at the ${userContext.pickupLocation}` : ''}.\n\nDoes everything look right? I can complete your booking now, or if you'd like to see the available vehicles first, just let me know! 😊`,
+          sender: 'marcia',
+          timestamp: new Date(),
+          suggestions: ['Complete booking', 'Show vehicles', 'Call me instead', 'Modify details'],
+        };
+      }
+      
+      // Progressive data collection
+      if (!userContext.name) {
+        return {
+          id: Date.now().toString(),
+          content: "Awesome! 🎯 Let's get you booked in.\n\nWhat's your name? Just your first name is fine!",
+          sender: 'marcia',
+          timestamp: new Date(),
+          suggestions: [],
+        };
+      }
+      
+      if (!userContext.email) {
+        return {
+          id: Date.now().toString(),
+          content: `Nice to meet you, ${userContext.name}! 👋\n\nWhat's your email address? I'll send your confirmation there.`,
+          sender: 'marcia',
+          timestamp: new Date(),
+          suggestions: [],
+        };
+      }
+      
+      if (!userContext.phone) {
+        return {
+          id: Date.now().toString(),
+          content: "Almost there! 📱 What's the best phone number to reach you?\n\nWe'll send you WhatsApp updates and be available if you need any support during your trip.",
+          sender: 'marcia',
+          timestamp: new Date(),
+          suggestions: [],
+        };
+      }
+      
+      if (!hasDates) {
+        return {
+          id: Date.now().toString(),
+          content: "Perfect! 📅 When do you need the vehicle?\n\nJust let me know your pick-up and return dates. You can say something like \"15th June to 22nd June\" or use the format 15/06/2024 to 22/06/2024.",
+          sender: 'marcia',
+          timestamp: new Date(),
+          suggestions: ['This weekend', 'Next week', 'July 1-7', 'Tell me best dates'],
+        };
+      }
+    }
+    
+    // Complete booking trigger
+    if (lowerMessage.includes('complete booking') || lowerMessage.includes('confirm booking') || lowerMessage.includes('yes, book it')) {
+      const hasAllInfo = userContext.name && userContext.email && userContext.phone && userContext.pickupDate && userContext.returnDate;
+      
+      if (hasAllInfo) {
+        // Here you would typically send to backend API
+        console.log('📝 Booking submission:', userContext);
+        
+        return {
+          id: Date.now().toString(),
+          content: `Awesome! 🎉 Your booking request is all set!\n\nI've got everything for ${userContext.name}. You'll get a confirmation email at ${userContext.email} in the next 5 minutes, and we'll give you a quick call at ${userContext.phone} to finalize everything.\n\nYour dates are ${userContext.pickupDate} to ${userContext.returnDate}.\n\nIf you need anything right now, just call us at +30 694 495 0094 or send a WhatsApp - we're always here! 😊\n\nThank you for choosing Aggelos Rentals! Can't wait to help you explore Paros! 🚗✨`,
+          sender: 'marcia',
+          timestamp: new Date(),
+          suggestions: ['View my booking', 'Modify booking', 'Add extras', 'Chat with team'],
+        };
+      } else {
+        return {
+          id: Date.now().toString(),
+          content: "⚠️ I still need some information to complete your booking. Let's start over - say 'book now'",
+          sender: 'marcia',
+          timestamp: new Date(),
+          suggestions: ['Book now', 'Show vehicles first'],
+        };
+      }
+    }
+    
+    // Modify details
+    if (lowerMessage.includes('modify') || lowerMessage.includes('change') || lowerMessage.includes('update details')) {
+      setUserContext({ conversationStage: 'initial' }); // Reset
       return {
         id: Date.now().toString(),
-        content: "📅 Ready to book? Here's how:\n\n**Online Booking:**\n• Use our booking form on homepage\n• Select dates & vehicle\n• Instant confirmation\n\n**Direct Booking:**\n• Call: +30 694 495 0094\n• WhatsApp: Available 24/7\n• Email: aggelos@antiparosrentacar.com\n\nNeed help choosing a vehicle first?",
+        content: "🔄 No problem! Let's start fresh.\n\nWhat would you like to update?\n\nOr just tell me everything again!",
         sender: 'marcia',
         timestamp: new Date(),
-        suggestions: ['Show me vehicles', 'Airport pickup', 'Contact WhatsApp'],
+        suggestions: ['Start over', 'Change dates', 'Different vehicle', 'Update contact'],
       };
+    }
+    
+    // Availability check
+    if (lowerMessage.includes('availability') || lowerMessage.includes('available')) {
+      if (userContext.pickupDate && userContext.returnDate) {
+        return {
+          id: Date.now().toString(),
+          content: `🔍 Checking availability for:\n${userContext.pickupDate} to ${userContext.returnDate}\n\n✅ Great news! We have vehicles available!\n\nWhat type are you interested in?`,
+          sender: 'marcia',
+          timestamp: new Date(),
+          suggestions: ['Economy cars', 'Family cars', 'SUVs', 'Scooters', 'ATVs'],
+        };
+      } else {
+        return {
+          id: Date.now().toString(),
+          content: "📅 When do you need the vehicle?\n\nTell me your dates and I'll check availability instantly!",
+          sender: 'marcia',
+          timestamp: new Date(),
+          suggestions: ['This weekend', 'Next week', 'July 1-7'],
+        };
+      }
     }
     
     // Seasonal/Best time queries
     if (lowerMessage.includes('season') || lowerMessage.includes('best time') || lowerMessage.includes('when to visit') || lowerMessage.includes('weather') || lowerMessage.includes('summer') || lowerMessage.includes('winter')) {
       return {
         id: Date.now().toString(),
-        content: "🌞 Best time to visit Paros:\n\n**Peak Season (June-Aug):**\n• Perfect beach weather\n• All facilities open\n• Book vehicles early!\n\n**Shoulder Season (May, Sep-Oct):**\n• Great weather, fewer crowds\n• Better prices\n• My recommendation! ⭐\n\n**Off Season (Nov-Apr):**\n• Limited rentals\n• Some businesses closed\n• Very quiet\n\nWhen are you planning to visit?",
+        content: "🌞 Ooh great question! So if you're thinking June to August, that's peak season - perfect beach weather, everything's open, but you'll want to book your car early because it gets busy!\n\nMy personal favorite? May or September/October. You get amazing weather, way fewer crowds, better prices, and honestly it's just perfect. ⭐\n\nWinter (November to April) is super quiet - some places are closed and rental options are limited.\n\nWhen are you planning to visit?",
         sender: 'marcia',
         timestamp: new Date(),
         suggestions: ['Summer rentals', 'September deals', 'Book now'],
@@ -253,7 +448,7 @@ export function MarciaChat() {
     if (lowerMessage.includes('group') || lowerMessage.includes('wedding') || lowerMessage.includes('event') || lowerMessage.includes('multiple') || lowerMessage.includes('fleet')) {
       return {
         id: Date.now().toString(),
-        content: "🎉 Group & Event Rentals:\n\n**We specialize in:**\n• Wedding transportation\n• Corporate events\n• Group tours (10+ vehicles)\n• Photography shoots\n\n**Benefits:**\n• Bulk discounts available\n• Coordinated delivery\n• Dedicated support\n• Flexible terms\n\nContact us for a custom quote!",
+        content: "🎉 Oh awesome! We love doing group rentals and events. We've done tons of weddings, corporate events, group tours with 10+ vehicles, even photography shoots!\n\nYou'll get bulk discounts, we'll coordinate delivery for everyone, you get dedicated support (no waiting around), and we're super flexible with terms.\n\nContact us directly and we'll whip up a custom quote for you!",
         sender: 'marcia',
         timestamp: new Date(),
         suggestions: ['Contact for quote', 'View fleet', 'Wedding packages'],
@@ -264,7 +459,7 @@ export function MarciaChat() {
     if (lowerMessage.includes('breakdown') || lowerMessage.includes('problem') || lowerMessage.includes('broken') || lowerMessage.includes('maintenance') || lowerMessage.includes('roadside')) {
       return {
         id: Date.now().toString(),
-        content: "🛠️ 24/7 Roadside Assistance:\n\n**We've got you covered!**\n• Free breakdown service\n• 24/7 hotline: +30 694 495 0094\n• Replacement vehicle if needed\n• Towing included\n\n**Common issues:**\n• Flat tire → We come to you\n• Dead battery → Jump start service\n• Locked keys → Spare key delivery\n\nNever stress - we're always here!",
+        content: "🛠️ Don't worry, we've got you totally covered! We offer free 24/7 roadside assistance - just call +30 694 495 0094 anytime, day or night.\n\nFlat tire? We come to you. Dead battery? We'll jump start it. Locked your keys inside? We'll bring the spare.\n\nIf something big happens, we'll bring you a replacement vehicle. Towing's included too.\n\nNever stress - we're literally always here!",
         sender: 'marcia',
         timestamp: new Date(),
         suggestions: ['Emergency contact', 'Insurance details', 'Browse fleet'],
@@ -275,7 +470,7 @@ export function MarciaChat() {
     if (lowerMessage.includes('payment') || lowerMessage.includes('pay') || lowerMessage.includes('credit card') || lowerMessage.includes('cash') || lowerMessage.includes('deposit')) {
       return {
         id: Date.now().toString(),
-        content: "💳 Payment Options:\n\n**We accept:**\n• Credit Cards (Visa, Mastercard)\n• Debit Cards\n• Cash (EUR)\n• Bank Transfer\n\n**Deposit:**\n• €200-500 security deposit\n• Held on credit card\n• Released upon return\n• No damage = full refund\n\n**Payment timing:**\n• Pay on pickup or online\n• No hidden fees!",
+        content: "💳 We make payment super easy! We take credit cards (Visa, Mastercard), debit cards, cash in euros, or bank transfer - whatever works for you.\n\nWe do need a security deposit (€200-500 depending on the vehicle) that we'll hold on your credit card, but don't worry - it's released as soon as you return the car. No damage? Full refund, simple as that.\n\nYou can pay when you pick up the car or online beforehand. And no sneaky hidden fees, promise!",
         sender: 'marcia',
         timestamp: new Date(),
         suggestions: ['Deposit info', 'Book now', 'Insurance included?'],
@@ -286,7 +481,7 @@ export function MarciaChat() {
     if (lowerMessage.includes('cancel') || lowerMessage.includes('refund') || lowerMessage.includes('change booking') || lowerMessage.includes('modify')) {
       return {
         id: Date.now().toString(),
-        content: "🔄 Flexible Cancellation Policy:\n\n**Free Cancellation:**\n• Up to 48 hours before pickup\n• Full refund guaranteed\n• No questions asked\n\n**Changes:**\n• Modify dates/vehicle anytime\n• Subject to availability\n• No change fees!\n\n**Within 48 hours:**\n• 50% refund\n• Or reschedule for free\n\nLife happens - we understand!",
+        content: "🔄 We're super flexible! Cancel up to 48 hours before pickup and get a full refund, no questions asked. Want to change your dates or switch vehicles? Do it anytime! No fees, just depends on what's available.\n\nEven if it's less than 48 hours, you'll still get 50% back or you can reschedule for free.\n\nLife happens, we totally get it!",
         sender: 'marcia',
         timestamp: new Date(),
         suggestions: ['Book with confidence', 'See vehicles', 'Contact us'],
@@ -297,7 +492,7 @@ export function MarciaChat() {
     if (lowerMessage.includes('gps') || lowerMessage.includes('child seat') || lowerMessage.includes('baby') || lowerMessage.includes('equipment') || lowerMessage.includes('extra') || lowerMessage.includes('accessories')) {
       return {
         id: Date.now().toString(),
-        content: "🎒 Additional Equipment:\n\n**Free Extras:**\n• Child seats (all sizes) 🍼\n• Booster seats\n• GPS Navigation\n• Phone holder\n• First aid kit\n\n**Available on request:**\n• Roof racks\n• Beach equipment\n• Cooler box\n\nJust let us know what you need!",
+        content: "🎒 Oh we've got tons of extras! And here's the best part - child seats (all sizes), booster seats, GPS, phone holders, and first aid kits are all completely free! 🍼\n\nNeed roof racks for your surfboard? Beach equipment? A cooler box for your drinks? Just ask and we'll hook you up!\n\nSeriously, just let us know what you need and we'll make it happen!",
         sender: 'marcia',
         timestamp: new Date(),
         suggestions: ['Child seat info', 'GPS included?', 'Book now'],
@@ -308,7 +503,7 @@ export function MarciaChat() {
     if (lowerMessage.includes('road') || lowerMessage.includes('condition') || lowerMessage.includes('paved') || lowerMessage.includes('dirt') || lowerMessage.includes('mountain')) {
       return {
         id: Date.now().toString(),
-        content: "🛣️ Paros Road Conditions:\n\n**Main Roads:**\n• Well-paved & maintained\n• Perfect for any car\n• Clear signage\n\n**Mountain Villages:**\n• Narrow winding roads\n• Some steep sections\n• Any car can do it!\n\n**Beaches:**\n• Most: Paved access\n• Hidden spots: Dirt roads\n• 4x4/ATV recommended\n\nPerfect for exploring safely!",
+        content: "🛣️ The roads here are great! Main roads are well-paved, perfectly maintained, and clearly marked - any car can handle them no problem.\n\nHeading up to the mountain villages? The roads get narrow and windy with some steep bits, but honestly any car can do it. Just take it slow and enjoy the views!\n\nMost beaches have paved access, but if you want to find those hidden gems, you'll hit some dirt roads - that's where a 4x4 or ATV really shines.\n\nPerfect for exploring safely!",
         sender: 'marcia',
         timestamp: new Date(),
         suggestions: ['Recommend vehicle', 'Best routes', 'ATVs for beaches'],
@@ -319,7 +514,7 @@ export function MarciaChat() {
     if (lowerMessage.includes('parking') || lowerMessage.includes('park') || lowerMessage.includes('where to park')) {
       return {
         id: Date.now().toString(),
-        content: "🅿️ Parking in Paros:\n\n**Parikia (Port Town):**\n• Free parking near port\n• Some paid zones (€2/hour)\n• Easy to find spots\n\n**Naoussa:**\n• Free parking 5min walk\n• Limited street parking\n• Early arrival recommended\n\n**Beaches:**\n• Free parking at all major beaches\n• Shaded spots fill up fast\n\n**Pro tip:** Small cars = easier parking in old towns!",
+        content: "🅿️ Parking's pretty easy on Paros! In Parikia (the port town), there's tons of free parking near the port. Some zones are paid (€2/hour) but spots are easy to find.\n\nNaoussa has free parking about a 5-minute walk away. Street parking is limited so get there early if you can.\n\nAll the major beaches have free parking, though shaded spots fill up fast in summer!\n\nPro tip: Small cars make parking in the old towns SO much easier!",
         sender: 'marcia',
         timestamp: new Date(),
         suggestions: ['Economy cars', 'Scooters', 'Best beaches'],
@@ -330,7 +525,7 @@ export function MarciaChat() {
     if (lowerMessage.includes('how far') || lowerMessage.includes('distance') || lowerMessage.includes('how long') || lowerMessage.includes('drive time')) {
       return {
         id: Date.now().toString(),
-        content: "🗺️ Paros Distances:\n\n**From Airport:**\n• Parikia: 10 min\n• Naoussa: 20 min\n• Golden Beach: 25 min\n\n**Popular Routes:**\n• Parikia ↔ Naoussa: 20 min\n• Parikia ↔ Antiparos Ferry: 15 min\n• Complete island loop: 2-3 hours\n\n**Island Size:**\n• 21km x 16km\n• Very easy to explore!\n\nPerfect for day trips!",
+        content: "🗺️ Paros is super compact and easy to explore! From the airport, Parikia is just 10 minutes, Naoussa is 20, and Golden Beach is about 25 minutes.\n\nParikia to Naoussa? 20 minutes. Parikia to the Antiparos ferry? 15 minutes. Want to do a complete island loop? Takes 2-3 hours and it's beautiful!\n\nThe whole island is only 21km by 16km, so you can literally explore the entire thing in a day trip. Perfect, right?",
         sender: 'marcia',
         timestamp: new Date(),
         suggestions: ['Best routes', 'Day trip ideas', 'Beach guide'],
@@ -343,7 +538,7 @@ export function MarciaChat() {
       if (automaticCars.length > 0) {
         return {
           id: Date.now().toString(),
-          content: "⚙️ Transmission Options:\n\n**Automatic:**\n• Easier to drive\n• Better in traffic\n• Slightly higher price\n• Great for relaxing holiday!\n\n**Manual:**\n• More economical\n• Lower rental price\n• Most vehicles are manual\n\nHere are our automatic options:",
+          content: "⚙️ So we've got both! Automatic is easier to drive (especially if you're not used to manual), better for sitting in traffic, and perfect for a relaxing holiday. They're just slightly more expensive.\n\nManual is more economical, cheaper to rent, and honestly most of our vehicles are manual anyway.\n\nHere are our automatic options if that's what you prefer:",
           sender: 'marcia',
           timestamp: new Date(),
           suggestions: ['Show all automatics', 'Manual cars', 'Compare'],
@@ -356,7 +551,7 @@ export function MarciaChat() {
     if (lowerMessage.includes('first time') || lowerMessage.includes('never been') || lowerMessage.includes('tips') || lowerMessage.includes('advice') || lowerMessage.includes('things to know')) {
       return {
         id: Date.now().toString(),
-        content: "🇬🇷 First Time in Paros? Welcome!\n\n**Driving Tips:**\n• Drive on the RIGHT side\n• Speed limits: 50-90 km/h\n• Greeks are friendly drivers!\n• Honking = saying hello 😊\n\n**What to Know:**\n• Fuel: Petrol stations in main towns\n• Parking: Usually free & easy\n• Navigation: Google Maps works great\n• Tolls: None on Paros!\n\n**Must-Visit:**\n• Naoussa old town\n• Kolympithres Beach\n• Antiparos Cave\n\nYou'll love it here! 🌅",
+        content: "🇬🇷 First time in Paros? You're going to absolutely love it here!\n\nA few quick tips - we drive on the right side here, speed limits are pretty relaxed (50-90 km/h), and honestly, Greek drivers are super friendly. If someone honks, they're probably just saying hi! 😊\n\nYou'll find petrol stations in the main towns, parking is free pretty much everywhere, and Google Maps works perfectly. No tolls on the island either!\n\nOh, and you HAVE to visit Naoussa's old town, Kolympithres Beach, and the Antiparos Cave. Trust me on this! 🌅",
         sender: 'marcia',
         timestamp: new Date(),
         suggestions: ['Driving rules', 'Best beaches', 'Recommend vehicle'],
@@ -367,7 +562,7 @@ export function MarciaChat() {
     if (lowerMessage.includes('electric') || lowerMessage.includes('hybrid') || lowerMessage.includes('eco') || lowerMessage.includes('environment')) {
       return {
         id: Date.now().toString(),
-        content: "⚡ Eco-Friendly Options:\n\n**Currently Available:**\n• Fuel-efficient economy cars\n• Modern engines (Euro 6)\n• Low emissions\n\n**Electric Vehicles:**\n• Coming soon to our fleet!\n• Limited charging stations on island\n• Perfect for daily use\n\n**Best Eco Choice Now:**\n• Small economy cars\n• Scooters (50cc)\n• Excellent fuel economy\n\nInterested in our most efficient options?",
+        content: "⚡ Love that you're thinking eco-friendly! Right now our best options are fuel-efficient economy cars with modern Euro 6 engines - super low emissions.\n\nElectric vehicles are coming to our fleet soon! There are limited charging stations on the island right now, but they'd be perfect for daily use around Paros.\n\nYour best eco choice right now? Small economy cars or 50cc scooters - they have excellent fuel economy and barely use any gas!\n\nInterested in seeing our most efficient options?",
         sender: 'marcia',
         timestamp: new Date(),
         suggestions: ['Economy cars', 'Scooters', 'Fuel costs'],
@@ -378,7 +573,7 @@ export function MarciaChat() {
     if (lowerMessage.includes('contact') || lowerMessage.includes('phone') || lowerMessage.includes('email') || lowerMessage.includes('whatsapp') || lowerMessage.includes('call')) {
       return {
         id: Date.now().toString(),
-        content: "📞 Contact Aggelos Rentals:\n\n**Phone/WhatsApp:**\n+30 694 495 0094\n(Available 24/7!)\n\n**Email:**\naggelos@antiparosrentacar.com\n\n**Office Location:**\nAntiparos Port\nCyclades, 840 07\n\n**Response Time:**\n• WhatsApp: Instant!\n• Phone: Always answer\n• Email: Within 2 hours\n\nWe're always here to help! 😊",
+        content: "📞 Want to talk to us directly? We'd love to hear from you!\n\nGive us a call or WhatsApp at +30 694 495 0094 - we're literally available 24/7. Seriously, even at 3am!\n\nPrefer email? Send us a message at aggelos@antiparosrentacar.com and we'll get back to you within a couple hours.\n\nOur office is right at Antiparos Port, so swing by if you're in the area! We're always happy to chat over a Greek coffee. ☕😊",
         sender: 'marcia',
         timestamp: new Date(),
         suggestions: ['WhatsApp us', 'Book now', 'View fleet'],
@@ -389,7 +584,7 @@ export function MarciaChat() {
     if (lowerMessage.includes('offer') || lowerMessage.includes('deal') || lowerMessage.includes('special') || lowerMessage.includes('promotion') || lowerMessage.includes('discount code')) {
       return {
         id: Date.now().toString(),
-        content: "🎁 Current Offers:\n\n**Weekly Discount:**\n• 7+ days: 15% OFF\n• 14+ days: 20% OFF\n• 30+ days: 25% OFF\n\n**Early Bird:**\n• Book 30+ days ahead: 10% OFF\n• Book 60+ days ahead: 15% OFF\n\n**Special Deals:**\n• Free delivery to Antiparos\n• Free child seats\n• Free GPS\n\n**Group Discount:**\n• 3+ vehicles: Custom pricing\n\nBest prices guaranteed!",
+        content: "🎁 Ooh you're in luck! We've got some great deals running:\n\nRent for a week and get 15% off! Two weeks? 20% off! Whole month? 25% off!\n\nBook early and save even more - 30 days ahead gets you 10% off, 60 days ahead gets you 15% off.\n\nAnd these are always free: delivery to Antiparos, child seats, and GPS!\n\nRenting 3+ vehicles for a group? Let's talk custom pricing.\n\nBest prices guaranteed!",
         sender: 'marcia',
         timestamp: new Date(),
         suggestions: ['Book long-term', 'Group rentals', 'Book now'],
@@ -400,7 +595,7 @@ export function MarciaChat() {
     if (lowerMessage.includes('review') || lowerMessage.includes('rating') || lowerMessage.includes('feedback') || lowerMessage.includes('recommend') || lowerMessage.includes('testimonial')) {
       return {
         id: Date.now().toString(),
-        content: "⭐ What Our Customers Say:\n\n**Google Reviews: 4.9/5**\n\n\"Best car rental in Paros! Professional service and great prices!\" - Sarah M. 🇺🇸\n\n\"Aggelos delivered to our hotel, car was spotless. Highly recommend!\" - John D. 🇬🇧\n\n\"Used them for 2 weeks, perfect condition. Will rent again!\" - Maria K. 🇩🇪\n\n**Why customers love us:**\n✓ Transparent pricing\n✓ Perfect maintenance\n✓ 24/7 support\n✓ Friendly service\n\nJoin our happy customers!",
+        content: "⭐ We're rated 4.9/5 on Google and honestly, we're pretty proud of that!\n\nHere's what people are saying:\n\nSarah from the US said we're the \"Best car rental in Paros! Professional service and great prices!\" 🇺🇸\n\nJohn from the UK: \"Aggelos delivered to our hotel, car was spotless. Highly recommend!\" 🇬🇧\n\nMaria from Germany: \"Used them for 2 weeks, perfect condition. Will rent again!\" 🇩🇪\n\nPeople love our transparent pricing, how well we maintain the cars, our 24/7 support, and yeah... we like to think we're pretty friendly too! 😊\n\nJoin our happy customers!",
         sender: 'marcia',
         timestamp: new Date(),
         suggestions: ['Read more reviews', 'Book now', 'Contact us'],
@@ -411,7 +606,7 @@ export function MarciaChat() {
     if (lowerMessage.includes('vs') || lowerMessage.includes('compare') || lowerMessage.includes('difference') || lowerMessage.includes('or')) {
       return {
         id: Date.now().toString(),
-        content: "🔄 Need help comparing?\n\n**Car vs Scooter:**\n• Car: More comfort, luggage space, A/C\n• Scooter: Easy parking, fuel efficient, fun!\n\n**Economy vs SUV:**\n• Economy: Budget-friendly, easy parking\n• SUV: More space, premium comfort\n\n**Manual vs Automatic:**\n• Manual: Lower cost, more available\n• Automatic: Easier driving, relaxing\n\nTell me your priorities and I'll recommend the best option!",
+        content: "🔄 Let me help you figure this out!\n\nThinking car vs scooter? Cars give you more comfort, luggage space, and A/C. Scooters are super easy to park, crazy fuel efficient, and honestly just more fun!\n\nEconomy vs SUV? Economy is budget-friendly and easier to park in tight spots. SUVs give you way more space and premium comfort.\n\nManual vs automatic? Manual costs less and we have way more available. Automatic is easier to drive and more relaxing.\n\nTell me what matters most to you and I'll recommend the perfect option!",
         sender: 'marcia',
         timestamp: new Date(),
         suggestions: ['Economy cars', 'SUVs', 'Scooters', 'ATVs'],
@@ -421,7 +616,7 @@ export function MarciaChat() {
     // Default response with suggestions
     return {
       id: Date.now().toString(),
-      content: "I'd love to help you find the perfect vehicle! Could you tell me more about:\n\n• How many people are traveling?\n• What's your budget?\n• Do you prefer cars, scooters, or ATVs?\n• Any specific needs (family, adventure, economy)?\n\nOr choose a quick option below! 👇",
+      content: "Hmm, I'm not quite sure what you're looking for, but I'm here to help! 😊\n\nMaybe tell me a bit more? Like how many people are traveling with you, what your budget looks like, or whether you're thinking cars, scooters, or maybe ATVs for some adventure?\n\nOr just pick one of the options below and we'll get you sorted!",
       sender: 'marcia',
       timestamp: new Date(),
       suggestions: [
