@@ -1,7 +1,7 @@
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { SEO } from "@/components/SEO";
-import { Car, MapPin, Clock, Star, ArrowRight, Palmtree, UtensilsCrossed } from "lucide-react";
+import { Car, MapPin, Clock, Star, ArrowRight, TreePalm as Palmtree, UtensilsCrossed } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const Naoussa = () => {
