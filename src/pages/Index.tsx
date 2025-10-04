@@ -165,29 +165,29 @@ const Index = () => {
                 </a>
               </div>
 
-              <div className="bg-gradient-to-br from-white to-gray-50 p-10 rounded-3xl shadow-xl border-2 border-gray-100 text-center group hover:shadow-2xl hover:border-gold-300 transition-all">
+              <div className="bg-gradient-to-br from-white to-gray-50 dark:from-gray-800 dark:to-gray-700 p-10 rounded-3xl shadow-xl border-2 border-gray-100 dark:border-gray-700 text-center group hover:shadow-2xl hover:border-gold-300 dark:hover:border-gold-600 transition-all">
                 <div className="h-24 w-24 bg-gradient-to-br from-gold-600 to-gold-500 rounded-3xl flex items-center justify-center mx-auto mb-8 shadow-lg group-hover:scale-110 transition-transform">
                   <Zap className="h-12 w-12 text-white" />
                 </div>
-                <h3 className="text-2xl font-black mb-4 text-main-900">Scooter Rentals</h3>
-                <p className="text-gray-700 mb-6 leading-relaxed text-base font-medium">
+                <h3 className="text-2xl font-black mb-4 text-main-900 dark:text-white">Scooter Rentals</h3>
+                <p className="text-gray-700 dark:text-gray-300 mb-6 leading-relaxed text-base font-medium">
                   Zip around Paros and Antiparos with ease. Perfect for couples and solo travelers who want freedom and fun.
                 </p>
-                <a href="/scooter-rental-paros" className="inline-flex items-center text-main-900 font-black text-base hover:text-gold-600 transition-colors">
+                <a href="/scooter-rental-paros" className="inline-flex items-center text-main-900 dark:text-gold-400 font-black text-base hover:text-gold-600 transition-colors">
                   Rent Scooters
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </a>
               </div>
 
-              <div className="bg-gradient-to-br from-white to-gray-50 p-10 rounded-3xl shadow-xl border-2 border-gray-100 text-center group hover:shadow-2xl hover:border-secondary-300 transition-all">
+              <div className="bg-gradient-to-br from-white to-gray-50 dark:from-gray-800 dark:to-gray-700 p-10 rounded-3xl shadow-xl border-2 border-gray-100 dark:border-gray-700 text-center group hover:shadow-2xl hover:border-secondary-300 dark:hover:border-gold-600 transition-all">
                 <div className="h-24 w-24 bg-gradient-to-br from-secondary-700 to-secondary-600 rounded-3xl flex items-center justify-center mx-auto mb-8 shadow-lg group-hover:scale-110 transition-transform">
                   <Compass className="h-12 w-12 text-white" />
                 </div>
-                <h3 className="text-2xl font-black mb-4 text-main-900">ATV/Quad Rentals</h3>
-                <p className="text-gray-700 mb-6 leading-relaxed text-base font-medium">
+                <h3 className="text-2xl font-black mb-4 text-main-900 dark:text-white">ATV/Quad Rentals</h3>
+                <p className="text-gray-700 dark:text-gray-300 mb-6 leading-relaxed text-base font-medium">
                   Adventure awaits! Explore off-road trails and reach hidden beaches that regular cars can't access.
                 </p>
-                <a href="/atv-quad-rental-paros" className="inline-flex items-center text-main-900 font-black text-lg hover:text-gold-600 transition-colors">
+                <a href="/atv-quad-rental-paros" className="inline-flex items-center text-main-900 dark:text-gold-400 font-black text-lg hover:text-gold-600 transition-colors">
                   Book ATV
                   <ArrowRight className="ml-3 h-6 w-6" />
                 </a>
@@ -197,50 +197,50 @@ const Index = () => {
         </section>
 
         {/* Popular Destinations Section */}
-        <section className="py-24 bg-gradient-to-b from-gray-50 to-white">
+        <section className="py-24 bg-gradient-to-b from-gray-50 to-white dark:from-gray-800 dark:to-gray-900">
           <div className="container mx-auto px-4">
             <div className="text-center mb-20">
-              <h2 className="text-4xl md:text-5xl font-black mb-4 text-main-900">Discover Paros & Antiparos</h2>
-              <p className="text-xl text-gray-600 max-w-3xl mx-auto font-medium">
+              <h2 className="text-4xl md:text-5xl font-black mb-4 text-main-900 dark:text-white">Discover Paros & Antiparos</h2>
+              <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto font-medium">
                 From bustling ports to secluded beaches, explore the best of both islands
               </p>
             </div>
             
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-              <div className="bg-gradient-to-br from-blue-100 to-blue-200 p-8 rounded-3xl text-center shadow-xl hover:shadow-2xl transition-all transform hover:scale-105">
-                <div className="h-20 w-20 bg-main-900 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg">
+              <div className="bg-gradient-to-br from-blue-100 to-blue-200 dark:from-blue-900/30 dark:to-blue-800/30 p-8 rounded-3xl text-center shadow-xl hover:shadow-2xl transition-all transform hover:scale-105">
+                <div className="h-20 w-20 bg-main-900 dark:bg-main-700 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg">
                   <MapPin className="h-10 w-10 text-white" />
                 </div>
-                <h3 className="text-2xl font-black mb-3 text-main-900">Parikia</h3>
-                <p className="text-gray-700 mb-5 font-semibold">Main port and capital</p>
-                <a href="/car-rental-parikia-paros" className="text-main-900 font-black hover:text-gold-600 transition-colors">Rent Here →</a>
+                <h3 className="text-2xl font-black mb-3 text-main-900 dark:text-white">Parikia</h3>
+                <p className="text-gray-700 dark:text-gray-300 mb-5 font-semibold">Main port and capital</p>
+                <a href="/car-rental-parikia-paros" className="text-main-900 dark:text-gold-400 font-black hover:text-gold-600 transition-colors">Rent Here →</a>
               </div>
 
-              <div className="bg-gradient-to-br from-teal-100 to-teal-200 p-8 rounded-3xl text-center shadow-xl hover:shadow-2xl transition-all transform hover:scale-105">
-                <div className="h-20 w-20 bg-secondary-700 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg">
+              <div className="bg-gradient-to-br from-teal-100 to-teal-200 dark:from-teal-900/30 dark:to-teal-800/30 p-8 rounded-3xl text-center shadow-xl hover:shadow-2xl transition-all transform hover:scale-105">
+                <div className="h-20 w-20 bg-secondary-700 dark:bg-secondary-600 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg">
                   <MapPin className="h-10 w-10 text-white" />
                 </div>
-                <h3 className="text-2xl font-black mb-3 text-main-900">Naoussa</h3>
-                <p className="text-gray-700 mb-5 font-semibold">Charming fishing village</p>
-                <a href="/car-rental-naoussa-paros" className="text-main-900 font-black hover:text-gold-600 transition-colors">Explore →</a>
+                <h3 className="text-2xl font-black mb-3 text-main-900 dark:text-white">Naoussa</h3>
+                <p className="text-gray-700 dark:text-gray-300 mb-5 font-semibold">Charming fishing village</p>
+                <a href="/car-rental-naoussa-paros" className="text-main-900 dark:text-gold-400 font-black hover:text-gold-600 transition-colors">Explore →</a>
               </div>
 
-              <div className="bg-gradient-to-br from-green-100 to-green-200 p-8 rounded-3xl text-center shadow-xl hover:shadow-2xl transition-all transform hover:scale-105">
-                <div className="h-20 w-20 bg-gold-600 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg">
+              <div className="bg-gradient-to-br from-green-100 to-green-200 dark:from-green-900/30 dark:to-green-800/30 p-8 rounded-3xl text-center shadow-xl hover:shadow-2xl transition-all transform hover:scale-105">
+                <div className="h-20 w-20 bg-gold-600 dark:bg-gold-500 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg">
                   <MapPin className="h-10 w-10 text-white" />
                 </div>
-                <h3 className="text-2xl font-black mb-3 text-main-900">Paros Airport</h3>
-                <p className="text-gray-700 mb-5 font-semibold">Convenient airport pickup</p>
-                <a href="/paros-airport-car-rental" className="text-main-900 font-black hover:text-gold-600 transition-colors">Book Now →</a>
+                <h3 className="text-2xl font-black mb-3 text-main-900 dark:text-white">Paros Airport</h3>
+                <p className="text-gray-700 dark:text-gray-300 mb-5 font-semibold">Convenient airport pickup</p>
+                <a href="/paros-airport-car-rental" className="text-main-900 dark:text-gold-400 font-black hover:text-gold-600 transition-colors">Book Now →</a>
               </div>
 
-              <div className="bg-gradient-to-br from-purple-100 to-purple-200 p-8 rounded-3xl text-center shadow-xl hover:shadow-2xl transition-all transform hover:scale-105">
-                <div className="h-20 w-20 bg-main-900 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg">
+              <div className="bg-gradient-to-br from-purple-100 to-purple-200 dark:from-purple-900/30 dark:to-purple-800/30 p-8 rounded-3xl text-center shadow-xl hover:shadow-2xl transition-all transform hover:scale-105">
+                <div className="h-20 w-20 bg-main-900 dark:bg-main-700 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg">
                   <MapPin className="h-10 w-10 text-white" />
                 </div>
-                <h3 className="text-2xl font-black mb-3 text-main-900">Antiparos</h3>
-                <p className="text-gray-700 mb-5 font-semibold">Peaceful sister island</p>
-                <a href="/car-rental-antiparos" className="text-main-900 font-black hover:text-gold-600 transition-colors">Cross Over →</a>
+                <h3 className="text-2xl font-black mb-3 text-main-900 dark:text-white">Antiparos</h3>
+                <p className="text-gray-700 dark:text-gray-300 mb-5 font-semibold">Peaceful sister island</p>
+                <a href="/car-rental-antiparos" className="text-main-900 dark:text-gold-400 font-black hover:text-gold-600 transition-colors">Cross Over →</a>
               </div>
             </div>
           </div>

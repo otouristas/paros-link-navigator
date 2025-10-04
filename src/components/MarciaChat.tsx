@@ -2,6 +2,7 @@ import { useState, useRef, useEffect } from 'react';
 import { X, Send, Sparkles, Bot, User, Car, Users, Gauge } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useCars } from '@/hooks/use-cars';
+import { useMarcia } from '@/contexts/MarciaContext';
 import type { Car as VehicleType } from '@/types/database';
 
 interface Message {
@@ -15,7 +16,7 @@ interface Message {
 
 export function MarciaChat() {
   const { data: allCars = [] } = useCars();
-  const [isOpen, setIsOpen] = useState(false);
+  const { isOpen, openChat, closeChat } = useMarcia();
   const [messages, setMessages] = useState<Message[]>([
     {
       id: '1',
@@ -276,8 +277,8 @@ export function MarciaChat() {
       {/* Chat Toggle Button */}
       {!isOpen && (
         <button
-          onClick={() => setIsOpen(true)}
-          className="fixed bottom-6 left-1/2 -translate-x-1/2 sm:left-auto sm:right-6 sm:translate-x-0 z-50 bg-gradient-to-r from-main-900 to-gold-600 text-white p-4 rounded-full shadow-2xl hover:scale-110 transition-all duration-300 flex items-center gap-3 group"
+          onClick={openChat}
+          className="fixed bottom-6 right-6 z-50 bg-gradient-to-r from-main-900 to-gold-600 text-white p-4 rounded-full shadow-2xl hover:scale-110 transition-all duration-300 flex items-center gap-3 group"
         >
           <Sparkles className="h-6 w-6 animate-pulse" />
           <span className="font-black text-lg hidden sm:inline group-hover:inline">Ask Marcia AI</span>
@@ -287,7 +288,7 @@ export function MarciaChat() {
 
       {/* Chat Window */}
       {isOpen && (
-        <div className="fixed bottom-6 left-1/2 -translate-x-1/2 sm:left-auto sm:right-6 sm:translate-x-0 z-50 w-[95vw] sm:w-[450px] h-[600px] bg-white dark:bg-gray-800 rounded-3xl shadow-2xl flex flex-col overflow-hidden border-4 border-main-900 dark:border-gold-600">
+        <div className="fixed inset-0 sm:inset-auto sm:bottom-6 sm:right-6 z-50 w-full sm:w-[450px] h-full sm:h-[600px] bg-white dark:bg-gray-800 sm:rounded-3xl shadow-2xl flex flex-col overflow-hidden border-0 sm:border-4 border-main-900 dark:border-gold-600">
           
           {/* Header */}
           <div className="bg-gradient-to-r from-main-900 via-main-800 to-gold-600 text-white p-6 flex items-center justify-between">
@@ -302,7 +303,7 @@ export function MarciaChat() {
               </div>
             </div>
             <button
-              onClick={() => setIsOpen(false)}
+              onClick={closeChat}
               className="hover:bg-white/20 p-2 rounded-xl transition-colors"
             >
               <X className="h-6 w-6" />
@@ -342,7 +343,7 @@ export function MarciaChat() {
                         <Link
                           key={vehicle.id}
                           to={`/fleet/${vehicle.id}`}
-                          onClick={() => setIsOpen(false)}
+                          onClick={closeChat}
                           className="block bg-white dark:bg-gray-700 border-2 border-gray-200 dark:border-gray-600 hover:border-gold-500 dark:hover:border-gold-500 rounded-xl p-3 transition-all hover:shadow-lg group"
                         >
                           <div className="flex gap-3">

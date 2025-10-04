@@ -20,11 +20,11 @@ export const Header = () => {
   ];
 
   return (
-    <header className="bg-main-900 shadow-xl sticky top-0 z-50">
+    <header className="bg-main-900 dark:bg-gray-900 shadow-xl sticky top-0 z-50 transition-colors duration-300">
       {/* Top contact bar */}
-      <div className="bg-main-950 border-b border-main-800">
+      <div className="bg-main-950 dark:bg-gray-950 border-b border-main-800 dark:border-gray-800 transition-colors duration-300">
         <div className="container mx-auto px-4 py-2">
-          <div className="flex items-center justify-between text-sm text-white/80">
+          <div className="flex items-center justify-between text-sm text-white/80 dark:text-gray-300">
             <div className="flex items-center space-x-6">
                   <div className="flex items-center space-x-2">
                     <Phone className="h-4 w-4" />
@@ -58,7 +58,7 @@ export const Header = () => {
               <Link
                 key={item.name}
                 to={item.href}
-                className="text-white/90 hover:text-white hover:bg-white/10 px-3 py-2 rounded-md font-medium transition-all duration-200 text-sm"
+                className="text-white/90 dark:text-gray-300 hover:text-white dark:hover:text-white hover:bg-white/10 dark:hover:bg-gray-700 px-3 py-2 rounded-md font-medium transition-all duration-200 text-sm"
               >
                 {item.name}
               </Link>
@@ -79,7 +79,7 @@ export const Header = () => {
                 
                 <button
                   onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                  className="lg:hidden p-2 rounded-lg hover:bg-white/10 transition-colors text-white"
+                  className="lg:hidden p-2 rounded-lg hover:bg-white/10 dark:hover:bg-gray-700 transition-colors text-white"
                 >
                   {mobileMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
                 </button>
@@ -88,20 +88,20 @@ export const Header = () => {
 
             {/* Mobile menu */}
             {mobileMenuOpen && (
-              <div className="lg:hidden mt-4 pb-4 border-t border-main-800 pt-4">
+              <div className="lg:hidden mt-4 pb-4 border-t border-main-800 dark:border-gray-700 pt-4 transition-colors duration-300">
                 <div className="grid grid-cols-2 gap-2">
                   {navigationItems.map((item) => (
                     <Link
                       key={item.name}
                       to={item.href}
                       onClick={() => setMobileMenuOpen(false)}
-                      className="block px-3 py-2 rounded-md text-white/90 hover:text-white hover:bg-white/10 font-medium transition-all text-sm text-center"
+                      className="block px-3 py-2 rounded-md text-white/90 dark:text-gray-300 hover:text-white dark:hover:text-white hover:bg-white/10 dark:hover:bg-gray-700 font-medium transition-all text-sm text-center"
                     >
                       {item.name}
                     </Link>
                   ))}
                 </div>
-                <div className="pt-4 border-t border-main-800 mt-4">
+                <div className="pt-4 border-t border-main-800 dark:border-gray-700 mt-4 transition-colors duration-300">
                   <a
                     href="https://antiparosrentacar.gocars.gr/search?lang=en"
                     target="_blank"

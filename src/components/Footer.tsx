@@ -5,7 +5,7 @@ export const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-main-950 text-white">
+    <footer className="bg-main-950 dark:bg-gray-950 text-white transition-colors duration-300">
       <div className="container mx-auto px-4 py-16">
         {/* Main footer content */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
@@ -19,28 +19,28 @@ export const Footer = () => {
               />
               <div>
                 <h3 className="text-xl font-bold">Aggelos Rentals</h3>
-                <p className="text-sm text-white/70">Car Rental Paros</p>
+                <p className="text-sm text-white/70 dark:text-gray-400">Car Rental Paros</p>
               </div>
             </Link>
-            <p className="text-white/80 text-sm leading-relaxed mb-6">
+            <p className="text-white/80 dark:text-gray-300 text-sm leading-relaxed mb-6">
               Premium car rental services in Paros & Antiparos since 1994. Explore the beautiful Greek islands with our reliable vehicles and exceptional service.
             </p>
             <div className="flex flex-col space-y-3">
               <a 
                 href="tel:+306944950094" 
-                className="flex items-center text-white/80 hover:text-white transition-colors group"
+                className="flex items-center text-white/80 dark:text-gray-300 hover:text-white dark:hover:text-white transition-colors group"
               >
                 <Phone className="h-4 w-4 mr-3 group-hover:text-gold-500" />
                 +30 694 495 0094
               </a>
               <a 
                 href="mailto:aggelos@antiparosrentacar.com" 
-                className="flex items-center text-white/80 hover:text-white transition-colors group"
+                className="flex items-center text-white/80 dark:text-gray-300 hover:text-white dark:hover:text-white transition-colors group"
               >
                 <Mail className="h-4 w-4 mr-3 group-hover:text-gold-500" />
                 aggelos@antiparosrentacar.com
               </a>
-              <div className="flex items-center text-white/80">
+              <div className="flex items-center text-white/80 dark:text-gray-300">
                 <MapPin className="h-4 w-4 mr-3" />
                 Port, Antiparos, Cyclades 840 07
               </div>
@@ -52,37 +52,37 @@ export const Footer = () => {
             <h4 className="text-lg font-semibold mb-6 text-white">Our Fleet</h4>
             <ul className="space-y-3">
               <li>
-                <Link to="/car-rental-paros" className="text-white/80 hover:text-gold-400 transition-colors flex items-center group">
+                <Link to="/car-rental-paros" className="text-white/80 dark:text-gray-300 hover:text-gold-400 dark:hover:text-gold-400 transition-colors flex items-center group">
                   <span>Car Rental Paros</span>
                   <ExternalLink className="h-3 w-3 ml-2 opacity-0 group-hover:opacity-100 transition-opacity" />
                 </Link>
               </li>
               <li>
-                <Link to="/car-rental-antiparos" className="text-white/80 hover:text-gold-400 transition-colors flex items-center group">
+                <Link to="/car-rental-antiparos" className="text-white/80 dark:text-gray-300 hover:text-gold-400 dark:hover:text-gold-400 transition-colors flex items-center group">
                   <span>Antiparos Car Rental</span>
                   <ExternalLink className="h-3 w-3 ml-2 opacity-0 group-hover:opacity-100 transition-opacity" />
                 </Link>
               </li>
               <li>
-                <Link to="/car-rental-naoussa-paros" className="text-white/80 hover:text-gold-400 transition-colors flex items-center group">
+                <Link to="/car-rental-naoussa-paros" className="text-white/80 dark:text-gray-300 hover:text-gold-400 dark:hover:text-gold-400 transition-colors flex items-center group">
                   <span>Naoussa Car Rental</span>
                   <ExternalLink className="h-3 w-3 ml-2 opacity-0 group-hover:opacity-100 transition-opacity" />
                 </Link>
               </li>
               <li>
-                <Link to="/scooter-rental-paros" className="text-white/80 hover:text-gold-400 transition-colors flex items-center group">
+                <Link to="/scooter-rental-paros" className="text-white/80 dark:text-gray-300 hover:text-gold-400 dark:hover:text-gold-400 transition-colors flex items-center group">
                   <span>Scooter Rental Paros</span>
                   <ExternalLink className="h-3 w-3 ml-2 opacity-0 group-hover:opacity-100 transition-opacity" />
                 </Link>
               </li>
               <li>
-                <Link to="/atv-quad-rental-paros" className="text-white/80 hover:text-gold-400 transition-colors flex items-center group">
+                <Link to="/atv-quad-rental-paros" className="text-white/80 dark:text-gray-300 hover:text-gold-400 dark:hover:text-gold-400 transition-colors flex items-center group">
                   <span>ATV & Quad Rental</span>
                   <ExternalLink className="h-3 w-3 ml-2 opacity-0 group-hover:opacity-100 transition-opacity" />
                 </Link>
               </li>
               <li>
-                <Link to="/economy-car-rental-paros" className="text-white/80 hover:text-gold-400 transition-colors flex items-center group">
+                <Link to="/economy-car-rental-paros" className="text-white/80 dark:text-gray-300 hover:text-gold-400 dark:hover:text-gold-400 transition-colors flex items-center group">
                   <span>Economy Car Rental</span>
                   <ExternalLink className="h-3 w-3 ml-2 opacity-0 group-hover:opacity-100 transition-opacity" />
                 </Link>
@@ -95,31 +95,31 @@ export const Footer = () => {
             <h4 className="text-lg font-semibold mb-6 text-white">Pickup Locations</h4>
             <ul className="space-y-3">
               <li>
-                <Link to="/paros-airport-car-rental" className="text-white/80 hover:text-gold-400 transition-colors flex items-center group">
+                <Link to="/paros-airport-car-rental" className="text-white/80 dark:text-gray-300 hover:text-gold-400 dark:hover:text-gold-400 transition-colors flex items-center group">
                   <span>Paros Airport (PAS)</span>
                   <ExternalLink className="h-3 w-3 ml-2 opacity-0 group-hover:opacity-100 transition-opacity" />
                 </Link>
               </li>
               <li>
-                <Link to="/paros-port-car-rental" className="text-white/80 hover:text-gold-400 transition-colors flex items-center group">
+                <Link to="/paros-port-car-rental" className="text-white/80 dark:text-gray-300 hover:text-gold-400 dark:hover:text-gold-400 transition-colors flex items-center group">
                   <span>Paros Port (Parikia)</span>
                   <ExternalLink className="h-3 w-3 ml-2 opacity-0 group-hover:opacity-100 transition-opacity" />
                 </Link>
               </li>
               <li>
-                <Link to="/car-rental-antiparos" className="text-white/80 hover:text-gold-400 transition-colors flex items-center group">
+                <Link to="/car-rental-antiparos" className="text-white/80 dark:text-gray-300 hover:text-gold-400 dark:hover:text-gold-400 transition-colors flex items-center group">
                   <span>Antiparos Island</span>
                   <ExternalLink className="h-3 w-3 ml-2 opacity-0 group-hover:opacity-100 transition-opacity" />
                 </Link>
               </li>
               <li>
-                <Link to="/car-rental-naoussa-paros" className="text-white/80 hover:text-gold-400 transition-colors flex items-center group">
+                <Link to="/car-rental-naoussa-paros" className="text-white/80 dark:text-gray-300 hover:text-gold-400 dark:hover:text-gold-400 transition-colors flex items-center group">
                   <span>Naoussa Village</span>
                   <ExternalLink className="h-3 w-3 ml-2 opacity-0 group-hover:opacity-100 transition-opacity" />
                 </Link>
               </li>
               <li>
-                <Link to="/car-rental-parikia-paros" className="text-white/80 hover:text-gold-400 transition-colors flex items-center group">
+                <Link to="/car-rental-parikia-paros" className="text-white/80 dark:text-gray-300 hover:text-gold-400 dark:hover:text-gold-400 transition-colors flex items-center group">
                   <span>Parikia Capital</span>
                   <ExternalLink className="h-3 w-3 ml-2 opacity-0 group-hover:opacity-100 transition-opacity" />
                 </Link>

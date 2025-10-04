@@ -31,13 +31,25 @@ export function BookingForm({ className = '' }: BookingFormProps) {
   ];
 
   const handleSearch = () => {
+    // Validate required fields
+    if (!pickupDate || !returnDate) {
+      alert('Please select both pickup and return dates');
+      return;
+    }
+
+    // Convert YYYY-MM-DD to DD/MM/YYYY
+    const formatDate = (dateStr: string) => {
+      const [year, month, day] = dateStr.split('-');
+      return `${day}/${month}/${year}`;
+    };
+
     const baseUrl = 'https://antiparosrentacar.gocars.gr/select';
     const params = new URLSearchParams({
       pickup_id: pickupLocation,
       return_id: differentReturn ? returnLocation : pickupLocation,
-      date_from: pickupDate.split('-').reverse().join('/'), // Convert to DD/MM/YYYY
+      date_from: formatDate(pickupDate),
       time_from: pickupTime,
-      date_to: returnDate.split('-').reverse().join('/'),
+      date_to: formatDate(returnDate),
       time_to: returnTime,
       age_group_id: ageGroup,
       vehicle_type: vehicleType,
@@ -170,54 +182,58 @@ export function BookingForm({ className = '' }: BookingFormProps) {
       {/* Date & Time Pickers */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-3 mb-3">
         {/* Pick-up Date/Time */}
-        <div>
-          <label className="block text-xs font-bold text-main-900 mb-1.5">
+        <div className="min-w-0">
+          <label className="block text-xs font-bold text-main-900 dark:text-white mb-1.5">
             Pick-up Date/Time*
           </label>
           <div className="space-y-2">
             <div className="relative">
-              <Calendar className="absolute left-2.5 top-1/2 transform -translate-y-1/2 h-4 w-4 text-gold-600" />
+              <Calendar className="absolute left-2.5 top-1/2 transform -translate-y-1/2 h-4 w-4 text-gold-600 pointer-events-none z-10" />
               <input
                 type="date"
                 value={pickupDate}
                 onChange={(e) => setPickupDate(e.target.value)}
-                className="w-full pl-9 pr-3 py-2.5 bg-white border-2 border-gray-200 rounded-lg focus:border-gold-600 focus:outline-none font-semibold text-main-900 text-sm"
+                className="w-full pl-9 pr-2 py-2.5 bg-white dark:bg-gray-700 border-2 border-gray-200 dark:border-gray-600 rounded-lg focus:border-gold-600 focus:outline-none font-semibold text-main-900 dark:text-white text-sm min-w-0"
+                style={{ colorScheme: 'light' }}
               />
             </div>
             <div className="relative">
-              <Clock className="absolute left-2.5 top-1/2 transform -translate-y-1/2 h-4 w-4 text-gold-600" />
+              <Clock className="absolute left-2.5 top-1/2 transform -translate-y-1/2 h-4 w-4 text-gold-600 pointer-events-none z-10" />
               <input
                 type="time"
                 value={pickupTime}
                 onChange={(e) => setPickupTime(e.target.value)}
-                className="w-full pl-9 pr-3 py-2.5 bg-white border-2 border-gray-200 rounded-lg focus:border-gold-600 focus:outline-none font-semibold text-main-900 text-sm"
+                className="w-full pl-9 pr-2 py-2.5 bg-white dark:bg-gray-700 border-2 border-gray-200 dark:border-gray-600 rounded-lg focus:border-gold-600 focus:outline-none font-semibold text-main-900 dark:text-white text-sm min-w-0"
+                style={{ colorScheme: 'light' }}
               />
             </div>
           </div>
         </div>
 
         {/* Return Date/Time */}
-        <div>
-          <label className="block text-xs font-bold text-main-900 mb-1.5">
+        <div className="min-w-0">
+          <label className="block text-xs font-bold text-main-900 dark:text-white mb-1.5">
             Drop-off Date/Time*
           </label>
           <div className="space-y-2">
             <div className="relative">
-              <Calendar className="absolute left-2.5 top-1/2 transform -translate-y-1/2 h-4 w-4 text-gold-600" />
+              <Calendar className="absolute left-2.5 top-1/2 transform -translate-y-1/2 h-4 w-4 text-gold-600 pointer-events-none z-10" />
               <input
                 type="date"
                 value={returnDate}
                 onChange={(e) => setReturnDate(e.target.value)}
-                className="w-full pl-9 pr-3 py-2.5 bg-white border-2 border-gray-200 rounded-lg focus:border-gold-600 focus:outline-none font-semibold text-main-900 text-sm"
+                className="w-full pl-9 pr-2 py-2.5 bg-white dark:bg-gray-700 border-2 border-gray-200 dark:border-gray-600 rounded-lg focus:border-gold-600 focus:outline-none font-semibold text-main-900 dark:text-white text-sm min-w-0"
+                style={{ colorScheme: 'light' }}
               />
             </div>
             <div className="relative">
-              <Clock className="absolute left-2.5 top-1/2 transform -translate-y-1/2 h-4 w-4 text-gold-600" />
+              <Clock className="absolute left-2.5 top-1/2 transform -translate-y-1/2 h-4 w-4 text-gold-600 pointer-events-none z-10" />
               <input
                 type="time"
                 value={returnTime}
                 onChange={(e) => setReturnTime(e.target.value)}
-                className="w-full pl-9 pr-3 py-2.5 bg-white border-2 border-gray-200 rounded-lg focus:border-gold-600 focus:outline-none font-semibold text-main-900 text-sm"
+                className="w-full pl-9 pr-2 py-2.5 bg-white dark:bg-gray-700 border-2 border-gray-200 dark:border-gray-600 rounded-lg focus:border-gold-600 focus:outline-none font-semibold text-main-900 dark:text-white text-sm min-w-0"
+                style={{ colorScheme: 'light' }}
               />
             </div>
           </div>

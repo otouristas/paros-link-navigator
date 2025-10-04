@@ -8,6 +8,7 @@ import { WhatsAppButton } from "@/components/WhatsAppButton";
 import { MarciaChat } from "@/components/MarciaChat";
 import { CookieConsent } from "@/components/CookieConsent";
 import { ScrollToTop } from "@/components/ScrollToTop";
+import { MarciaProvider } from "@/contexts/MarciaContext";
 import Index from "./pages/Index";
 import MarciaAI from "./pages/MarciaAI";
 import CarRentalParos from "./pages/CarRentalParos";
@@ -38,11 +39,12 @@ const queryClient = new QueryClient();
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
-      <Toaster />
-      <Sonner />
-      <BrowserRouter>
-        <ScrollToTop />
-        <Routes>
+      <MarciaProvider>
+        <Toaster />
+        <Sonner />
+        <BrowserRouter>
+          <ScrollToTop />
+          <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/car-rental-paros" element={<CarRentalParos />} />
           {/* SEO Strategy Routes */}
@@ -76,6 +78,7 @@ const App = () => (
         <MarciaChat />
         <CookieConsent />
       </BrowserRouter>
+      </MarciaProvider>
     </TooltipProvider>
   </QueryClientProvider>
 );
