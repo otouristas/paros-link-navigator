@@ -1,17 +1,31 @@
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { SEO } from "@/components/SEO";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useCars } from "@/hooks/use-cars";
 import { Car as CarIcon, Users, Fuel, Cog, Check, ArrowRight, Filter, X } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Link, useSearchParams } from "react-router-dom";
 import type { FleetFilters } from "@/types/database";
 import { Skeleton } from "@/components/ui/skeleton";
 
 const Fleet = () => {
+  const [searchParams] = useSearchParams();
   const [filters, setFilters] = useState<FleetFilters>({});
   const [showFilters, setShowFilters] = useState(false);
   const { data: cars = [], isLoading, isError } = useCars({ filters });
+
+  // Initialize filters from URL parameters
+  useEffect(() => {
+    const categoryParam = searchParams.get('category');
+    const typeParam = searchParams.get('type');
+    
+    if (categoryParam || typeParam) {
+      setFilters({
+        ...(categoryParam && { category: categoryParam }),
+        ...(typeParam && { type: typeParam as any }),
+      });
+    }
+  }, [searchParams]);
 
   const categories = [
     { value: '', label: 'All Categories' },

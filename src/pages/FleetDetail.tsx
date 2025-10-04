@@ -2,13 +2,24 @@ import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { SEO } from "@/components/SEO";
 import { useParams, Link } from "react-router-dom";
-import { useCar } from "@/hooks/use-cars";
-import { Car as CarIcon, Users, Fuel, Cog, Check, ArrowRight, ArrowLeft, Phone, Shield, Award } from "lucide-react";
+import { useCar, useCars } from "@/hooks/use-cars";
+import { Car as CarIcon, Users, Fuel, Cog, Check, ArrowRight, ArrowLeft, Phone, Shield, Award, ChevronRight } from "lucide-react";
 import { Skeleton } from "@/components/ui/skeleton";
 
 const FleetDetail = () => {
   const { id } = useParams<{ id: string }>();
   const { data: car, isLoading, isError } = useCar(id || '');
+  
+  // Fetch similar vehicles from the same category
+  const { data: similarCars = [] } = useCars({
+    filters: car?.category ? { category: car.category } : undefined,
+    enabled: !!car?.category,
+  });
+  
+  // Filter out current car and limit to 3
+  const filteredSimilarCars = similarCars
+    .filter(c => c.id !== car?.id)
+    .slice(0, 3);
 
   if (isLoading) {
     return (
@@ -70,12 +81,27 @@ const FleetDetail = () => {
         <section className="py-6 bg-gray-50 border-b border-gray-200">
           <div className="container mx-auto px-4">
             <div className="max-w-6xl mx-auto">
-              <div className="flex items-center text-sm text-gray-600 font-semibold">
-                <Link to="/" className="hover:text-main-900 transition-colors">Home</Link>
-                <span className="mx-2">/</span>
-                <Link to="/fleet" className="hover:text-main-900 transition-colors">Fleet</Link>
-                <span className="mx-2">/</span>
-                <span className="text-main-900">{car.name}</span>
+              <div className="flex items-center flex-wrap gap-2 text-sm text-gray-600 font-semibold">
+                <Link to="/" className="hover:text-main-900 transition-colors flex items-center">
+                  Home
+                </Link>
+                <ChevronRight className="h-4 w-4 text-gray-400" />
+                <Link to="/fleet" className="hover:text-main-900 transition-colors flex items-center">
+                  Fleet
+                </Link>
+                {car.category && (
+                  <>
+                    <ChevronRight className="h-4 w-4 text-gray-400" />
+                    <Link 
+                      to={`/fleet?category=${car.category}`} 
+                      className="hover:text-main-900 transition-colors flex items-center capitalize"
+                    >
+                      {car.category}
+                    </Link>
+                  </>
+                )}
+                <ChevronRight className="h-4 w-4 text-gray-400" />
+                <span className="text-main-900 font-black">{car.name}</span>
               </div>
             </div>
           </div>
@@ -221,47 +247,84 @@ const FleetDetail = () => {
         </section>
 
         {/* Category Description */}
-        <section className="py-24 bg-white">
-          <div className="container mx-auto px-4">
-            <div className="max-w-4xl mx-auto">
-              <h2 className="text-4xl md:text-5xl font-black mb-8 text-main-900 text-center">
-                About {car.category.charAt(0).toUpperCase() + car.category.slice(1)} Vehicles
-              </h2>
-              <div className="prose prose-lg max-w-none">
-                {car.category === 'economy' && (
-                  <p className="text-xl text-gray-700 leading-relaxed font-medium">
-                    Our economy vehicles are perfect for budget-conscious travelers who don't want to compromise on quality. These compact cars offer excellent fuel efficiency, easy parking in narrow Greek island streets, and all the essential features you need for a comfortable journey around Paros and Antiparos.
-                  </p>
-                )}
-                {car.category === 'family' && (
-                  <p className="text-xl text-gray-700 leading-relaxed font-medium">
-                    Our family vehicles provide spacious interiors, comfortable seating for up to 5 passengers, and ample luggage space. Perfect for families exploring Paros with children, these cars come equipped with child seat options, air conditioning, and modern safety features to ensure a pleasant journey for everyone.
-                  </p>
-                )}
-                {car.category === 'suv' && (
-                  <p className="text-xl text-gray-700 leading-relaxed font-medium">
-                    Our SUV fleet combines comfort with capability. With elevated driving positions, spacious interiors, and enhanced ground clearance, these vehicles are ideal for exploring both paved roads and rougher terrain around Paros. Perfect for groups or families who want extra space and versatility.
-                  </p>
-                )}
-                {car.category === 'jeep' && (
-                  <p className="text-xl text-gray-700 leading-relaxed font-medium">
-                    Our 4x4 Jeeps and off-road vehicles are built for adventure. Reach hidden beaches, explore mountain villages, and discover places that regular cars can't access. These rugged vehicles come with safety gear and are perfect for travelers who want to experience the authentic, untouched side of Paros and Antiparos.
-                  </p>
-                )}
-                {car.category === 'scooter' && (
-                  <p className="text-xl text-gray-700 leading-relaxed font-medium">
-                    Our scooters offer the perfect way to explore Paros' narrow streets and coastal roads. Ideal for couples and solo travelers, these fuel-efficient two-wheelers make parking a breeze and allow you to discover hidden spots that cars can't reach. All rentals include helmets and insurance for your safety.
-                  </p>
-                )}
-                {car.category === 'atv' && (
-                  <p className="text-xl text-gray-700 leading-relaxed font-medium">
-                    Our ATV and quad bikes are designed for adventure seekers. With powerful engines and excellent traction, these vehicles can handle any terrain - from beach sand to mountain trails. Perfect for exploring off-the-beaten-path locations and accessing remote beaches around Paros and Antiparos. Safety gear and brief orientation included.
-                  </p>
-                )}
+        {car.category && (
+          <section className="py-24 bg-white">
+            <div className="container mx-auto px-4">
+              <div className="max-w-4xl mx-auto">
+                <h2 className="text-4xl md:text-5xl font-black mb-8 text-main-900 text-center">
+                  About {car.category.charAt(0).toUpperCase() + car.category.slice(1)} Vehicles
+                </h2>
+                <div className="prose prose-lg max-w-none">
+                  {car.category === 'economy' && (
+                    <>
+                      <p className="text-xl text-gray-700 leading-relaxed font-medium mb-6">
+                        Our economy vehicles are perfect for budget-conscious travelers who don't want to compromise on quality. These compact cars offer excellent fuel efficiency, easy parking in narrow Greek island streets, and all the essential features you need for a comfortable journey around Paros and Antiparos.
+                      </p>
+                      <p className="text-xl text-gray-700 leading-relaxed font-medium">
+                        Whether you're exploring <Link to="/car-rental-paros" className="text-main-900 font-black hover:text-gold-600 transition-colors underline">car rental options in Paros</Link> or looking for the perfect budget vehicle, our economy fleet has you covered. From compact city cars to fuel-efficient hatchbacks, each vehicle is regularly maintained and comes with comprehensive insurance. Browse our complete <Link to="/fleet?category=economy" className="text-main-900 font-black hover:text-gold-600 transition-colors underline">economy fleet</Link> to find your ideal rental.
+                      </p>
+                    </>
+                  )}
+                  {car.category === 'family' && (
+                    <>
+                      <p className="text-xl text-gray-700 leading-relaxed font-medium mb-6">
+                        Our family vehicles provide spacious interiors, comfortable seating for up to 5-7 passengers, and ample luggage space. Perfect for families exploring Paros with children, these cars come equipped with child seat options, air conditioning, and modern safety features to ensure a pleasant journey for everyone.
+                      </p>
+                      <p className="text-xl text-gray-700 leading-relaxed font-medium">
+                        Planning a family vacation in Paros? Our family vehicles make exploring the island stress-free. Check out our <Link to="/car-rental-naoussa-paros" className="text-main-900 font-black hover:text-gold-600 transition-colors underline">car rental services in Naoussa</Link> or browse the complete <Link to="/fleet?category=family" className="text-main-900 font-black hover:text-gold-600 transition-colors underline">family vehicle collection</Link>. We also offer <Link to="/paros-airport-car-rental" className="text-main-900 font-black hover:text-gold-600 transition-colors underline">airport pickup and delivery</Link> for your convenience.
+                      </p>
+                    </>
+                  )}
+                  {car.category === 'suv' && (
+                    <>
+                      <p className="text-xl text-gray-700 leading-relaxed font-medium mb-6">
+                        Our SUV fleet combines comfort with capability. With elevated driving positions, spacious interiors, and enhanced ground clearance, these vehicles are ideal for exploring both paved roads and rougher terrain around Paros. Perfect for groups or families who want extra space and versatility.
+                      </p>
+                      <p className="text-xl text-gray-700 leading-relaxed font-medium">
+                        Experience Paros in comfort and style with our premium SUVs. Ideal for beach trips, mountain villages, and accessing remote locations. View our complete <Link to="/fleet?category=suv" className="text-main-900 font-black hover:text-gold-600 transition-colors underline">SUV collection</Link> or explore our <Link to="/car-rental-parikia-paros" className="text-main-900 font-black hover:text-gold-600 transition-colors underline">Parikia rental options</Link>. Free delivery available to your hotel or the <Link to="/paros-port-car-rental" className="text-main-900 font-black hover:text-gold-600 transition-colors underline">Paros Port</Link>.
+                      </p>
+                    </>
+                  )}
+                  {car.category === 'jeep' && (
+                    <>
+                      <p className="text-xl text-gray-700 leading-relaxed font-medium mb-6">
+                        Our 4x4 Jeeps and off-road vehicles are built for adventure. Reach hidden beaches, explore mountain villages, and discover places that regular cars can't access. These rugged vehicles come with safety gear and are perfect for travelers who want to experience the authentic, untouched side of Paros and Antiparos.
+                      </p>
+                      <p className="text-xl text-gray-700 leading-relaxed font-medium">
+                        Ready for adventure? Our Jeep fleet opens up Paros' hidden gems. Perfect for <Link to="/car-rental-antiparos" className="text-main-900 font-black hover:text-gold-600 transition-colors underline">exploring Antiparos</Link> and reaching secluded beaches. Browse our <Link to="/fleet?category=jeep" className="text-main-900 font-black hover:text-gold-600 transition-colors underline">complete 4x4 fleet</Link> to find your perfect adventure vehicle. All Jeeps come with comprehensive insurance and 24/7 support.
+                      </p>
+                    </>
+                  )}
+                  {car.category === 'scooter' && (
+                    <>
+                      <p className="text-xl text-gray-700 leading-relaxed font-medium mb-6">
+                        Our scooters offer the perfect way to explore Paros' narrow streets and coastal roads. Ideal for couples and solo travelers, these fuel-efficient two-wheelers make parking a breeze and allow you to discover hidden spots that cars can't reach. All rentals include helmets and insurance for your safety.
+                      </p>
+                      <p className="text-xl text-gray-700 leading-relaxed font-medium">
+                        Discover the freedom of two-wheeled travel! Our <Link to="/scooter-rental-paros" className="text-main-900 font-black hover:text-gold-600 transition-colors underline">scooter rentals in Paros</Link> are perfect for exploring the island at your own pace. View our complete <Link to="/fleet?type=Motorbike" className="text-main-900 font-black hover:text-gold-600 transition-colors underline">scooter and motorbike collection</Link>. Looking for more adventure? Check out our <Link to="/atv-quad-rental-paros" className="text-main-900 font-black hover:text-gold-600 transition-colors underline">ATV and quad rentals</Link>.
+                      </p>
+                    </>
+                  )}
+                  {car.category === 'atv' && (
+                    <>
+                      <p className="text-xl text-gray-700 leading-relaxed font-medium mb-6">
+                        Our ATV and quad bikes are designed for adventure seekers. With powerful engines and excellent traction, these vehicles can handle any terrain - from beach sand to mountain trails. Perfect for exploring off-the-beaten-path locations and accessing remote beaches around Paros and Antiparos. Safety gear and brief orientation included.
+                      </p>
+                      <p className="text-xl text-gray-700 leading-relaxed font-medium">
+                        Experience ultimate off-road freedom with our <Link to="/atv-quad-rental-paros" className="text-main-900 font-black hover:text-gold-600 transition-colors underline">ATV and quad rentals</Link>. Browse our complete <Link to="/fleet?type=ATV / QUAD" className="text-main-900 font-black hover:text-gold-600 transition-colors underline">ATV collection</Link> or explore our <Link to="/scooter-rental-paros" className="text-main-900 font-black hover:text-gold-600 transition-colors underline">scooter options</Link> for a different adventure. All rentals include safety equipment and comprehensive insurance.
+                      </p>
+                    </>
+                  )}
+                  {(!car.category || !['economy', 'family', 'suv', 'jeep', 'scooter', 'atv'].includes(car.category)) && (
+                    <p className="text-xl text-gray-700 leading-relaxed font-medium">
+                      This vehicle is part of our premium fleet, designed to provide you with the best possible experience exploring Paros and Antiparos. View our <Link to="/fleet" className="text-main-900 font-black hover:text-gold-600 transition-colors underline">complete vehicle collection</Link> or contact us for personalized recommendations.
+                    </p>
+                  )}
+                </div>
               </div>
             </div>
-          </div>
-        </section>
+          </section>
+        )}
 
         {/* FAQs */}
         <section className="py-24 bg-gradient-to-b from-gray-50 to-white">
@@ -323,6 +386,96 @@ const FleetDetail = () => {
             </div>
           </div>
         </section>
+
+        {/* Similar Vehicles */}
+        {filteredSimilarCars.length > 0 && (
+          <section className="py-24 bg-gradient-to-b from-white to-gray-50">
+            <div className="container mx-auto px-4">
+              <div className="max-w-6xl mx-auto">
+                <div className="text-center mb-16">
+                  <h2 className="text-4xl md:text-5xl font-black mb-4 text-main-900">
+                    Similar {car.category ? `${car.category.charAt(0).toUpperCase() + car.category.slice(1)}` : ''} Vehicles
+                  </h2>
+                  <p className="text-xl text-gray-600 font-medium">
+                    Explore more options from our {car.category || 'premium'} collection
+                  </p>
+                </div>
+
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+                  {filteredSimilarCars.map((similarCar) => (
+                    <Link
+                      key={similarCar.id}
+                      to={`/fleet/${similarCar.id}`}
+                      className="group bg-white rounded-3xl shadow-xl overflow-hidden hover:shadow-2xl transition-all border-2 border-gray-100 hover:border-gold-300"
+                    >
+                      <div className="relative overflow-hidden h-56">
+                        <img
+                          src={similarCar.images && similarCar.images.length > 0 ? similarCar.images[0] : '/placeholder.svg'}
+                          alt={similarCar.name}
+                          className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                          loading="lazy"
+                        />
+                        {similarCar.category && (
+                          <div className="absolute top-4 right-4">
+                            <span className="bg-gold-500 text-main-950 px-4 py-2 rounded-full text-sm font-black shadow-lg">
+                              {similarCar.category.toUpperCase()}
+                            </span>
+                          </div>
+                        )}
+                      </div>
+
+                      <div className="p-6">
+                        <h3 className="text-2xl font-black text-main-900 mb-3 group-hover:text-gold-600 transition-colors">
+                          {similarCar.name}
+                        </h3>
+                        <p className="text-gray-600 mb-6 line-clamp-2 font-medium text-sm">
+                          {similarCar.description}
+                        </p>
+
+                        <div className="grid grid-cols-2 gap-3 mb-6 text-sm">
+                          <div className="flex items-center text-gray-700">
+                            <Users className="h-4 w-4 mr-2 text-main-900" />
+                            <span className="font-semibold">{similarCar.seats} Seats</span>
+                          </div>
+                          <div className="flex items-center text-gray-700">
+                            <Cog className="h-4 w-4 mr-2 text-main-900" />
+                            <span className="font-semibold">{similarCar.transmission}</span>
+                          </div>
+                        </div>
+
+                        <div className="border-t-2 border-gray-100 pt-4">
+                          <div className="flex items-center justify-between">
+                            <div>
+                              <p className="text-gray-600 text-xs font-semibold">From</p>
+                              <p className="text-2xl font-black text-main-900">
+                                €{similarCar.price_per_day}
+                                <span className="text-sm text-gray-500 font-medium">/day</span>
+                              </p>
+                            </div>
+                            <span className="inline-flex items-center text-main-900 font-black hover:text-gold-600 transition-colors text-sm">
+                              View Details
+                              <ArrowRight className="ml-2 h-4 w-4" />
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                    </Link>
+                  ))}
+                </div>
+
+                <div className="text-center mt-12">
+                  <Link
+                    to={`/fleet?category=${car.category || ''}`}
+                    className="inline-flex items-center bg-main-900 text-white px-10 py-4 rounded-xl font-black text-lg hover:bg-main-800 transition-all shadow-lg hover:scale-105 transform"
+                  >
+                    View All {car.category ? `${car.category.charAt(0).toUpperCase() + car.category.slice(1)}` : ''} Vehicles
+                    <ArrowRight className="ml-3 h-6 w-6" />
+                  </Link>
+                </div>
+              </div>
+            </div>
+          </section>
+        )}
 
         {/* CTA Section */}
         <section className="py-24 bg-gradient-to-br from-main-900 to-main-950 text-white">
