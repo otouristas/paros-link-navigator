@@ -8,6 +8,7 @@ import { WhatsAppButton } from "@/components/WhatsAppButton";
 import { CookieConsent } from "@/components/CookieConsent";
 import { ScrollToTop } from "@/components/ScrollToTop";
 import Index from "./pages/Index";
+import CarRentalParos from "./pages/CarRentalParos";
 import CarRentalAntiparos from "./pages/CarRentalAntiparos";
 import CarRentalNaoussa from "./pages/CarRentalNaoussa";
 import CarRentalParikia from "./pages/CarRentalParikia";
@@ -39,7 +40,7 @@ const App = () => (
         <ScrollToTop />
         <Routes>
           <Route path="/" element={<Index />} />
-          <Route path="/car-rental-paros" element={<Index />} />
+          <Route path="/car-rental-paros" element={<CarRentalParos />} />
           {/* SEO Strategy Routes */}
           <Route path="/car-rental-antiparos" element={<CarRentalAntiparos />} />
           <Route path="/car-rental-naoussa-paros" element={<CarRentalNaoussa />} />

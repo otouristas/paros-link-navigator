@@ -16,35 +16,35 @@ const CarRentalAntiparos = () => {
         <Header />
 
         {/* Hero Section */}
-        <section className="relative bg-gradient-to-br from-main-900 via-main-800 to-secondary-700 text-white py-24 overflow-hidden">
+        <section className="relative bg-gradient-to-br from-main-900 via-main-800 to-main-950 text-white py-28 overflow-hidden">
           <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmZmZmYiIGZpbGwtb3BhY2l0eT0iMC4wNSI+PHBhdGggZD0iTTM2IDE0di0yYzAtMi4yMS0xLjc5LTQtNC00cy00IDEuNzktNCA0djJjLTIuMjEgMC00IDEuNzktNCA0czEuNzkgNCA0IDRoOGMyLjIxIDAgNC0xLjc5IDQtNHMtMS43OS00LTQtNHoiLz48L2c+PC9nPjwvc3ZnPg==')] opacity-10"></div>
           <div className="container mx-auto px-4 relative z-10">
-            <div className="max-w-5xl mx-auto text-center">
-              <div className="inline-flex items-center bg-white/20 backdrop-blur-sm px-5 py-2 rounded-full text-sm font-semibold mb-6">
-                <Ship className="h-4 w-4 mr-2" />
+            <div className="max-w-6xl mx-auto text-center">
+              <div className="inline-flex items-center bg-gold-500 text-main-950 px-6 py-3 rounded-full text-sm font-bold mb-8 shadow-2xl">
+                <Ship className="h-5 w-5 mr-2" />
                 Ferry Delivery Service Available
               </div>
-              <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
+              <h1 className="text-5xl md:text-6xl font-black mb-6 leading-tight tracking-tight">
                 Car Rental in Antiparos
               </h1>
-              <p className="text-xl md:text-2xl mb-10 text-white/95 leading-relaxed max-w-4xl mx-auto">
+              <p className="text-xl md:text-2xl mb-10 text-white/95 leading-relaxed max-w-4xl mx-auto font-medium">
                 Discover the beauty of Antiparos with our convenient car, scooter, and ATV rentals. We deliver vehicles directly from Paros via ferry — ready when you arrive. No queues, no stress.
               </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <div className="flex flex-col sm:flex-row gap-6 justify-center">
                 <a
                   href="https://antiparosrentacar.gocars.gr/search?lang=en"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="bg-gold-600 hover:bg-gold-500 text-main-900 px-10 py-5 rounded-xl font-bold text-lg transition-all inline-flex items-center justify-center shadow-2xl hover:scale-105 transform"
+                  className="bg-gold-500 hover:bg-gold-400 text-main-950 px-12 py-6 rounded-2xl font-black text-xl transition-all inline-flex items-center justify-center shadow-2xl hover:scale-105 transform"
                 >
                   Book Your Antiparos Car Today
-                  <ArrowRight className="ml-3 h-6 w-6" />
+                  <ArrowRight className="ml-3 h-7 w-7" />
                 </a>
                 <a
                   href="tel:+306944950094"
-                  className="bg-white text-main-900 hover:bg-gray-50 px-10 py-5 rounded-xl font-bold text-lg transition-all shadow-xl inline-flex items-center justify-center"
+                  className="bg-white text-main-900 hover:bg-gray-100 px-12 py-6 rounded-2xl font-black text-xl transition-all shadow-xl inline-flex items-center justify-center"
                 >
-                  <Phone className="mr-3 h-6 w-6" />
+                  <Phone className="mr-3 h-7 w-7" />
                   Call Now
                 </a>
               </div>
@@ -53,41 +53,41 @@ const CarRentalAntiparos = () => {
         </section>
 
         {/* How It Works Section */}
-        <section className="py-20 bg-gradient-to-b from-gray-50 to-white">
+        <section className="py-24 bg-gradient-to-b from-gray-50 to-white">
           <div className="container mx-auto px-4">
-            <div className="text-center mb-16">
-              <h2 className="text-4xl md:text-5xl font-bold mb-4 text-main-900">How It Works</h2>
-              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <div className="text-center mb-20">
+              <h2 className="text-4xl md:text-5xl font-black mb-4 text-main-900">How It Works</h2>
+              <p className="text-xl text-gray-600 max-w-3xl mx-auto font-medium">
                 We deliver vehicles directly from Paros via ferry — ready when you arrive. No queues, no stress.
               </p>
             </div>
-            <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+            <div className="grid md:grid-cols-3 gap-10 max-w-6xl mx-auto">
               <div className="text-center">
-                <div className="h-20 w-20 bg-main-900 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg">
-                  <Phone className="h-10 w-10 text-white" />
+                <div className="h-24 w-24 bg-main-900 rounded-3xl flex items-center justify-center mx-auto mb-8 shadow-lg">
+                  <Phone className="h-12 w-12 text-white" />
                 </div>
-                <h3 className="text-xl font-bold mb-3 text-main-900">1. Book Online</h3>
-                <p className="text-gray-600 leading-relaxed">
+                <h3 className="text-2xl font-black mb-4 text-main-900">1. Book Online</h3>
+                <p className="text-gray-700 leading-relaxed text-base font-medium">
                   Reserve your vehicle online and specify Antiparos as your pickup location.
                 </p>
               </div>
 
               <div className="text-center">
-                <div className="h-20 w-20 bg-secondary-700 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg">
-                  <Ship className="h-10 w-10 text-white" />
+                <div className="h-24 w-24 bg-secondary-700 rounded-3xl flex items-center justify-center mx-auto mb-8 shadow-lg">
+                  <Ship className="h-12 w-12 text-white" />
                 </div>
-                <h3 className="text-xl font-bold mb-3 text-main-900">2. Ferry Delivery</h3>
-                <p className="text-gray-600 leading-relaxed">
+                <h3 className="text-2xl font-black mb-4 text-main-900">2. Ferry Delivery</h3>
+                <p className="text-gray-700 leading-relaxed text-base font-medium">
                   We transport your vehicle to Antiparos via ferry and meet you at the port.
                 </p>
               </div>
 
               <div className="text-center">
-                <div className="h-20 w-20 bg-gold-700 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg">
-                  <Car className="h-10 w-10 text-white" />
+                <div className="h-24 w-24 bg-gold-600 rounded-3xl flex items-center justify-center mx-auto mb-8 shadow-lg">
+                  <Car className="h-12 w-12 text-white" />
                 </div>
-                <h3 className="text-xl font-bold mb-3 text-main-900">3. Start Exploring</h3>
-                <p className="text-gray-600 leading-relaxed">
+                <h3 className="text-2xl font-black mb-4 text-main-900">3. Start Exploring</h3>
+                <p className="text-gray-700 leading-relaxed text-base font-medium">
                   Your vehicle is ready to go! Start exploring Antiparos immediately.
                 </p>
               </div>
@@ -96,11 +96,11 @@ const CarRentalAntiparos = () => {
         </section>
 
         {/* Vehicle Options Section */}
-        <section className="py-20 bg-white">
+        <section className="py-24 bg-white">
           <div className="container mx-auto px-4">
-            <div className="text-center mb-16">
-              <h2 className="text-4xl md:text-5xl font-bold mb-4 text-main-900">Vehicle Options</h2>
-              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <div className="text-center mb-20">
+              <h2 className="text-4xl md:text-5xl font-black mb-4 text-main-900">Vehicle Options</h2>
+              <p className="text-xl text-gray-600 max-w-3xl mx-auto font-medium">
                 Small cars for couples, family sedans, scooters for short distances, and 4x4s for exploring hidden beaches.
               </p>
             </div>
@@ -174,11 +174,11 @@ const CarRentalAntiparos = () => {
         </section>
 
         {/* Popular Routes Section */}
-        <section className="py-20 bg-gradient-to-b from-gray-50 to-white">
+        <section className="py-24 bg-gradient-to-b from-gray-50 to-white">
           <div className="container mx-auto px-4">
-            <div className="text-center mb-16">
-              <h2 className="text-4xl md:text-5xl font-bold mb-4 text-main-900">Popular Antiparos Routes</h2>
-              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <div className="text-center mb-20">
+              <h2 className="text-4xl md:text-5xl font-black mb-4 text-main-900">Popular Antiparos Routes</h2>
+              <p className="text-xl text-gray-600 max-w-3xl mx-auto font-medium">
                 Discover the best routes and attractions around Antiparos island
               </p>
             </div>
@@ -232,10 +232,10 @@ const CarRentalAntiparos = () => {
         </section>
 
         {/* FAQ Section */}
-        <section className="py-20 bg-white">
+        <section className="py-24 bg-white">
           <div className="container mx-auto px-4">
-            <div className="text-center mb-16">
-              <h2 className="text-4xl md:text-5xl font-bold mb-4 text-main-900">Frequently Asked Questions</h2>
+            <div className="text-center mb-20">
+              <h2 className="text-4xl md:text-5xl font-black mb-4 text-main-900">Frequently Asked Questions</h2>
             </div>
             
             <div className="max-w-4xl mx-auto space-y-6">
@@ -268,27 +268,27 @@ const CarRentalAntiparos = () => {
         </section>
 
         {/* CTA Section */}
-        <section className="py-20 bg-gradient-to-br from-main-900 to-secondary-700 text-white">
+        <section className="py-24 bg-gradient-to-br from-main-900 to-main-950 text-white">
           <div className="container mx-auto px-4">
-            <div className="max-w-4xl mx-auto text-center">
-              <h2 className="text-4xl md:text-5xl font-bold mb-6">Ready to Explore Antiparos?</h2>
-              <p className="text-xl md:text-2xl mb-10 text-white/95">
+            <div className="max-w-5xl mx-auto text-center">
+              <h2 className="text-4xl md:text-5xl font-black mb-6">Ready to Explore Antiparos?</h2>
+              <p className="text-xl md:text-2xl mb-10 text-white/95 font-medium">
                 Book your Antiparos vehicle today and discover this beautiful island at your own pace.
               </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <div className="flex flex-col sm:flex-row gap-6 justify-center">
                 <a
                   href="https://antiparosrentacar.gocars.gr/search?lang=en"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="bg-gold-600 hover:bg-gold-500 text-main-900 px-10 py-5 rounded-xl font-bold text-lg transition-all inline-flex items-center justify-center shadow-2xl hover:scale-105 transform"
+                  className="bg-gold-500 hover:bg-gold-400 text-main-950 px-12 py-6 rounded-2xl font-black text-xl transition-all inline-flex items-center justify-center shadow-2xl hover:scale-105 transform"
                 >
                   Book Your Antiparos Ride Today
                 </a>
                 <a
                   href="tel:+306944950094"
-                  className="bg-white text-main-900 hover:bg-gray-50 px-10 py-5 rounded-xl font-bold text-lg transition-all inline-flex items-center justify-center shadow-xl"
+                  className="bg-white text-main-900 hover:bg-gray-100 px-12 py-6 rounded-2xl font-black text-xl transition-all inline-flex items-center justify-center shadow-xl"
                 >
-                  <Phone className="mr-3 h-6 w-6" />
+                  <Phone className="mr-3 h-7 w-7" />
                   Call +30 694 495 0094
                 </a>
               </div>

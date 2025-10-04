@@ -103,17 +103,17 @@ export default {
 					950: '#232730',
 				},
 				gold: {
-					50: '#fefce8',
-					100: '#fef3c7',
-					200: '#fef3c7',
-					300: '#fef3c7',
-					400: '#fef3c7',
-					500: '#fef3c7',
-					600: '#fef3c7',
-					700: '#fef3c7',
-					800: '#fef3c7',
-					900: '#fef3c7',
-					950: '#fef3c7',
+					50: '#fffbeb',   // Very light cream - good contrast with dark text
+					100: '#fef3c7',  // Light cream
+					200: '#fde68a',  // Soft yellow
+					300: '#fcd34d',  // Medium yellow
+					400: '#fbbf24',  // Bright yellow - excellent contrast
+					500: '#f59e0b',  // Strong orange-yellow
+					600: '#d97706',  // Deep orange - high contrast
+					700: '#b45309',  // Dark orange
+					800: '#92400e',  // Very dark orange
+					900: '#78350f',  // Almost brown
+					950: '#451a03',  // Deep brown - excellent contrast
 				},
 			},
 			borderRadius: {

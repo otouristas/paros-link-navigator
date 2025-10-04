@@ -15,7 +15,8 @@ export const Header = () => {
     { name: "Port", href: "/paros-port-car-rental" },
     { name: "Scooters", href: "/scooter-rental-paros" },
     { name: "ATVs", href: "/atv-quad-rental-paros" },
-    { name: "Economy Cars", href: "/economy-car-rental-paros" }
+    { name: "Economy Cars", href: "/economy-car-rental-paros" },
+    { name: "Blog", href: "/blog" }
   ];
 
   return (

@@ -1,4 +1,35 @@
-# Welcome to your Lovable project
+# Paros Rent-a-Car Website
+
+A modern car rental website for Paros and Antiparos islands, featuring an integrated Strapi CMS for content management.
+
+## 🎉 New: Strapi CMS Integration
+
+This project now includes a **Strapi CMS** backend for easy content management! You can now:
+- ✅ Add, edit, and delete blog posts through a dashboard
+- ✅ Manage users and permissions
+- ✅ Upload and organize media files
+- ✅ Create categories and organize content
+
+## 🚀 Getting Started (Super Simple!)
+
+### 🎯 You Have Admin Account? Start Here!
+👉 **[Open DO_THIS_NOW.md](./DO_THIS_NOW.md)** - Setup content types & import blog posts (15 min)
+
+### 📝 Need Full Blog Content?
+👉 **[Open BLOG_POSTS_CONTENT.md](./BLOG_POSTS_CONTENT.md)** - All 6 blog posts ready to copy-paste
+
+### 🛠️ Haven't Created Strapi Yet?
+👉 **[Open START_HERE.md](./START_HERE.md)** - Install and setup Strapi from scratch
+
+### 📚 Other Helpful Guides
+- 🔧 [Content Setup Guide](./STRAPI_CONTENT_SETUP.md) - Detailed content type creation
+- ⚡ [Quick Commands](./QUICK_COMMANDS.txt) - Just the essential commands
+- 📘 [Quick Start Guide](./STRAPI_QUICK_START.md) - 5-minute overview
+- 📕 [Command Reference](./STRAPI_COMMANDS.md) - All commands in one place
+- 🎨 [Visual Guide](./STRAPI_VISUAL_GUIDE.md) - Step-by-step with visuals
+- 📖 [Full Documentation](./README_STRAPI.md) - Complete reference
+
+---
 
 ## Project info
 
@@ -54,11 +85,19 @@ npm run dev
 
 This project is built with:
 
+**Frontend:**
 - Vite
 - TypeScript
 - React
 - shadcn-ui
 - Tailwind CSS
+- React Query (TanStack Query)
+- React Router
+
+**Backend (CMS):**
+- Strapi CMS
+- SQLite/PostgreSQL (database)
+- Node.js
 
 ## How can I deploy this project?
 

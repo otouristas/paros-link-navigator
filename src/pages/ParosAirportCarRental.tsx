@@ -16,43 +16,47 @@ const ParosAirportCarRental = () => {
       <div className="min-h-screen bg-white text-main-950">
         <Header />
 
-        <section className="relative bg-gradient-to-br from-main-900 via-main-800 to-secondary-700 text-white py-24 overflow-hidden">
+        <section className="relative bg-gradient-to-br from-main-900 via-main-800 to-main-950 text-white py-28 overflow-hidden">
           <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmZmZmYiIGZpbGwtb3BhY2l0eT0iMC4wNSI+PHBhdGggZD0iTTM2IDE0di0yYzAtMi4yMS0xLjc5LTQtNC00cy00IDEuNzktNCA0djJjLTIuMjEgMC00IDEuNzktNCA0czEuNzkgNCA0IDRoOGMyLjIxIDAgNC0xLjc5IDQtNHMtMS43OS00LTQtNHoiLz48L2c+PC9nPjwvc3ZnPg==')] opacity-10"></div>
           <div className="container mx-auto px-4 relative z-10">
-            <div className="max-w-5xl mx-auto text-center">
-              <div className="inline-flex items-center bg-white/20 backdrop-blur-sm px-5 py-2 rounded-full text-sm font-semibold mb-6">
-                <Plane className="h-4 w-4 mr-2" />
+            <div className="max-w-6xl mx-auto text-center">
+              <div className="inline-flex items-center bg-gold-500 text-main-950 px-6 py-3 rounded-full text-sm font-bold mb-8 shadow-2xl">
+                <Plane className="h-5 w-5 mr-2" />
                 24/7 Airport Service Available
               </div>
-              <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
+              <h1 className="text-5xl md:text-6xl font-black mb-6 leading-tight tracking-tight">
                 Paros Airport Car Rental
               </h1>
-              <p className="text-xl text-white/90 mb-8 max-w-3xl mx-auto leading-relaxed">
+              <p className="text-xl md:text-2xl mb-10 text-white/95 leading-relaxed max-w-4xl mx-auto font-medium">
                 Arrive and drive away in comfort — no shuttle, no delays. Fast and easy Paros Airport car rental with Aggelos Rentals.
               </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+              <div className="flex flex-col sm:flex-row gap-6 justify-center">
                 <a
                   href="https://antiparosrentacar.gocars.gr/search?lang=en"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="bg-gold-600 hover:bg-gold-500 text-main-900 px-8 py-4 rounded-xl font-bold text-lg transition-all duration-200 shadow-lg hover:shadow-xl transform hover:scale-105"
+                  className="bg-gold-500 hover:bg-gold-400 text-main-950 px-12 py-6 rounded-2xl font-black text-xl transition-all inline-flex items-center justify-center shadow-2xl hover:scale-105 transform"
                 >
                   Book Airport Pickup Now
+                  <ArrowRight className="ml-3 h-7 w-7" />
                 </a>
-                <div className="flex items-center text-white/80">
-                  <Phone className="h-5 w-5 mr-2" />
-                  <span className="font-semibold">+30 694 495 0094</span>
-                </div>
+                <a
+                  href="tel:+306944950094"
+                  className="bg-white text-main-900 hover:bg-gray-100 px-12 py-6 rounded-2xl font-black text-xl transition-all shadow-xl inline-flex items-center justify-center"
+                >
+                  <Phone className="mr-3 h-7 w-7" />
+                  Call Now
+                </a>
               </div>
             </div>
           </div>
         </section>
 
-        <section className="py-20 bg-gray-50">
+        <section className="py-24 bg-gradient-to-b from-gray-50 to-white">
           <div className="container mx-auto px-4">
             <div className="max-w-6xl mx-auto">
-              <div className="text-center mb-16">
-                <h2 className="text-4xl font-bold mb-6 text-main-900">Arriving at Paros Airport?</h2>
+              <div className="text-center mb-20">
+                <h2 className="text-4xl md:text-5xl font-black mb-4 text-main-900">Arriving at Paros Airport?</h2>
                 <p className="text-xl text-gray-600 max-w-3xl mx-auto">
                   Our team meets you directly at arrivals with your car ready to go. No waiting, no hassle.
                 </p>
@@ -145,7 +149,7 @@ const ParosAirportCarRental = () => {
           </div>
         </section>
 
-        <section className="py-20 bg-white">
+        <section className="py-24 bg-white">
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto">
               <h2 className="text-3xl font-bold text-center mb-12 text-main-900">Distance from Paros Airport</h2>
@@ -176,7 +180,7 @@ const ParosAirportCarRental = () => {
         <section className="py-16 bg-main-900 text-white">
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto text-center">
-              <h2 className="text-4xl font-bold mb-8">Ready to Explore Paros?</h2>
+              <h2 className="text-4xl md:text-5xl font-black mb-8">Ready to Explore Paros?</h2>
               <p className="text-xl text-white/90 mb-8">
                 Book your Paros Airport car rental now and start your island adventure the moment you land.
               </p>
@@ -185,7 +189,7 @@ const ParosAirportCarRental = () => {
                   href="https://antiparosrentacar.gocars.gr/search?lang=en"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="bg-gold-600 hover:bg-gold-500 text-main-900 px-8 py-4 rounded-xl font-bold text-lg transition-all duration-200 shadow-lg hover:shadow-xl transform hover:scale-105 flex items-center"
+                  className="bg-gold-500 hover:bg-gold-400 text-main-900 px-8 py-4 rounded-xl font-bold text-lg transition-all duration-200 shadow-lg hover:shadow-xl transform hover:scale-105 flex items-center"
                 >
                   <span>Book Airport Pickup Now</span>
                   <ArrowRight className="h-5 w-5 ml-2" />
