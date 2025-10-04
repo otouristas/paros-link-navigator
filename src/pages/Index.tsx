@@ -1,385 +1,297 @@
-
+import { Header } from "@/components/Header";
+import { Footer } from "@/components/Footer";
+import { SEO } from "@/components/SEO";
+import { Car, MapPin, Clock, Star, ArrowRight, Shield, Award, Check } from "lucide-react";
 import { Link } from "react-router-dom";
-import { Car, MapPin, Phone, Clock, Star, ArrowRight, Award, Shield, Users } from "lucide-react";
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white">
-      {/* Header */}
-      <header className="bg-white shadow-xl sticky top-0 z-50 border-b border-gray-100">
-        <div className="container mx-auto px-4 py-6">
-          <nav className="flex justify-between items-center">
-            <div className="flex items-center space-x-3">
-              <div className="h-12 w-12 bg-gradient-to-br from-navy-600 to-navy-800 rounded-xl flex items-center justify-center">
-                <Car className="h-7 w-7 text-white" />
-              </div>
-              <div>
-                <h1 className="text-2xl font-bold text-navy-800">Paros Rent A Car</h1>
-                <p className="text-sm text-gray-600">Premium Car Rental Network</p>
-              </div>
-            </div>
-            <div className="hidden md:flex space-x-8">
-              <Link to="/cars" className="text-navy-700 hover:text-gold-600 font-medium transition-colors">Cars</Link>
-              <Link to="/scooters" className="text-navy-700 hover:text-gold-600 font-medium transition-colors">Scooters</Link>
-              <Link to="/atv" className="text-navy-700 hover:text-gold-600 font-medium transition-colors">ATVs</Link>
-              <Link to="/airport" className="text-navy-700 hover:text-gold-600 font-medium transition-colors">Airport</Link>
-              <Link to="/port" className="text-navy-700 hover:text-gold-600 font-medium transition-colors">Port</Link>
-            </div>
-          </nav>
-        </div>
-      </header>
+    <>
+      <SEO
+        title="Car Rental Paros | Rent a Car in Paros Greece - Best Prices 2025"
+        description="Premium car rental services in Paros, Greece. Rent economy cars, SUVs, scooters & ATVs. Airport & port pickup available. Book your Paros car rental online with best price guarantee."
+        canonicalUrl="http://rentacar-paros.gr/"
+        keywords="car rental paros, paros car rental, rent a car paros, paros airport car rental, antiparos rent a car, economy car rentals paros"
+      />
+      <div className="min-h-screen bg-white">
+        <Header />
 
-      {/* Hero Section */}
-      <section className="py-24 bg-gradient-to-br from-navy-800 via-navy-700 to-navy-900 text-white relative overflow-hidden">
-        <div className="absolute inset-0 bg-black/10"></div>
-        <div className="container mx-auto px-4 text-center relative z-10">
-          <div className="inline-flex items-center bg-gold-100 text-gold-800 px-4 py-2 rounded-full text-sm font-medium mb-6">
-            <Award className="h-4 w-4 mr-2" />
-            Premium Paros Car Rental Services
-          </div>
-          <h1 className="text-6xl font-bold mb-8 leading-tight">
-            Paros Rent A Car Services
-            <span className="block text-gold-400 text-4xl mt-2">Your Trusted Vehicle Partner</span>
-          </h1>
-          <p className="text-xl mb-10 max-w-4xl mx-auto text-gray-200 leading-relaxed">
-            Discover Paros with our premium car rental services. From economy cars to luxury SUVs, 
-            scooters to ATVs - we have the perfect vehicle for your Paros adventure. 
-            Professional service, competitive rates, and unmatched reliability.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-6 justify-center">
-            <a 
-              href="https://antiparosrentacar.com" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="bg-gradient-to-r from-gold-500 to-gold-600 hover:from-gold-600 hover:to-gold-700 text-white px-10 py-5 rounded-xl font-bold text-lg transition-all transform hover:scale-105 shadow-xl inline-flex items-center justify-center"
-            >
-              Book Now at Antiparos Rent A Car
-              <ArrowRight className="ml-3 h-6 w-6" />
-            </a>
-            <Link 
-              to="/cars" 
-              className="bg-transparent border-3 border-white hover:bg-white hover:text-navy-800 text-white px-10 py-5 rounded-xl font-bold text-lg transition-all"
-            >
-              View Our Premium Fleet
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* Services Section */}
-      <section className="py-20 bg-white">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-5xl font-bold text-navy-800 mb-6">
-              Rent A Car Paros - Complete Vehicle Solutions
-            </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Professional car rental services across Paros island with the largest fleet selection
-            </p>
-          </div>
-          
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <div className="group text-center p-8 bg-gradient-to-br from-white to-gray-50 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100">
-              <div className="h-20 w-20 bg-gradient-to-br from-navy-600 to-navy-800 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform">
-                <Car className="h-10 w-10 text-white" />
+        <section className="relative bg-gradient-to-br from-primary via-primary/90 to-secondary text-white py-24 overflow-hidden">
+          <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmZmZmYiIGZpbGwtb3BhY2l0eT0iMC4wNSI+PHBhdGggZD0iTTM2IDE0di0yYzAtMi4yMS0xLjc5LTQtNC00cy00IDEuNzktNCA0djJjLTIuMjEgMC00IDEuNzktNCA0czEuNzkgNCA0IDRoOGMyLjIxIDAgNC0xLjc5IDQtNHMtMS43OS00LTQtNHoiLz48L2c+PC9nPjwvc3ZnPg==')] opacity-10"></div>
+          <div className="container mx-auto px-4 relative z-10">
+            <div className="max-w-5xl mx-auto text-center">
+              <div className="inline-flex items-center bg-white/20 backdrop-blur-sm px-5 py-2 rounded-full text-sm font-semibold mb-6 animate-fade-in">
+                <Award className="h-4 w-4 mr-2" />
+                Trusted Car Rental Service Since 2010
               </div>
-              <h3 className="text-2xl font-bold mb-4 text-navy-800">Paros Car Rental</h3>
-              <p className="text-gray-600 mb-6 leading-relaxed">
-                Economy, compact, and luxury cars available for rent in Paros. Perfect for exploring the island with comfort and style.
+              <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
+                Car Rental in Paros, Greece
+              </h1>
+              <p className="text-xl md:text-2xl mb-10 text-white/95 leading-relaxed max-w-4xl mx-auto">
+                Explore the beauty of Paros with our premium vehicle rentals. From economy cars to luxury SUVs, scooters to ATVs - find your perfect ride today.
               </p>
-              <Link to="/cars" className="text-gold-600 hover:text-gold-700 font-bold text-lg inline-flex items-center">
-                View Cars
-                <ArrowRight className="ml-2 h-5 w-5" />
-              </Link>
-            </div>
-            
-            <div className="group text-center p-8 bg-gradient-to-br from-white to-gray-50 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100">
-              <div className="h-20 w-20 bg-gradient-to-br from-emerald-500 to-emerald-700 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform">
-                <span className="text-white font-bold text-2xl">🛵</span>
-              </div>
-              <h3 className="text-2xl font-bold mb-4 text-navy-800">Paros Scooter Rental</h3>
-              <p className="text-gray-600 mb-6 leading-relaxed">
-                Explore Paros on two wheels. Premium scooter rentals for easy navigation through narrow streets and coastal roads.
-              </p>
-              <Link to="/scooters" className="text-gold-600 hover:text-gold-700 font-bold text-lg inline-flex items-center">
-                View Scooters
-                <ArrowRight className="ml-2 h-5 w-5" />
-              </Link>
-            </div>
-            
-            <div className="group text-center p-8 bg-gradient-to-br from-white to-gray-50 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100">
-              <div className="h-20 w-20 bg-gradient-to-br from-orange-500 to-orange-700 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform">
-                <span className="text-white font-bold text-2xl">🏎️</span>
-              </div>
-              <h3 className="text-2xl font-bold mb-4 text-navy-800">Paros ATV Rental</h3>
-              <p className="text-gray-600 mb-6 leading-relaxed">
-                Adventure vehicles for off-road exploration. Premium ATVs and quad bikes for Paros adventures and beach access.
-              </p>
-              <Link to="/atv" className="text-gold-600 hover:text-gold-700 font-bold text-lg inline-flex items-center">
-                View ATVs
-                <ArrowRight className="ml-2 h-5 w-5" />
-              </Link>
-            </div>
-            
-            <div className="group text-center p-8 bg-gradient-to-br from-white to-gray-50 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100">
-              <div className="h-20 w-20 bg-gradient-to-br from-purple-500 to-purple-700 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform">
-                <span className="text-white font-bold text-2xl">🚙</span>
-              </div>
-              <h3 className="text-2xl font-bold mb-4 text-navy-800">Paros SUV Rental</h3>
-              <p className="text-gray-600 mb-6 leading-relaxed">
-                Spacious luxury SUVs for families and groups. Premium vehicles for your comfortable Paros vacation experience.
-              </p>
-              <Link to="/cars" className="text-gold-600 hover:text-gold-700 font-bold text-lg inline-flex items-center">
-                View SUVs
-                <ArrowRight className="ml-2 h-5 w-5" />
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Locations Section */}
-      <section className="py-20 bg-gradient-to-br from-gray-50 to-white">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-5xl font-bold text-navy-800 mb-6">
-              Paros Car Rental Locations
-            </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Convenient pickup locations across Paros island for your ultimate convenience
-            </p>
-          </div>
-          
-          <div className="grid md:grid-cols-2 gap-12">
-            <div className="bg-white p-10 rounded-3xl shadow-xl border border-gray-100">
-              <div className="h-16 w-16 bg-gradient-to-br from-blue-500 to-blue-700 rounded-2xl flex items-center justify-center mb-6">
-                <MapPin className="h-8 w-8 text-white" />
-              </div>
-              <h3 className="text-3xl font-bold mb-6 text-navy-800">Paros Airport Car Rental</h3>
-              <p className="text-gray-600 mb-8 text-lg leading-relaxed">
-                Premium car rental services at Paros Airport (PAS). Pick up your vehicle upon arrival 
-                and start your Paros journey immediately. We offer professional meet & greet services, 
-                quick paperwork processing, and 24/7 support.
-              </p>
-              <div className="flex gap-4">
-                <Link to="/airport" className="bg-navy-600 text-white px-8 py-4 rounded-xl font-bold hover:bg-navy-700 transition-colors">
-                  Airport Details
-                </Link>
-                <a 
-                  href="https://antiparosrentacar.com" 
-                  target="_blank" 
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <a
+                  href="https://antiparosrentacar.com"
+                  target="_blank"
                   rel="noopener noreferrer"
-                  className="bg-gradient-to-r from-gold-500 to-gold-600 text-white px-8 py-4 rounded-xl font-bold hover:from-gold-600 hover:to-gold-700 transition-colors"
+                  className="bg-accent hover:bg-accent/90 text-white px-10 py-5 rounded-xl font-bold text-lg transition-all inline-flex items-center justify-center shadow-2xl hover:scale-105 transform"
                 >
-                  Book Airport Pickup
+                  Book Your Rental Now
+                  <ArrowRight className="ml-3 h-6 w-6" />
+                </a>
+                <Link
+                  to="/cars"
+                  className="bg-white text-primary hover:bg-gray-50 px-10 py-5 rounded-xl font-bold text-lg transition-all shadow-xl"
+                >
+                  View Our Fleet
+                </Link>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="py-20 bg-gradient-to-b from-gray-50 to-white">
+          <div className="container mx-auto px-4">
+            <div className="text-center mb-16">
+              <h2 className="text-4xl md:text-5xl font-bold mb-4">Rent a Car in Paros</h2>
+              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+                Complete vehicle rental solutions for your perfect Paros vacation
+              </p>
+            </div>
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+              <Link to="/cars" className="group bg-white p-8 rounded-2xl shadow-sm hover:shadow-xl transition-all border border-gray-100 hover:border-primary/20">
+                <div className="h-16 w-16 bg-primary/10 rounded-xl flex items-center justify-center mb-4 group-hover:bg-primary group-hover:scale-110 transition-all">
+                  <Car className="h-8 w-8 text-primary group-hover:text-white" />
+                </div>
+                <h3 className="text-2xl font-bold mb-3 group-hover:text-primary transition-colors">Cars & SUVs</h3>
+                <p className="text-gray-600 mb-4">
+                  Economy to luxury vehicles for all your transportation needs across Paros island.
+                </p>
+                <span className="text-primary font-semibold inline-flex items-center group-hover:underline">
+                  Explore Cars
+                  <ArrowRight className="ml-2 h-4 w-4" />
+                </span>
+              </Link>
+
+              <Link to="/scooters" className="group bg-white p-8 rounded-2xl shadow-sm hover:shadow-xl transition-all border border-gray-100 hover:border-secondary/20">
+                <div className="h-16 w-16 bg-secondary/10 rounded-xl flex items-center justify-center mb-4 group-hover:bg-secondary group-hover:scale-110 transition-all">
+                  <span className="text-3xl group-hover:scale-110 transition-transform">🛵</span>
+                </div>
+                <h3 className="text-2xl font-bold mb-3 group-hover:text-secondary transition-colors">Scooters</h3>
+                <p className="text-gray-600 mb-4">
+                  Navigate narrow streets and discover hidden beaches on our modern scooters.
+                </p>
+                <span className="text-primary font-semibold inline-flex items-center group-hover:underline">
+                  View Scooters
+                  <ArrowRight className="ml-2 h-4 w-4" />
+                </span>
+              </Link>
+
+              <Link to="/atv" className="group bg-white p-8 rounded-2xl shadow-sm hover:shadow-xl transition-all border border-gray-100 hover:border-accent/20">
+                <div className="h-16 w-16 bg-accent/10 rounded-xl flex items-center justify-center mb-4 group-hover:bg-accent group-hover:scale-110 transition-all">
+                  <span className="text-3xl group-hover:scale-110 transition-transform">🏍️</span>
+                </div>
+                <h3 className="text-2xl font-bold mb-3 group-hover:text-accent transition-colors">ATVs & Quads</h3>
+                <p className="text-gray-600 mb-4">
+                  Off-road adventures and access to remote beaches with our powerful ATVs.
+                </p>
+                <span className="text-primary font-semibold inline-flex items-center group-hover:underline">
+                  View ATVs
+                  <ArrowRight className="ml-2 h-4 w-4" />
+                </span>
+              </Link>
+
+              <Link to="/airport" className="group bg-white p-8 rounded-2xl shadow-sm hover:shadow-xl transition-all border border-gray-100 hover:border-primary/20">
+                <div className="h-16 w-16 bg-primary/10 rounded-xl flex items-center justify-center mb-4 group-hover:bg-primary group-hover:scale-110 transition-all">
+                  <span className="text-3xl group-hover:scale-110 transition-transform">✈️</span>
+                </div>
+                <h3 className="text-2xl font-bold mb-3 group-hover:text-primary transition-colors">Airport Pickup</h3>
+                <p className="text-gray-600 mb-4">
+                  Convenient meet & greet service at Paros Airport for immediate vehicle pickup.
+                </p>
+                <span className="text-primary font-semibold inline-flex items-center group-hover:underline">
+                  Airport Service
+                  <ArrowRight className="ml-2 h-4 w-4" />
+                </span>
+              </Link>
+            </div>
+          </div>
+        </section>
+
+        <section className="py-20 bg-white">
+          <div className="container mx-auto px-4">
+            <div className="text-center mb-16">
+              <h2 className="text-4xl md:text-5xl font-bold mb-4">Paros Car Rental Locations</h2>
+              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+                Convenient service across all major locations in Paros and Antiparos
+              </p>
+            </div>
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+              <Link to="/airport" className="bg-gradient-to-br from-blue-50 to-blue-100 p-8 rounded-2xl hover:shadow-lg transition-all">
+                <div className="h-14 w-14 bg-primary rounded-xl flex items-center justify-center mb-4">
+                  <MapPin className="h-7 w-7 text-white" />
+                </div>
+                <h3 className="text-2xl font-bold mb-3">Paros Airport</h3>
+                <p className="text-gray-700 mb-4">
+                  Meet & greet service at Paros Airport (PAS). Your vehicle ready upon arrival.
+                </p>
+                <span className="text-primary font-semibold inline-flex items-center hover:underline">
+                  Learn More →
+                </span>
+              </Link>
+
+              <Link to="/port" className="bg-gradient-to-br from-teal-50 to-teal-100 p-8 rounded-2xl hover:shadow-lg transition-all">
+                <div className="h-14 w-14 bg-secondary rounded-xl flex items-center justify-center mb-4">
+                  <MapPin className="h-7 w-7 text-white" />
+                </div>
+                <h3 className="text-2xl font-bold mb-3">Paros Port</h3>
+                <p className="text-gray-700 mb-4">
+                  Ferry arrival pickup at Parikia port. Start exploring immediately after disembarking.
+                </p>
+                <span className="text-primary font-semibold inline-flex items-center hover:underline">
+                  Port Details →
+                </span>
+              </Link>
+
+              <Link to="/antiparos" className="bg-gradient-to-br from-green-50 to-green-100 p-8 rounded-2xl hover:shadow-lg transition-all">
+                <div className="h-14 w-14 bg-accent rounded-xl flex items-center justify-center mb-4">
+                  <MapPin className="h-7 w-7 text-white" />
+                </div>
+                <h3 className="text-2xl font-bold mb-3">Antiparos Island</h3>
+                <p className="text-gray-700 mb-4">
+                  Full rental services on Antiparos with free ferry port pickup and delivery.
+                </p>
+                <span className="text-primary font-semibold inline-flex items-center hover:underline">
+                  Antiparos Info →
+                </span>
+              </Link>
+
+              <Link to="/naoussa" className="bg-gradient-to-br from-orange-50 to-orange-100 p-8 rounded-2xl hover:shadow-lg transition-all">
+                <div className="h-14 w-14 bg-primary rounded-xl flex items-center justify-center mb-4">
+                  <MapPin className="h-7 w-7 text-white" />
+                </div>
+                <h3 className="text-2xl font-bold mb-3">Naoussa Village</h3>
+                <p className="text-gray-700 mb-4">
+                  Free delivery to hotels in Naoussa. Perfect for exploring northern Paros beaches.
+                </p>
+                <span className="text-primary font-semibold inline-flex items-center hover:underline">
+                  Naoussa Service →
+                </span>
+              </Link>
+
+              <Link to="/parikia" className="bg-gradient-to-br from-purple-50 to-purple-100 p-8 rounded-2xl hover:shadow-lg transition-all">
+                <div className="h-14 w-14 bg-secondary rounded-xl flex items-center justify-center mb-4">
+                  <MapPin className="h-7 w-7 text-white" />
+                </div>
+                <h3 className="text-2xl font-bold mb-3">Parikia Capital</h3>
+                <p className="text-gray-700 mb-4">
+                  Main office in Parikia town. Port pickup and city center delivery available.
+                </p>
+                <span className="text-primary font-semibold inline-flex items-center hover:underline">
+                  Parikia Options →
+                </span>
+              </Link>
+
+              <div className="bg-gradient-to-br from-gray-50 to-gray-100 p-8 rounded-2xl">
+                <div className="h-14 w-14 bg-accent rounded-xl flex items-center justify-center mb-4">
+                  <MapPin className="h-7 w-7 text-white" />
+                </div>
+                <h3 className="text-2xl font-bold mb-3">Hotel Delivery</h3>
+                <p className="text-gray-700 mb-4">
+                  Free delivery to your accommodation anywhere across Paros island.
+                </p>
+                <a href="https://antiparosrentacar.com" target="_blank" rel="noopener noreferrer" className="text-primary font-semibold inline-flex items-center hover:underline">
+                  Request Delivery →
                 </a>
               </div>
             </div>
-            
-            <div className="bg-white p-10 rounded-3xl shadow-xl border border-gray-100">
-              <div className="h-16 w-16 bg-gradient-to-br from-teal-500 to-teal-700 rounded-2xl flex items-center justify-center mb-6">
-                <span className="text-white font-bold text-2xl">⚓</span>
-              </div>
-              <h3 className="text-3xl font-bold mb-6 text-navy-800">Paros Port Car Rental</h3>
-              <p className="text-gray-600 mb-8 text-lg leading-relaxed">
-                Professional car rental services at Paros Port (Parikia). Perfect for ferry arrivals from Athens, 
-                Mykonos, or other Greek islands. Easy access to your rental vehicle right at the port with 
-                immediate assistance.
+          </div>
+        </section>
+
+        <section className="py-20 bg-gradient-to-b from-gray-50 to-white">
+          <div className="container mx-auto px-4">
+            <div className="text-center mb-16">
+              <h2 className="text-4xl md:text-5xl font-bold mb-4">Why Choose Aggelos Rentals</h2>
+              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+                Your trusted partner for car rentals in Paros since 2010
               </p>
-              <div className="flex gap-4">
-                <Link to="/port" className="bg-navy-600 text-white px-8 py-4 rounded-xl font-bold hover:bg-navy-700 transition-colors">
-                  Port Details
-                </Link>
-                <a 
-                  href="https://antiparosrentacar.com" 
-                  target="_blank" 
+            </div>
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+              <div className="text-center">
+                <div className="h-20 w-20 bg-primary rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg">
+                  <Star className="h-10 w-10 text-white" />
+                </div>
+                <h3 className="text-xl font-bold mb-3">Best Prices</h3>
+                <p className="text-gray-600 leading-relaxed">
+                  Competitive rates with no hidden fees. Price match guarantee on all vehicles.
+                </p>
+              </div>
+
+              <div className="text-center">
+                <div className="h-20 w-20 bg-secondary rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg">
+                  <Shield className="h-10 w-10 text-white" />
+                </div>
+                <h3 className="text-xl font-bold mb-3">Full Insurance</h3>
+                <p className="text-gray-600 leading-relaxed">
+                  Comprehensive coverage included. Drive with complete peace of mind.
+                </p>
+              </div>
+
+              <div className="text-center">
+                <div className="h-20 w-20 bg-accent rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg">
+                  <Clock className="h-10 w-10 text-white" />
+                </div>
+                <h3 className="text-xl font-bold mb-3">24/7 Support</h3>
+                <p className="text-gray-600 leading-relaxed">
+                  Round-the-clock assistance. We're always here when you need us.
+                </p>
+              </div>
+
+              <div className="text-center">
+                <div className="h-20 w-20 bg-primary rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg">
+                  <Car className="h-10 w-10 text-white" />
+                </div>
+                <h3 className="text-xl font-bold mb-3">Modern Fleet</h3>
+                <p className="text-gray-600 leading-relaxed">
+                  Well-maintained, recent model vehicles. Cleaned and serviced regularly.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="py-20 bg-gradient-to-br from-primary to-secondary text-white">
+          <div className="container mx-auto px-4">
+            <div className="max-w-4xl mx-auto text-center">
+              <h2 className="text-4xl md:text-5xl font-bold mb-6">Ready to Explore Paros?</h2>
+              <p className="text-xl md:text-2xl mb-10 text-white/95">
+                Book your perfect vehicle today and discover the beauty of Paros island with the freedom of your own transportation.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <a
+                  href="https://antiparosrentacar.com"
+                  target="_blank"
                   rel="noopener noreferrer"
-                  className="bg-gradient-to-r from-gold-500 to-gold-600 text-white px-8 py-4 rounded-xl font-bold hover:from-gold-600 hover:to-gold-700 transition-colors"
+                  className="bg-white text-primary hover:bg-gray-50 px-10 py-5 rounded-xl font-bold text-lg transition-all inline-flex items-center justify-center shadow-2xl hover:scale-105 transform"
                 >
-                  Book Port Pickup
+                  Reserve Your Vehicle
+                  <ArrowRight className="ml-3 h-6 w-6" />
                 </a>
+                <Link
+                  to="/cars"
+                  className="bg-accent hover:bg-accent/90 text-white px-10 py-5 rounded-xl font-bold text-lg transition-all shadow-xl"
+                >
+                  View Available Vehicles
+                </Link>
               </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* Why Choose Us Section */}
-      <section className="py-20 bg-white">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-5xl font-bold text-navy-800 mb-6">
-              Why Choose Our Paros Rent A Car Network
-            </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Professional excellence and customer satisfaction guaranteed
-            </p>
-          </div>
-          
-          <div className="grid md:grid-cols-3 gap-12">
-            <div className="text-center group">
-              <div className="h-24 w-24 bg-gradient-to-br from-yellow-400 to-yellow-600 rounded-3xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform">
-                <Star className="h-12 w-12 text-white" />
-              </div>
-              <h3 className="text-2xl font-bold mb-4 text-navy-800">Premium Quality Fleet</h3>
-              <p className="text-gray-600 text-lg leading-relaxed">
-                Meticulously maintained vehicles with comprehensive insurance coverage for your complete peace of mind and safety.
-              </p>
-            </div>
-            
-            <div className="text-center group">
-              <div className="h-24 w-24 bg-gradient-to-br from-green-500 to-green-700 rounded-3xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform">
-                <Clock className="h-12 w-12 text-white" />
-              </div>
-              <h3 className="text-2xl font-bold mb-4 text-navy-800">24/7 Professional Support</h3>
-              <p className="text-gray-600 text-lg leading-relaxed">
-                Round-the-clock customer support and emergency roadside assistance throughout Paros island.
-              </p>
-            </div>
-            
-            <div className="text-center group">
-              <div className="h-24 w-24 bg-gradient-to-br from-blue-500 to-blue-700 rounded-3xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform">
-                <Phone className="h-12 w-12 text-white" />
-              </div>
-              <h3 className="text-2xl font-bold mb-4 text-navy-800">Seamless Booking Experience</h3>
-              <p className="text-gray-600 text-lg leading-relaxed">
-                Simple online booking process with instant confirmation and flexible cancellation policies.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-br from-gold-500 via-gold-600 to-gold-700 text-white relative overflow-hidden">
-        <div className="absolute inset-0 bg-black/10"></div>
-        <div className="container mx-auto px-4 text-center relative z-10">
-          <h2 className="text-5xl font-bold mb-8">Ready to Explore Paros in Style?</h2>
-          <p className="text-2xl mb-12 max-w-4xl mx-auto leading-relaxed">
-            Book your perfect vehicle today with Antiparos Rent A Car - your trusted partner for 
-            premium Paros car rental services. Best prices and exceptional service guaranteed!
-          </p>
-          <a 
-            href="https://antiparosrentacar.com" 
-            target="_blank" 
-            rel="noopener noreferrer"
-            className="bg-white text-gold-600 px-12 py-6 rounded-2xl font-bold text-xl hover:bg-gray-100 transition-all inline-flex items-center shadow-2xl transform hover:scale-105"
-          >
-            Book Your Premium Vehicle Now
-            <ArrowRight className="ml-3 h-7 w-7" />
-          </a>
-        </div>
-      </section>
-
-      {/* Footer */}
-      <footer className="bg-navy-900 text-white py-16">
-        <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-4 gap-12">
-            <div>
-              <div className="flex items-center space-x-3 mb-6">
-                <div className="h-12 w-12 bg-gradient-to-br from-gold-500 to-gold-600 rounded-xl flex items-center justify-center">
-                  <Car className="h-7 w-7 text-white" />
-                </div>
-                <div>
-                  <h3 className="text-2xl font-bold">Paros Rent A Car</h3>
-                  <p className="text-gray-400">Premium Network</p>
-                </div>
-              </div>
-              <p className="text-gray-300 leading-relaxed">
-                Your premier destination for professional car rental services in Paros, Greece. 
-                Premium vehicles, competitive prices, exceptional customer service.
-              </p>
-            </div>
-            
-            <div>
-              <h4 className="text-xl font-bold mb-6 text-gold-400">Vehicle Categories</h4>
-              <ul className="space-y-3 text-gray-300">
-                <li><Link to="/cars" className="hover:text-white transition-colors font-medium">Premium Cars</Link></li>
-                <li><Link to="/scooters" className="hover:text-white transition-colors font-medium">Scooters</Link></li>
-                <li><Link to="/atv" className="hover:text-white transition-colors font-medium">ATVs & Quads</Link></li>
-                <li><a href="https://antiparosrentacar.com" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors font-medium">Luxury Bikes</a></li>
-              </ul>
-            </div>
-            
-            <div>
-              <h4 className="text-xl font-bold mb-6 text-gold-400">Service Locations</h4>
-              <ul className="space-y-3 text-gray-300">
-                <li><Link to="/airport" className="hover:text-white transition-colors font-medium">Paros Airport</Link></li>
-                <li><Link to="/port" className="hover:text-white transition-colors font-medium">Paros Port</Link></li>
-                <li><a href="https://antiparosrentacar.com" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors font-medium">Parikia Center</a></li>
-                <li><a href="https://antiparosrentacar.com" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors font-medium">Naoussa Area</a></li>
-              </ul>
-            </div>
-            
-            <div>
-              <h4 className="text-xl font-bold mb-6 text-gold-400">Partner Network</h4>
-              <p className="text-gray-300 mb-6 leading-relaxed">
-                This site is part of the premium Paros car rental network, professionally powered by:
-              </p>
-              <a 
-                href="https://antiparosrentacar.com" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="text-gold-400 hover:text-gold-300 font-bold text-lg transition-colors inline-flex items-center"
-              >
-                Antiparos Rent A Car
-                <ArrowRight className="ml-2 h-5 w-5" />
-              </a>
-            </div>
-          </div>
-          
-          <div className="border-t border-gray-700 mt-12 pt-8 text-center text-gray-300">
-            <p className="text-lg">&copy; 2024 Paros Car Rental Premium Network. All rights reserved. | 
-              <a href="https://antiparosrentacar.com" target="_blank" rel="noopener noreferrer" className="text-gold-400 hover:text-gold-300 ml-2 font-medium">
-                Professionally Powered by Antiparos Rent A Car
-              </a>
-            </p>
-            
-            {/* Enhanced Hidden SEO Keywords Section */}
-            <div className="hidden">
-              <a href="https://antiparosrentacar.com" target="_blank" rel="noopener noreferrer">paros rent a car</a>
-              <a href="https://antiparosrentacar.com" target="_blank" rel="noopener noreferrer">rent a car paros</a>
-              <a href="https://antiparosrentacar.com" target="_blank" rel="noopener noreferrer">paros car rental</a>
-              <a href="https://antiparosrentacar.com" target="_blank" rel="noopener noreferrer">paros airport car rental</a>
-              <a href="https://antiparosrentacar.com" target="_blank" rel="noopener noreferrer">paros port car rental</a>
-              <a href="https://antiparosrentacar.com" target="_blank" rel="noopener noreferrer">antiparos rent a car</a>
-              <a href="https://antiparosrentacar.com" target="_blank" rel="noopener noreferrer">paros scooter rental</a>
-              <a href="https://antiparosrentacar.com" target="_blank" rel="noopener noreferrer">paros atv rental</a>
-              <a href="https://antiparosrentacar.com" target="_blank" rel="noopener noreferrer">paros bike rental</a>
-              <a href="https://antiparosrentacar.com" target="_blank" rel="noopener noreferrer">paros suv rental</a>
-              <a href="https://antiparosrentacar.com" target="_blank" rel="noopener noreferrer">paros quad rental</a>
-              <a href="https://antiparosrentacar.com" target="_blank" rel="noopener noreferrer">car hire paros</a>
-              <a href="https://antiparosrentacar.com" target="_blank" rel="noopener noreferrer">paros vehicle rental</a>
-              <a href="https://antiparosrentacar.com" target="_blank" rel="noopener noreferrer">paros motorcycle rental</a>
-              <a href="https://antiparosrentacar.com" target="_blank" rel="noopener noreferrer">paros moto rental</a>
-              <a href="https://antiparosrentacar.com" target="_blank" rel="noopener noreferrer">rent car paros greece</a>
-              <a href="https://antiparosrentacar.com" target="_blank" rel="noopener noreferrer">paros island car rental</a>
-              <a href="https://antiparosrentacar.com" target="_blank" rel="noopener noreferrer">paros rental cars</a>
-              <a href="https://antiparosrentacar.com" target="_blank" rel="noopener noreferrer">paros economy car rental</a>
-              <a href="https://antiparosrentacar.com" target="_blank" rel="noopener noreferrer">paros luxury car rental</a>
-              <a href="https://antiparosrentacar.com" target="_blank" rel="noopener noreferrer">paros 4x4 rental</a>
-              <a href="https://antiparosrentacar.com" target="_blank" rel="noopener noreferrer">paros jeep rental</a>
-              <a href="https://antiparosrentacar.com" target="_blank" rel="noopener noreferrer">paros cabrio rental</a>
-              <a href="https://antiparosrentacar.com" target="_blank" rel="noopener noreferrer">paros convertible rental</a>
-              <a href="https://antiparosrentacar.com" target="_blank" rel="noopener noreferrer">paros airport pickup</a>
-              <a href="https://antiparosrentacar.com" target="_blank" rel="noopener noreferrer">paros port pickup</a>
-              <a href="https://antiparosrentacar.com" target="_blank" rel="noopener noreferrer">parikia car rental</a>
-              <a href="https://antiparosrentacar.com" target="_blank" rel="noopener noreferrer">naoussa car rental</a>
-              <a href="https://antiparosrentacar.com" target="_blank" rel="noopener noreferrer">golden beach paros car rental</a>
-              <a href="https://antiparosrentacar.com" target="_blank" rel="noopener noreferrer">paros beach car rental</a>
-              <a href="https://antiparosrentacar.com" target="_blank" rel="noopener noreferrer">cheap car rental paros</a>
-              <a href="https://antiparosrentacar.com" target="_blank" rel="noopener noreferrer">best car rental paros</a>
-              <a href="https://antiparosrentacar.com" target="_blank" rel="noopener noreferrer">paros car hire cheap</a>
-              <a href="https://antiparosrentacar.com" target="_blank" rel="noopener noreferrer">paros auto rental</a>
-              <a href="https://antiparosrentacar.com" target="_blank" rel="noopener noreferrer">paros car booking</a>
-              <a href="https://antiparosrentacar.com" target="_blank" rel="noopener noreferrer">paros vehicle hire</a>
-              <a href="https://antiparosrentacar.com" target="_blank" rel="noopener noreferrer">premium paros car rental</a>
-              <a href="https://antiparosrentacar.com" target="_blank" rel="noopener noreferrer">professional paros car rental</a>
-            </div>
-          </div>
-        </div>
-      </footer>
-    </div>
+        <Footer />
+      </div>
+    </>
   );
 };
 

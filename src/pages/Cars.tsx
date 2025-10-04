@@ -1,30 +1,21 @@
 
 import { Link } from "react-router-dom";
 import { Car, ArrowLeft, ArrowRight, Star, Users, Fuel, Settings, Award, Shield } from "lucide-react";
+import { SEO } from "@/components/SEO";
+import { Header } from "@/components/Header";
+import { Footer } from "@/components/Footer";
 
 const Cars = () => {
   return (
-    <div className="min-h-screen bg-slate-50">
-      {/* Header */}
-      <header className="bg-white shadow-xl border-b border-gray-100">
-        <div className="container mx-auto px-4 py-6">
-          <nav className="flex justify-between items-center">
-            <Link to="/" className="flex items-center space-x-3">
-              <div className="h-12 w-12 bg-gradient-to-br from-navy-600 to-navy-800 rounded-xl flex items-center justify-center">
-                <Car className="h-7 w-7 text-white" />
-              </div>
-              <div>
-                <span className="text-2xl font-bold text-navy-800">Paros Rent A Car</span>
-                <p className="text-sm text-gray-600">Premium Car Fleet</p>
-              </div>
-            </Link>
-            <Link to="/" className="flex items-center text-navy-600 hover:text-gold-600 transition-colors font-medium">
-              <ArrowLeft className="h-5 w-5 mr-2" />
-              Back to Home
-            </Link>
-          </nav>
-        </div>
-      </header>
+    <>
+      <SEO
+        title="Car Rental Paros | Economy, Compact & Luxury Cars - Best Prices"
+        description="Rent a car in Paros, Greece. Wide selection of economy cars, compact vehicles, SUVs & luxury cars. Airport pickup, 24/7 support, best rates guaranteed. Book your Paros car rental today."
+        canonicalUrl="http://rentacar-paros.gr/cars"
+        keywords="paros car rental, rent a car paros, paros economy car rental, paros suv rental, cheap car rental paros, paros luxury car rental"
+      />
+      <div className="min-h-screen bg-slate-50">
+        <Header />
 
       {/* Hero Section */}
       <section className="py-20 bg-gradient-to-br from-navy-800 via-navy-700 to-navy-900 text-white relative overflow-hidden">
@@ -244,44 +235,9 @@ const Cars = () => {
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="bg-navy-900 text-white py-12">
-        <div className="container mx-auto px-4 text-center">
-          <p className="mb-6 text-lg">
-            Professional premium car rental services in Paros | 
-            <a href="https://antiparosrentacar.com" target="_blank" rel="noopener noreferrer" className="text-gold-400 hover:text-gold-300 ml-2 font-medium">
-              Professionally Powered by Antiparos Rent A Car
-            </a>
-          </p>
-          <div className="flex justify-center space-x-8">
-            <Link to="/" className="hover:text-gold-400 transition-colors font-medium">Home</Link>
-            <Link to="/scooters" className="hover:text-gold-400 transition-colors font-medium">Scooters</Link>
-            <Link to="/atv" className="hover:text-gold-400 transition-colors font-medium">ATVs</Link>
-            <Link to="/airport" className="hover:text-gold-400 transition-colors font-medium">Airport</Link>
-          </div>
-          
-          {/* Enhanced Hidden SEO Keywords Section */}
-          <div className="hidden">
-            <a href="https://antiparosrentacar.com" target="_blank" rel="noopener noreferrer">cheap car rental paros</a>
-            <a href="https://antiparosrentacar.com" target="_blank" rel="noopener noreferrer">best car rental paros</a>
-            <a href="https://antiparosrentacar.com" target="_blank" rel="noopener noreferrer">paros car hire cheap</a>
-            <a href="https://antiparosrentacar.com" target="_blank" rel="noopener noreferrer">paros auto rental</a>
-            <a href="https://antiparosrentacar.com" target="_blank" rel="noopener noreferrer">paros car booking</a>
-            <a href="https://antiparosrentacar.com" target="_blank" rel="noopener noreferrer">paros vehicle hire</a>
-            <a href="https://antiparosrentacar.com" target="_blank" rel="noopener noreferrer">premium paros car rental</a>
-            <a href="https://antiparosrentacar.com" target="_blank" rel="noopener noreferrer">professional paros car rental</a>
-            <a href="https://antiparosrentacar.com" target="_blank" rel="noopener noreferrer">luxury paros car rental</a>
-            <a href="https://antiparosrentacar.com" target="_blank" rel="noopener noreferrer">paros economy car rental</a>
-            <a href="https://antiparosrentacar.com" target="_blank" rel="noopener noreferrer">paros compact car rental</a>
-            <a href="https://antiparosrentacar.com" target="_blank" rel="noopener noreferrer">paros suv rental</a>
-            <a href="https://antiparosrentacar.com" target="_blank" rel="noopener noreferrer">paros 4x4 rental</a>
-            <a href="https://antiparosrentacar.com" target="_blank" rel="noopener noreferrer">paros jeep rental</a>
-            <a href="https://antiparosrentacar.com" target="_blank" rel="noopener noreferrer">paros automatic car rental</a>
-            <a href="https://antiparosrentacar.com" target="_blank" rel="noopener noreferrer">paros manual car rental</a>
-          </div>
-        </div>
-      </footer>
-    </div>
+        <Footer />
+      </div>
+    </>
   );
 };
 
