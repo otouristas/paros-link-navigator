@@ -89,7 +89,7 @@ const CompleteGuideExploringParosCar = () => {
               {/* Featured Image */}
               <div className="mb-12">
                 <img
-                  src="/src/assets/blog/rent-a-car-paros-1024x1024-1.webp"
+                  src="/assets/blog/rent-a-car-paros-1024x1024-1.webp"
                   alt="Scenic drive around Paros island with coastal views and traditional Greek architecture"
                   className="w-full h-96 object-cover rounded-2xl shadow-lg"
                   loading="lazy"

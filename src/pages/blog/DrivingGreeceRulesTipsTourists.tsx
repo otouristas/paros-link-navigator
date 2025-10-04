@@ -57,7 +57,7 @@ const DrivingGreeceRulesTipsTourists = () => {
                 {/* Feature Image */}
                 <div className="mb-12">
                   <img
-                    src="/src/assets/blog/antiparos-paros-rent-jeep-car-rentals.webp"
+                    src="/assets/blog/antiparos-paros-rent-jeep-car-rentals.webp"
                     alt="Rental car driving on scenic Greek roads in Paros with beautiful coastal views"
                     className="w-full h-96 object-cover rounded-2xl shadow-lg"
                     loading="lazy"

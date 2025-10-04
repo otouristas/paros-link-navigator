@@ -57,7 +57,7 @@ const BestBeachesParosAccessibleCar = () => {
                 {/* Feature Image */}
                 <div className="mb-12">
                   <img
-                    src="/src/assets/blog/Kolimpithres-Beach-Paros-650x399.webp"
+                    src="/assets/blog/Kolimpithres-Beach-Paros-650x399.webp"
                     alt="Beautiful Kolimpithres beach in Paros with crystal clear waters and golden sand accessible by car"
                     className="w-full h-96 object-cover rounded-2xl shadow-lg"
                     loading="lazy"

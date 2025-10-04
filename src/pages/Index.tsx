@@ -35,28 +35,28 @@ const Index = () => {
                 <div className="text-center lg:text-left">
                   <div className="inline-flex items-center bg-gold-500 text-main-950 px-6 py-3 rounded-full text-sm font-bold mb-8 shadow-2xl">
                     <Award className="h-5 w-5 mr-2" />
-                    Your Local Paros & Antiparos Experts Since 2010
-                  </div>
+                Your Local Paros & Antiparos Experts Since 2010
+              </div>
                   <h1 className="text-4xl md:text-5xl lg:text-6xl font-black mb-6 leading-tight tracking-tight">
                     Explore Paros & Antiparos<br />
                     <span className="text-gold-400">Your Way</span>
-                  </h1>
+              </h1>
                   <p className="text-lg md:text-xl mb-10 text-white/95 leading-relaxed font-medium">
                     Discover the authentic beauty of the Cyclades. From hidden beaches to charming villages, we provide the perfect vehicle for your Greek island adventure.
-                  </p>
+              </p>
                   <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-                    <a
-                      href="/car-rental-paros"
+                <a
+                  href="/car-rental-paros"
                       className="bg-gold-500 hover:bg-gold-400 text-main-950 px-10 py-4 rounded-2xl font-black text-lg transition-all inline-flex items-center justify-center shadow-2xl hover:shadow-gold-500/50 hover:scale-105 transform"
-                    >
+                >
                       Explore Fleet
-                      <ArrowRight className="ml-3 h-6 w-6" />
-                    </a>
-                    <a
-                      href="tel:+306944950094"
+                  <ArrowRight className="ml-3 h-6 w-6" />
+                </a>
+                <a
+                  href="tel:+306944950094"
                       className="bg-white text-main-900 hover:bg-gray-100 px-10 py-4 rounded-2xl font-black text-lg transition-all shadow-xl inline-flex items-center justify-center border-4 border-white/20"
-                    >
-                      <Phone className="mr-3 h-6 w-6" />
+                >
+                  <Phone className="mr-3 h-6 w-6" />
                       Call Now
                     </a>
                   </div>
@@ -86,7 +86,7 @@ const Index = () => {
               {/* Image 1 - Jeep */}
               <div className="relative group overflow-hidden rounded-3xl shadow-2xl hover:shadow-gold-500/30 transition-all duration-500 lg:row-span-2">
                 <OptimizedImage
-                  src="/src/assets/antiparos-paros-rent-jeep-car-rentals.webp"
+                  src="/assets/antiparos-paros-rent-jeep-car-rentals.webp"
                   alt="4x4 Jeep Rental in Antiparos and Paros - Off-road Adventure with Aggelos Rentals"
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                   loading="lazy"
@@ -104,7 +104,7 @@ const Index = () => {
               {/* Image 2 - Ferry to Antiparos */}
               <div className="relative group overflow-hidden rounded-3xl shadow-2xl hover:shadow-gold-500/30 transition-all duration-500">
                 <OptimizedImage
-                  src="/src/assets/blog/antiparos-paros-with-ferry-1024x683.png"
+                  src="/assets/blog/antiparos-paros-with-ferry-1024x683.png"
                   alt="Ferry connecting Paros and Antiparos - Explore both islands with Aggelos Rentals"
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                   loading="lazy"

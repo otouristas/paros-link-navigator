@@ -57,7 +57,7 @@ const ParosAirportNaoussaTransportationGuide = () => {
                 {/* Feature Image */}
                 <div className="mb-12">
                   <img
-                    src="/src/assets/blog/Aerial-View-of-Antiparos-Island-1024x576.webp"
+                    src="/assets/blog/Aerial-View-of-Antiparos-Island-1024x576.webp"
                     alt="Aerial view of Paros and Antiparos islands showing the airport and transportation routes"
                     className="w-full h-96 object-cover rounded-2xl shadow-lg"
                     loading="lazy"

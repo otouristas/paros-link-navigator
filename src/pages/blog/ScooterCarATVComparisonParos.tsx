@@ -57,7 +57,7 @@ const ScooterCarATVComparisonParos = () => {
                 {/* Feature Image */}
                 <div className="mb-12">
                   <img
-                    src="/src/assets/blog/antiparos-rent-a-car-scaled.jpg"
+                    src="/assets/blog/antiparos-rent-a-car-scaled.jpg"
                     alt="Different vehicle types for rent in Paros including cars, scooters and ATVs"
                     className="w-full h-96 object-cover rounded-2xl shadow-lg"
                     loading="lazy"
