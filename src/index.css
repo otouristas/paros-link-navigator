@@ -22,7 +22,7 @@
     --muted: 217 32% 95%;
     --muted-foreground: 217 32% 43%;
 
-    --accent: 45 95% 57%;
+    --accent: 50 100% 58%; /* #FFDB3B */
     --accent-foreground: 217 32% 17%;
 
     --destructive: 0 84.2% 60.2%;
@@ -63,7 +63,7 @@
     --muted: 217 32% 20%;
     --muted-foreground: 0 0% 70%;
 
-    --accent: 45 95% 57%;
+    --accent: 50 100% 58%; /* #FFDB3B */
     --accent-foreground: 217 32% 17%;
 
     --destructive: 0 62.8% 30.6%;
