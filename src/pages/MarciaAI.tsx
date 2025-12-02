@@ -91,7 +91,7 @@ const MarciaAI = () => {
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-4 mb-8 group"
               >
-                <img src="https://hotelssifnos.com/uploads/touristas-ai-logo.svg" alt="Touristas AI" className="h-20 group-hover:scale-110 transition-transform" />
+                <img src="https://hotelssifnos.com/uploads/touristas-ai-logo.svg" alt="Touristas AI" width="80" height="80" className="h-20 group-hover:scale-110 transition-transform" />
               </a>
               <h2 className="text-3xl md:text-4xl font-black mb-6 text-main-900">
                 Powered by Touristas AI

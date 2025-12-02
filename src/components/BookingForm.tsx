@@ -122,14 +122,16 @@ export function BookingForm({ className = '' }: BookingFormProps) {
 
       {/* Pick-up Location */}
       <div className="mb-3">
-        <label className="block text-xs font-bold text-main-900 mb-1.5">
+        <label htmlFor="pickup-location" className="block text-xs font-bold text-main-900 mb-1.5">
           Pick-up Location*
         </label>
         <div className="relative">
           <MapPin className="absolute left-2.5 top-1/2 transform -translate-y-1/2 h-4 w-4 text-gold-600" />
           <select
+            id="pickup-location"
             value={pickupLocation}
             onChange={(e) => setPickupLocation(e.target.value)}
+            aria-label="Pick-up location"
             className="w-full pl-9 pr-3 py-2.5 bg-white border-2 border-gray-200 rounded-lg focus:border-gold-600 focus:outline-none font-semibold text-main-900 text-sm"
           >
             {locations.map((loc) => (
@@ -159,14 +161,16 @@ export function BookingForm({ className = '' }: BookingFormProps) {
       {/* Return Location (conditional) */}
       {differentReturn && (
         <div className="mb-3">
-          <label className="block text-xs font-bold text-main-900 mb-1.5">
+          <label htmlFor="return-location" className="block text-xs font-bold text-main-900 mb-1.5">
             Drop-off Location*
           </label>
           <div className="relative">
             <MapPin className="absolute left-2.5 top-1/2 transform -translate-y-1/2 h-4 w-4 text-gold-600" />
             <select
+              id="return-location"
               value={returnLocation}
               onChange={(e) => setReturnLocation(e.target.value)}
+              aria-label="Drop-off location"
               className="w-full pl-9 pr-3 py-2.5 bg-white border-2 border-gray-200 rounded-lg focus:border-gold-600 focus:outline-none font-semibold text-main-900 text-sm"
             >
               {locations.map((loc) => (
@@ -188,20 +192,26 @@ export function BookingForm({ className = '' }: BookingFormProps) {
           </label>
           <div className="space-y-2">
             <div className="relative">
+              <label htmlFor="pickup-date" className="sr-only">Pick-up date</label>
               <Calendar className="absolute left-2.5 top-1/2 transform -translate-y-1/2 h-4 w-4 text-gold-600" />
               <input
+                id="pickup-date"
                 type="date"
                 value={pickupDate}
                 onChange={(e) => setPickupDate(e.target.value)}
+                aria-label="Pick-up date"
                 className="w-full pl-9 pr-3 py-2.5 bg-white dark:bg-gray-700 border-2 border-gray-200 dark:border-gray-600 rounded-lg focus:border-gold-600 focus:outline-none font-semibold text-main-900 dark:text-white text-sm"
               />
             </div>
             <div className="relative">
+              <label htmlFor="pickup-time" className="sr-only">Pick-up time</label>
               <Clock className="absolute left-2.5 top-1/2 transform -translate-y-1/2 h-4 w-4 text-gold-600" />
               <input
+                id="pickup-time"
                 type="time"
                 value={pickupTime}
                 onChange={(e) => setPickupTime(e.target.value)}
+                aria-label="Pick-up time"
                 className="w-full pl-9 pr-3 py-2.5 bg-white dark:bg-gray-700 border-2 border-gray-200 dark:border-gray-600 rounded-lg focus:border-gold-600 focus:outline-none font-semibold text-main-900 dark:text-white text-sm"
               />
             </div>
@@ -215,20 +225,26 @@ export function BookingForm({ className = '' }: BookingFormProps) {
           </label>
           <div className="space-y-2">
             <div className="relative">
+              <label htmlFor="return-date" className="sr-only">Drop-off date</label>
               <Calendar className="absolute left-2.5 top-1/2 transform -translate-y-1/2 h-4 w-4 text-gold-600" />
               <input
+                id="return-date"
                 type="date"
                 value={returnDate}
                 onChange={(e) => setReturnDate(e.target.value)}
+                aria-label="Drop-off date"
                 className="w-full pl-9 pr-3 py-2.5 bg-white dark:bg-gray-700 border-2 border-gray-200 dark:border-gray-600 rounded-lg focus:border-gold-600 focus:outline-none font-semibold text-main-900 dark:text-white text-sm"
               />
             </div>
             <div className="relative">
+              <label htmlFor="return-time" className="sr-only">Drop-off time</label>
               <Clock className="absolute left-2.5 top-1/2 transform -translate-y-1/2 h-4 w-4 text-gold-600" />
               <input
+                id="return-time"
                 type="time"
                 value={returnTime}
                 onChange={(e) => setReturnTime(e.target.value)}
+                aria-label="Drop-off time"
                 className="w-full pl-9 pr-3 py-2.5 bg-white dark:bg-gray-700 border-2 border-gray-200 dark:border-gray-600 rounded-lg focus:border-gold-600 focus:outline-none font-semibold text-main-900 dark:text-white text-sm"
               />
             </div>
@@ -238,14 +254,16 @@ export function BookingForm({ className = '' }: BookingFormProps) {
 
       {/* Age Group */}
       <div className="mb-4">
-        <label className="block text-xs font-bold text-main-900 mb-1.5">
+        <label htmlFor="age-group" className="block text-xs font-bold text-main-900 mb-1.5">
           Age Group*
         </label>
         <div className="relative">
           <Users className="absolute left-2.5 top-1/2 transform -translate-y-1/2 h-4 w-4 text-gold-600" />
           <select
+            id="age-group"
             value={ageGroup}
             onChange={(e) => setAgeGroup(e.target.value)}
+            aria-label="Age group"
             className="w-full pl-9 pr-3 py-2.5 bg-white border-2 border-gray-200 rounded-lg focus:border-gold-600 focus:outline-none font-semibold text-main-900 text-sm"
           >
             {ageGroups.map((group) => (

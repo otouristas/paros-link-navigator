@@ -39,7 +39,7 @@ export const CookieConsent = () => {
           <div className="flex space-x-2">
             <button
               onClick={acceptCookies}
-              className="bg-gold-600 hover:bg-gold-700 text-white px-3 py-1 rounded text-xs font-medium transition-colors"
+              className="bg-gold-600 hover:bg-gold-700 text-main-900 px-3 py-1 rounded text-xs font-bold transition-colors"
             >
               Accept
             </button>
@@ -54,6 +54,7 @@ export const CookieConsent = () => {
         <button
           onClick={declineCookies}
           className="flex-shrink-0 text-gray-400 hover:text-gray-600 transition-colors"
+          aria-label="Close cookie consent dialog"
         >
           <X className="h-4 w-4" />
         </button>

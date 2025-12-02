@@ -73,7 +73,7 @@ const FleetDetail = () => {
       <SEO
         title={`${car.name} Rental | Aggelos Rentals Paros`}
         description={`Rent a ${car.name} in Paros. ${car.description} From €${car.price_per_day}/day.`}
-        canonicalUrl={`http://rentacar-paros.gr/fleet/${car.id}`}
+        canonicalUrl={`https://rentacar-paros.gr/fleet/${car.id}`}
         keywords={`${car.brand} ${car.model} rental paros, rent ${car.brand} paros, ${car.category || car.type} rental paros`}
       />
       <div className="min-h-screen bg-white">

@@ -845,6 +845,7 @@ export function MarciaChat() {
                 onClick={() => handleSend()}
                 disabled={!input.trim()}
                 className="bg-gradient-to-r from-main-900 to-gold-600 text-white p-3 rounded-xl hover:scale-105 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+                aria-label="Send message"
               >
                 <Send className="h-5 w-5" />
               </button>
@@ -862,7 +863,7 @@ export function MarciaChat() {
                 className="flex items-center justify-center gap-2 text-xs text-gray-400 hover:text-main-900 dark:hover:text-gold-400 transition-colors group"
               >
                 <span>Powered by</span>
-                <img src="https://hotelssifnos.com/uploads/touristas-ai-logo.svg" alt="Touristas AI" className="h-6 inline-block group-hover:scale-110 transition-transform" />
+                <img src="https://hotelssifnos.com/uploads/touristas-ai-logo.svg" alt="Touristas AI" width="24" height="24" className="h-6 inline-block group-hover:scale-110 transition-transform" />
                 <span className="font-bold text-sm text-gray-600 dark:text-gray-400 group-hover:text-main-900 dark:group-hover:text-gold-400">Touristas AI</span>
               </a>
             </div>

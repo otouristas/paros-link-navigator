@@ -11,6 +11,11 @@
     <meta name="robots" content="index, follow" />
     <meta name="google-site-verification" content="DGgIxDU18XI0kTapRg9NPgc2MLZ6jbjQPrtTGtrCzfA" />
     
+    <!-- Security Headers -->
+    <!-- Note: These meta tags provide basic protection. For full security, configure HTTP headers at server level. -->
+    <!-- See SECURITY_HEADERS.md for server configuration instructions -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com https://cdn.gpteng.co; style-src 'self' 'unsafe-inline'; img-src 'self' data: https: blob:; font-src 'self' data:; connect-src 'self' https://www.google-analytics.com https://*.supabase.co https://hotelssifnos.com; frame-ancestors 'none'; base-uri 'self'; form-action 'self';" />
+    
     <!-- Open Graph Tags -->
     <meta property="og:title" content="Paros Rent A Car | Best Car Rental Services in Paros Greece" />
     <meta property="og:description" content="Premium Paros rent a car services. Rent cars, scooters, ATVs, bikes & SUVs in Paros. Airport & port pickup available." />
@@ -26,13 +31,22 @@
     <!-- Canonical URL -->
     <link rel="canonical" href="https://paros-car-rental.com" />
     
-    <!-- Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-1H34VC33RQ"></script>
+    <!-- Google Analytics - Deferred for better performance -->
     <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-1H34VC33RQ');
+      // Defer Google Analytics loading
+      window.addEventListener('load', function() {
+        const script = document.createElement('script');
+        script.async = true;
+        script.src = 'https://www.googletagmanager.com/gtag/js?id=G-1H34VC33RQ';
+        document.head.appendChild(script);
+        
+        script.onload = function() {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-1H34VC33RQ');
+        };
+      });
     </script>
     
     <!-- Structured Data -->

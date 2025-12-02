@@ -8,6 +8,8 @@ interface OptimizedImageProps {
   onLoad?: () => void;
   placeholder?: string;
   sizes?: string;
+  width?: number;
+  height?: number;
 }
 
 export const OptimizedImage = ({ 
@@ -17,7 +19,9 @@ export const OptimizedImage = ({
   loading = 'lazy',
   onLoad,
   placeholder = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgZmlsbD0iI2Y3ZjdmNyIvPjwvc3ZnPg==',
-  sizes = '(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
+  sizes = '(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw',
+  width,
+  height
 }: OptimizedImageProps) => {
   const [imageLoaded, setImageLoaded] = useState(false);
   const [imageError, setImageError] = useState(false);
@@ -47,6 +51,8 @@ export const OptimizedImage = ({
         <img
           src={src}
           alt={alt}
+          width={width}
+          height={height}
           className={`transition-opacity duration-500 ${
             imageLoaded ? 'opacity-100' : 'opacity-0'
           } ${className}`}

@@ -28,7 +28,7 @@ export const fallbackBlogPosts: BlogPost[] = [
     author: 'Aggelos Rentals Team',
     readTime: '6 min read',
     category: 'Island Hopping',
-    image: '/assets/blog/antiparos-paros-with-ferry-1024x683.png',
+    image: '/assets/blog/antiparos-paros-with-ferry-1024x683.webp',
     slug: 'antiparos-island-hopping-ferry-guide',
     content: '',
     featured: false,

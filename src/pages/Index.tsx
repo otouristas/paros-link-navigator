@@ -92,6 +92,8 @@ const Index = () => {
                   loading="lazy"
                   onLoad={() => handleImageLoad('jeep')}
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  width={750}
+                  height={450}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-main-950/80 via-main-900/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500">
                   <div className="absolute bottom-0 left-0 right-0 p-8 text-white">
@@ -104,9 +106,11 @@ const Index = () => {
               {/* Image 2 - Ferry to Antiparos */}
               <div className="relative group overflow-hidden rounded-3xl shadow-2xl hover:shadow-gold-500/30 transition-all duration-500">
                 <OptimizedImage
-                  src="/assets/blog/antiparos-paros-with-ferry-1024x683.png"
+                  src="/assets/blog/antiparos-paros-with-ferry-1024x683.webp"
                   alt="Ferry connecting Paros and Antiparos - Explore both islands with Aggelos Rentals"
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  width={1024}
+                  height={683}
                   loading="lazy"
                   onLoad={() => handleImageLoad('ferry')}
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
@@ -385,7 +389,7 @@ const Index = () => {
                   rel="noopener noreferrer"
                   className="flex items-center gap-3 hover:text-white transition-colors group"
                 >
-                  <img src="https://hotelssifnos.com/uploads/touristas-ai-logo.svg" alt="Touristas AI" className="h-8 inline-block group-hover:scale-110 transition-transform" />
+                  <img src="https://hotelssifnos.com/uploads/touristas-ai-logo.svg" alt="Touristas AI" width="32" height="32" className="h-8 inline-block group-hover:scale-110 transition-transform" />
                   <span className="font-black text-lg text-white">Touristas AI</span>
                 </a>
               </div>

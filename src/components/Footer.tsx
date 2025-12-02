@@ -15,6 +15,8 @@ export const Footer = () => {
               <img
                 src="/logo.png"
                 alt="Aggelos Rentals"
+                width="169"
+                height="48"
                 className="h-12 w-auto"
               />
               <div>

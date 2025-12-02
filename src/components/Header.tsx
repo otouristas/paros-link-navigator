@@ -50,6 +50,8 @@ export const Header = () => {
             <img
               src="/logo.png"
               alt="Aggelos Rentals Logo"
+              width="141"
+              height="40"
               className="h-10 w-auto transition-transform group-hover:scale-105"
             />
           </Link>
@@ -81,6 +83,8 @@ export const Header = () => {
                 <button
                   onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
                   className="lg:hidden p-2 rounded-lg hover:bg-white/10 dark:hover:bg-gray-700 transition-colors text-white"
+                  aria-label={mobileMenuOpen ? "Close mobile menu" : "Open mobile menu"}
+                  aria-expanded={mobileMenuOpen}
                 >
                   {mobileMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
                 </button>
