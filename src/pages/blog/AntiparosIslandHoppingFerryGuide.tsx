@@ -57,7 +57,7 @@ const AntiparosIslandHoppingFerryGuide = () => {
                 {/* Feature Image */}
                 <div className="mb-12">
                   <img
-                    src="/assets/blog/antiparos-paros-with-ferry-1024x683.webp"
+                    src="/assets/blog/antiparos-paros-with-ferry-1024x683.png"
                     alt="Ferry boat traveling between Paros and Antiparos islands in the Aegean Sea"
                     width={1024}
                     height={683}

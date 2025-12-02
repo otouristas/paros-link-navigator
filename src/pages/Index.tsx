@@ -17,10 +17,10 @@ const Index = () => {
   return (
     <>
       <SEO
-        title="Rent a Car Paros | No Credit Card & Free Delivery | Aggelos Rentals"
-        description="Looking for the best Rent a Car in Paros? Book now from €14/day. Free delivery to Port & Airport. No Deposit options available. Trusted local agency."
+        title="Paros Rent A Car | Your Gateway to Exploring Paros & Antiparos Islands"
+        description="Discover Paros with confidence! Aggelos Rentals offers premium car, scooter, and ATV rentals across Paros and Antiparos. Local expertise, modern fleet, 24/7 support. Your trusted partner since 2010."
         canonicalUrl="https://rentacar-paros.gr"
-        keywords="paros rent a car, rent a car paros, paros car rental, car rental paros, cheap car rental paros, affordable car rental paros"
+        keywords="paros rent a car, paros car rental, antiparos rent a car, paros island exploration, paros transportation, cyclades car rental, greek islands car rental"
       />
       <div className="min-h-screen bg-white dark:bg-gray-900 transition-colors duration-300">
         <Header />
@@ -38,8 +38,8 @@ const Index = () => {
                 Your Local Paros & Antiparos Experts Since 2010
               </div>
                   <h1 className="text-4xl md:text-5xl lg:text-6xl font-black mb-6 leading-tight tracking-tight">
-                    Rent a Car in Paros –<br />
-                    <span className="text-gold-400">Reliable & Affordable</span>
+                    Explore Paros & Antiparos<br />
+                    <span className="text-gold-400">Your Way</span>
               </h1>
                   <p className="text-lg md:text-xl mb-10 text-white/95 leading-relaxed font-medium">
                     Discover the authentic beauty of the Cyclades. From hidden beaches to charming villages, we provide the perfect vehicle for your Greek island adventure.
@@ -75,7 +75,7 @@ const Index = () => {
         <section className="py-20 bg-gradient-to-b from-gray-50 to-white dark:from-gray-800 dark:to-gray-900">
           <div className="container mx-auto px-4">
             <div className="text-center mb-16">
-              <h2 className="text-4xl md:text-5xl font-black mb-4 text-main-900 dark:text-white">Why Choose Us for Car Rental in Paros?</h2>
+              <h2 className="text-4xl md:text-5xl font-black mb-4 text-main-900 dark:text-white">Experience Island Freedom</h2>
               <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto font-medium">
                 Real moments from real travelers exploring Paros & Antiparos with Aggelos Rentals
               </p>
@@ -92,8 +92,6 @@ const Index = () => {
                   loading="lazy"
                   onLoad={() => handleImageLoad('jeep')}
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                  width={750}
-                  height={450}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-main-950/80 via-main-900/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500">
                   <div className="absolute bottom-0 left-0 right-0 p-8 text-white">
@@ -106,11 +104,9 @@ const Index = () => {
               {/* Image 2 - Ferry to Antiparos */}
               <div className="relative group overflow-hidden rounded-3xl shadow-2xl hover:shadow-gold-500/30 transition-all duration-500">
                 <OptimizedImage
-                  src="/assets/blog/antiparos-paros-with-ferry-1024x683.webp"
+                  src="/assets/blog/antiparos-paros-with-ferry-1024x683.png"
                   alt="Ferry connecting Paros and Antiparos - Explore both islands with Aggelos Rentals"
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                  width={1024}
-                  height={683}
                   loading="lazy"
                   onLoad={() => handleImageLoad('ferry')}
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
@@ -148,7 +144,7 @@ const Index = () => {
         <section className="py-24 bg-white dark:bg-gray-900">
           <div className="container mx-auto px-4">
             <div className="text-center mb-20">
-              <h2 className="text-4xl md:text-5xl font-black mb-4 text-main-900 dark:text-white">Our Fleet: Economy, SUVs, and ATVs</h2>
+              <h2 className="text-4xl md:text-5xl font-black mb-4 text-main-900 dark:text-white">Your Complete Transportation Solution</h2>
               <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto font-medium">
                 Whether you need a car for family adventures or a scooter for quick island hops
               </p>
@@ -163,8 +159,8 @@ const Index = () => {
                 <p className="text-gray-700 dark:text-gray-300 mb-6 leading-relaxed text-base font-medium">
                   Perfect for families and groups. Explore Paros comfortably with our modern fleet of economy and SUV vehicles.
                 </p>
-                <a href="/fleet" className="inline-flex items-center text-main-900 dark:text-gold-400 font-black text-lg hover:text-gold-600 transition-colors">
-                  check our car rental prices
+                <a href="/car-rental-paros" className="inline-flex items-center text-main-900 dark:text-gold-400 font-black text-lg hover:text-gold-600 transition-colors">
+                  Explore Cars
                   <ArrowRight className="ml-3 h-6 w-6" />
                 </a>
               </div>
@@ -204,7 +200,7 @@ const Index = () => {
         <section className="py-24 bg-gradient-to-b from-gray-50 to-white dark:from-gray-800 dark:to-gray-900">
           <div className="container mx-auto px-4">
             <div className="text-center mb-20">
-              <h2 className="text-4xl md:text-5xl font-black mb-4 text-main-900 dark:text-white">Pickup Locations: Airport, Port, Naoussa</h2>
+              <h2 className="text-4xl md:text-5xl font-black mb-4 text-main-900 dark:text-white">Discover Paros & Antiparos</h2>
               <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto font-medium">
                 From bustling ports to secluded beaches, explore the best of both islands
               </p>
@@ -217,7 +213,7 @@ const Index = () => {
                 </div>
                 <h3 className="text-2xl font-black mb-3 text-main-900 dark:text-white">Parikia</h3>
                 <p className="text-gray-700 dark:text-gray-300 mb-5 font-semibold">Main port and capital</p>
-                <a href="/paros-port-car-rental" className="text-main-900 dark:text-gold-400 font-black hover:text-gold-600 transition-colors">pickup at Paros Port →</a>
+                <a href="/car-rental-parikia-paros" className="text-main-900 dark:text-gold-400 font-black hover:text-gold-600 transition-colors">Rent Here →</a>
               </div>
 
               <div className="bg-gradient-to-br from-teal-100 to-teal-200 dark:from-teal-900/30 dark:to-teal-800/30 p-8 rounded-3xl text-center shadow-xl hover:shadow-2xl transition-all transform hover:scale-105">
@@ -226,7 +222,7 @@ const Index = () => {
                 </div>
                 <h3 className="text-2xl font-black mb-3 text-main-900 dark:text-white">Naoussa</h3>
                 <p className="text-gray-700 dark:text-gray-300 mb-5 font-semibold">Charming fishing village</p>
-                <a href="/car-rental-naoussa-paros" className="text-main-900 dark:text-gold-400 font-black hover:text-gold-600 transition-colors">rent a car in Naoussa →</a>
+                <a href="/car-rental-naoussa-paros" className="text-main-900 dark:text-gold-400 font-black hover:text-gold-600 transition-colors">Explore →</a>
               </div>
 
               <div className="bg-gradient-to-br from-green-100 to-green-200 dark:from-green-900/30 dark:to-green-800/30 p-8 rounded-3xl text-center shadow-xl hover:shadow-2xl transition-all transform hover:scale-105">
@@ -235,7 +231,7 @@ const Index = () => {
                 </div>
                 <h3 className="text-2xl font-black mb-3 text-main-900 dark:text-white">Paros Airport</h3>
                 <p className="text-gray-700 dark:text-gray-300 mb-5 font-semibold">Convenient airport pickup</p>
-                <a href="/paros-airport-car-rental" className="text-main-900 dark:text-gold-400 font-black hover:text-gold-600 transition-colors">Paros airport car rental →</a>
+                <a href="/paros-airport-car-rental" className="text-main-900 dark:text-gold-400 font-black hover:text-gold-600 transition-colors">Book Now →</a>
               </div>
 
               <div className="bg-gradient-to-br from-purple-100 to-purple-200 dark:from-purple-900/30 dark:to-purple-800/30 p-8 rounded-3xl text-center shadow-xl hover:shadow-2xl transition-all transform hover:scale-105">
@@ -389,7 +385,7 @@ const Index = () => {
                   rel="noopener noreferrer"
                   className="flex items-center gap-3 hover:text-white transition-colors group"
                 >
-                  <img src="https://hotelssifnos.com/uploads/touristas-ai-logo.svg" alt="Touristas AI" width="32" height="32" className="h-8 inline-block group-hover:scale-110 transition-transform" />
+                  <img src="https://hotelssifnos.com/uploads/touristas-ai-logo.svg" alt="Touristas AI" className="h-8 inline-block group-hover:scale-110 transition-transform" />
                   <span className="font-black text-lg text-white">Touristas AI</span>
                 </a>
               </div>
@@ -423,10 +419,10 @@ const Index = () => {
               
               <div className="flex flex-col sm:flex-row gap-6 justify-center">
                 <a
-                  href="/fleet"
+                  href="/car-rental-paros"
                   className="bg-main-900 hover:bg-main-800 text-white px-12 py-6 rounded-2xl font-black text-xl transition-all inline-flex items-center justify-center shadow-2xl hover:scale-105 transform"
                 >
-                  view our fleet
+                  Browse All Vehicles
                   <ArrowRight className="ml-3 h-7 w-7" />
                 </a>
                 <a
@@ -435,46 +431,6 @@ const Index = () => {
                 >
                   Read Our Travel Guide
                 </a>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* FAQ Section with Zero-Click Answer */}
-        <section className="py-24 bg-gradient-to-b from-gray-50 to-white">
-          <div className="container mx-auto px-4">
-            <div className="max-w-4xl mx-auto">
-              <h2 className="text-4xl md:text-5xl font-black mb-12 text-center text-main-900">Frequently Asked Questions</h2>
-              
-              <div className="bg-white rounded-3xl shadow-xl p-8 mb-8 border-2 border-gold-200">
-                <h3 className="text-2xl font-black mb-4 text-main-900">How much does car rental cost in Paros?</h3>
-                <p className="text-xl font-bold text-gold-600 mb-2">Prices start from €15 in low season and €45 in high season.</p>
-                <p className="text-gray-700 font-medium">
-                  Our car rental prices vary by season. Low season (March-May, October-November) offers the best rates starting from €15/day. 
-                  High season (June-September) prices range from €45-68/day. Book 33-57 days in advance for the best prices.
-                </p>
-              </div>
-
-              <div className="space-y-6">
-                <div className="bg-white rounded-xl p-6 shadow-lg">
-                  <h3 className="text-xl font-bold mb-3 text-main-900">Do I need a car in Paros?</h3>
-                  <p className="text-gray-700 font-medium">While not essential, renting a car in Paros is highly recommended for full island exploration. It gives you access to hidden beaches like Kolymbithres and Lefkes village that are difficult to reach by bus.</p>
-                </div>
-                
-                <div className="bg-white rounded-xl p-6 shadow-lg">
-                  <h3 className="text-xl font-bold mb-3 text-main-900">Can I rent a car in Paros without a credit card?</h3>
-                  <p className="text-gray-700 font-medium">Yes! Many local agencies, including us, allow debit cards or cash with deposit. We offer no-credit-card rental options.</p>
-                </div>
-                
-                <div className="bg-white rounded-xl p-6 shadow-lg">
-                  <h3 className="text-xl font-bold mb-3 text-main-900">How early should I book a car rental in Paros?</h3>
-                  <p className="text-gray-700 font-medium">For the best prices, book 33-57 days in advance. During peak season (June-August), booking early also guarantees availability.</p>
-                </div>
-                
-                <div className="bg-white rounded-xl p-6 shadow-lg">
-                  <h3 className="text-xl font-bold mb-3 text-main-900">Can I take a rental car to Antiparos?</h3>
-                  <p className="text-gray-700 font-medium">Yes! You can take our rental cars on the ferry to Antiparos. The ferry from Pounda port takes 7 minutes and costs €7.30 for cars.</p>
-                </div>
               </div>
             </div>
           </div>
@@ -490,10 +446,10 @@ const Index = () => {
               </p>
               <div className="flex flex-col sm:flex-row gap-6 justify-center">
                 <a
-                  href="/fleet"
+                  href="/car-rental-paros"
                   className="bg-gold-500 hover:bg-gold-400 text-main-950 px-12 py-6 rounded-2xl font-black text-xl transition-all inline-flex items-center justify-center shadow-2xl hover:scale-105 transform"
                 >
-                  see all vehicles
+                  Browse Vehicles
                   <ArrowRight className="ml-3 h-7 w-7" />
                 </a>
                 <a

@@ -55,6 +55,10 @@ After conversion:
 
 ## Current Status
 
-✅ All code references have been updated to use `.webp` extension
+✅ All code references currently use `.png` extension (to prevent 404 errors)
 ⏳ Image file conversion pending (manual step required)
+⚠️ **After converting to WebP**, update these files to use `.webp`:
+  - `src/pages/Index.tsx` (line 107)
+  - `src/pages/blog/AntiparosIslandHoppingFerryGuide.tsx` (line 60)
+  - `src/data/fallback-blog-posts.ts` (line 31)
 
