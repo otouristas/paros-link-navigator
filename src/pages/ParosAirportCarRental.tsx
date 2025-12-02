@@ -8,10 +8,10 @@ const ParosAirportCarRental = () => {
   return (
     <>
       <SEO
-        title="Paros Airport Car Rental | Rent a Car at Paros Airport – Aggelos Rentals"
-        description="Fast and easy Paros Airport car rental with Aggelos Rentals. Book online, pick up upon arrival, 24/7 service."
+        title="Paros Airport Car Rental (PAS) | Free Meet & Greet Pickup"
+        description="Land and drive! Fast Car Rental at Paros Airport (PAS). We wait for you at arrivals. No queues, full insurance, and unlimited mileage."
         canonicalUrl="https://rentacar-paros.gr/paros-airport-car-rental"
-        keywords="paros airport car rental, rent a car paros airport, paros airport pickup, paros airport car hire, PAS airport car rental"
+        keywords="paros airport car rental, rent a car paros airport, paros airport pickup, paros airport car hire, PAS airport car rental, car rental paros airport PAS"
       />
       <div className="min-h-screen bg-white text-main-950">
         <Header />
@@ -25,7 +25,7 @@ const ParosAirportCarRental = () => {
                 24/7 Airport Service Available
               </div>
               <h1 className="text-5xl md:text-6xl font-black mb-6 leading-tight tracking-tight">
-                Paros Airport Car Rental
+                Car Rental Paros Airport (PAS) – Land & Drive
               </h1>
               <p className="text-xl md:text-2xl mb-10 text-white/95 leading-relaxed max-w-4xl mx-auto font-medium">
                 Arrive and drive away in comfort — no shuttle, no delays. Fast and easy Paros Airport car rental with Aggelos Rentals.
@@ -56,7 +56,7 @@ const ParosAirportCarRental = () => {
           <div className="container mx-auto px-4">
             <div className="max-w-6xl mx-auto">
               <div className="text-center mb-20">
-                <h2 className="text-4xl md:text-5xl font-black mb-4 text-main-900">Arriving at Paros Airport?</h2>
+                <h2 className="text-4xl md:text-5xl font-black mb-4 text-main-900">How to Pick Up Your Car at Paros Airport</h2>
                 <p className="text-xl text-gray-600 max-w-3xl mx-auto">
                   Our team meets you directly at arrivals with your car ready to go. No waiting, no hassle.
                 </p>
@@ -152,7 +152,7 @@ const ParosAirportCarRental = () => {
         <section className="py-24 bg-white">
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto">
-              <h2 className="text-3xl font-bold text-center mb-12 text-main-900">Distance from Paros Airport</h2>
+              <h2 className="text-3xl font-bold text-center mb-12 text-main-900">Distance from Airport to Naoussa & Parikia</h2>
               <div className="grid md:grid-cols-3 gap-8">
                 <div className="text-center bg-gray-50 rounded-xl p-6">
                   <MapPin className="h-12 w-12 text-gold-600 mx-auto mb-4" />

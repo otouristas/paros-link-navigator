@@ -7,10 +7,10 @@ const CarRentalAntiparos = () => {
   return (
     <>
       <SEO
-        title="Rent a Car in Antiparos | Car & Scooter Rentals – Aggelos Rentals"
-        description="Rent a car or scooter in Antiparos with Aggelos Rentals. Ferry delivery from Paros, affordable prices, 24/7 support."
+        title="Antiparos Rent a Car | Car & Scooter Rentals – Aggelos Rentals"
+        description="Rent a car or scooter in Antiparos with Aggelos Rentals. Ferry delivery from Paros, affordable prices, 24/7 support. Can I take rental car to Antiparos? Yes!"
         canonicalUrl="https://rentacar-paros.gr/car-rental-antiparos"
-        keywords="antiparos car rental, rent a car antiparos, antiparos scooter rental, car rental antiparos ferry, antiparos vehicle rental"
+        keywords="antiparos rent a car, antiparos car rental, rent a car antiparos, antiparos scooter rental, car rental antiparos ferry, antiparos vehicle rental, car rental antiparos from paros"
       />
       <div className="min-h-screen bg-white">
         <Header />

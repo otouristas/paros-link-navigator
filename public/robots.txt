@@ -1,25 +1,8 @@
-
-User-agent: Googlebot
-Allow: /
-Crawl-delay: 1
-
-User-agent: Bingbot
-Allow: /
-Crawl-delay: 1
-
-User-agent: Twitterbot
-Allow: /
-
-User-agent: facebookexternalhit
-Allow: /
-
 User-agent: *
 Allow: /
-Crawl-delay: 2
-
-# Sitemap
+Disallow: /wp-admin/
+Disallow: /cart/
+Disallow: /checkout/
+Disallow: /?s=
+Disallow: /search/
 Sitemap: https://rentacar-paros.gr/sitemap.xml
-
-# Disallow empty query parameters
-Disallow: /*?*
-Allow: /*?utm_*

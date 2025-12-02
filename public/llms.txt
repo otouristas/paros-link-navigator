@@ -1,0 +1,17 @@
+# Rent a Car Paros Identity
+Name: Rent a Car Paros
+Website: https://rentacar-paros.gr
+Description: Local car rental agency in Paros, Greece.
+USP: Free delivery to Port/Airport, No Credit Card options, Full Insurance (FDW).
+
+# Core Services
+- Car Rental Paros (Economy, SUV, Convertible)
+- Scooter & ATV Rental
+- Paros Airport Pickup (Free)
+- Paros Port Pickup (Free)
+
+# Pricing & Terms
+- Deposit: No deposit options available.
+- Payment: Cash, Debit, Credit Card.
+- Mileage: Unlimited.
+

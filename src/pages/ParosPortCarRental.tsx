@@ -8,10 +8,10 @@ const ParosPortCarRental = () => {
   return (
     <>
       <SEO
-        title="Paros Port Car Rental | Rent a Car at the Ferry Port – Aggelos Rentals"
-        description="Rent a car at Paros Port from Aggelos Rentals. Perfect for ferry arrivals. Book ahead to skip the line."
+        title="Car Rental Paros Port | Office 50m from Ferry | Free Delivery"
+        description="Arriving by ferry? Best Car Rental at Paros Port (Parikia). Walk to our car pickup point. Avoid the bus queues. Book your port rental today."
         canonicalUrl="https://rentacar-paros.gr/paros-port-car-rental"
-        keywords="paros port car rental, rent a car paros port, ferry port car rental, paros ferry pickup, port car hire"
+        keywords="paros port car rental, rent a car paros port, ferry port car rental, paros ferry pickup, port car hire, rent a car parikia paros, parikia car rental"
       />
       <div className="min-h-screen bg-white text-main-950">
         <Header />
@@ -25,7 +25,7 @@ const ParosPortCarRental = () => {
                 Ferry Port Service Available
               </div>
               <h1 className="text-5xl md:text-6xl font-black mb-6 leading-tight tracking-tight">
-                Paros Port Car Rental
+                Rent a Car at Paros Port (Parikia)
               </h1>
               <p className="text-xl md:text-2xl mb-10 text-white/95 leading-relaxed max-w-4xl mx-auto font-medium">
                 Start your holiday the moment you dock — our team is waiting right at the pier. Perfect for ferry arrivals with fast service and great prices.

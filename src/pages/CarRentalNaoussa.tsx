@@ -7,10 +7,10 @@ const CarRentalNaoussa = () => {
   return (
     <>
       <SEO
-        title="Car Rental Naoussa Paros | Affordable Car Hire – Aggelos Rentals"
-        description="Rent a car in Naoussa Paros to explore beaches and villages. Best local rates, easy pickup, and reliable vehicles."
+        title="Naoussa Car Rental | Rent a Car in Naoussa Paros – Aggelos Rentals"
+        description="Rent a car in Naoussa Paros to explore beaches and villages. Best local rates, easy pickup, and reliable vehicles. Free delivery available."
         canonicalUrl="https://rentacar-paros.gr/car-rental-naoussa-paros"
-        keywords="naoussa car rental, car rental naoussa paros, naoussa paros car hire, rent a car naoussa, naoussa vehicle rental"
+        keywords="naoussa car rental, car rental naoussa paros, naoussa paros car hire, rent a car naoussa, naoussa vehicle rental, rent a car naoussa paros"
       />
       <div className="min-h-screen bg-white">
         <Header />
